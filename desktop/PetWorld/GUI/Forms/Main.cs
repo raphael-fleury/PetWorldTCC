@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PetWorld
+namespace PetWorld.GUI.Forms
 {
     public partial class Main : Form
     {

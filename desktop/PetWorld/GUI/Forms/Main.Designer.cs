@@ -1,4 +1,4 @@
-﻿namespace PetWorld
+﻿namespace PetWorld.GUI.Forms
 {
     partial class Main
     {
@@ -28,13 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.SuspendLayout();
+            // 
+            // sidebar1
+            //
+            this.sidebar = UserControls.Sidebar.Create();
+            this.sidebar.BackColor = System.Drawing.Color.Orange;
+            this.sidebar.Dock = System.Windows.Forms.DockStyle.Left;
+            this.sidebar.Location = new System.Drawing.Point(0, 0);
+            this.sidebar.MinimumSize = new System.Drawing.Size(200, 0);
+            this.sidebar.Name = "sidebar1";
+            this.sidebar.Padding = new System.Windows.Forms.Padding(20);
+            this.sidebar.Size = new System.Drawing.Size(200, 561);
+            this.sidebar.TabIndex = 0;
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.sidebar);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(600, 400);
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pet World";
@@ -43,6 +59,8 @@
         }
 
         #endregion
+
+        private UserControls.Sidebar sidebar;
     }
 }
 
