@@ -1,4 +1,6 @@
-﻿namespace PetWorld.GUI.Forms
+﻿using System.Windows.Forms;
+
+namespace PetWorld.GUI.Forms
 {
     partial class Main
     {
@@ -29,25 +31,32 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
+            this.screen = new PetWorld.GUI.UserControls.Screen();
+            this.sidebar = new PetWorld.GUI.UserControls.Sidebar();
             this.SuspendLayout();
             // 
-            // sidebar1
-            //
-            this.sidebar = UserControls.Sidebar.Create();
-            this.sidebar.BackColor = System.Drawing.Color.Orange;
+            // screen
+            // 
+            this.screen.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.screen.Location = new System.Drawing.Point(200, 0);
+            this.screen.Name = "screen";
+            this.screen.Size = new System.Drawing.Size(584, 561);
+            this.screen.TabIndex = 3;
+            // 
+            // sidebar
+            // 
             this.sidebar.Dock = System.Windows.Forms.DockStyle.Left;
             this.sidebar.Location = new System.Drawing.Point(0, 0);
-            this.sidebar.MinimumSize = new System.Drawing.Size(200, 0);
-            this.sidebar.Name = "sidebar1";
-            this.sidebar.Padding = new System.Windows.Forms.Padding(20);
+            this.sidebar.Name = "sidebar";
             this.sidebar.Size = new System.Drawing.Size(200, 561);
-            this.sidebar.TabIndex = 0;
+            this.sidebar.TabIndex = 2;
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.screen);
             this.Controls.Add(this.sidebar);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(600, 400);
@@ -61,6 +70,7 @@
         #endregion
 
         private UserControls.Sidebar sidebar;
+        private UserControls.Screen screen;
     }
 }
 

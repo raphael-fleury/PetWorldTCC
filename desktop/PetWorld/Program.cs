@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-using PetWorld.GUI.Forms;
+using MainForm = PetWorld.GUI.Forms.Main;
 
 namespace PetWorld
 {
@@ -18,7 +18,9 @@ namespace PetWorld
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Main());
+            
+            MainForm.Create();
+            Application.Run(MainForm.Instance);
         }
     }
 }
