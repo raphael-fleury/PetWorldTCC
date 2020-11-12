@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PetWorld.GUI.UserControls
 {
-    public partial class UserControl2 : Screen
+    public partial class Pet : UserControl
     {
-        public UserControl2()
+        public Pet()
         {
             InitializeComponent();
         }

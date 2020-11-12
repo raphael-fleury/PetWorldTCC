@@ -52,6 +52,12 @@
     <Compile Include="GUI\Forms\Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\UserControls\Pet.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UserControls\Pet.Designer.cs">
+      <DependentUpon>Pet.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\UserControls\Screen.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -70,16 +76,19 @@
     <Compile Include="GUI\UserControls\UserControl1.Designer.cs">
       <DependentUpon>UserControl1.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\UserControls\UserControl2.cs">
+    <Compile Include="GUI\UserControls\Pets.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\UserControls\UserControl2.Designer.cs">
-      <DependentUpon>UserControl2.cs</DependentUpon>
+    <Compile Include="GUI\UserControls\Pets.Designer.cs">
+      <DependentUpon>Pets.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GUI\Forms\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UserControls\Pet.resx">
+      <DependentUpon>Pet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UserControls\Screen.resx">
       <DependentUpon>Screen.cs</DependentUpon>
@@ -90,8 +99,8 @@
     <EmbeddedResource Include="GUI\UserControls\UserControl1.resx">
       <DependentUpon>UserControl1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\UserControls\UserControl2.resx">
-      <DependentUpon>UserControl2.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\UserControls\Pets.resx">
+      <DependentUpon>Pets.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
