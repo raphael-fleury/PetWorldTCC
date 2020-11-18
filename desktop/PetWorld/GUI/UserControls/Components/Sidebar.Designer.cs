@@ -1,4 +1,4 @@
-﻿namespace PetWorld.GUI.UserControls
+﻿namespace PetWorld.GUI.UserControls.Components
 {
     partial class Sidebar
     {
@@ -38,7 +38,7 @@
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Orange;
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(164)))), ((int)(((byte)(0)))));
             this.flowLayoutPanel1.Controls.Add(this.logoBox);
             this.flowLayoutPanel1.Controls.Add(this.rbHome);
             this.flowLayoutPanel1.Controls.Add(this.rbPets);
@@ -65,11 +65,12 @@
             this.rbHome.Appearance = System.Windows.Forms.Appearance.Button;
             this.rbHome.Dock = System.Windows.Forms.DockStyle.Top;
             this.rbHome.FlatAppearance.BorderSize = 0;
-            this.rbHome.FlatAppearance.CheckedBackColor = System.Drawing.Color.Sienna;
-            this.rbHome.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkOrange;
+            this.rbHome.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(34)))), ((int)(((byte)(6)))));
+            this.rbHome.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(102)))), ((int)(((byte)(15)))));
+            this.rbHome.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkOrange;
             this.rbHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rbHome.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbHome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(39)))), ((int)(((byte)(16)))));
+            this.rbHome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(34)))), ((int)(((byte)(6)))));
             this.rbHome.Location = new System.Drawing.Point(0, 200);
             this.rbHome.Margin = new System.Windows.Forms.Padding(0);
             this.rbHome.Name = "rbHome";
@@ -84,11 +85,12 @@
             this.rbPets.Appearance = System.Windows.Forms.Appearance.Button;
             this.rbPets.Dock = System.Windows.Forms.DockStyle.Top;
             this.rbPets.FlatAppearance.BorderSize = 0;
-            this.rbPets.FlatAppearance.CheckedBackColor = System.Drawing.Color.Sienna;
-            this.rbPets.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkOrange;
+            this.rbPets.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(34)))), ((int)(((byte)(6)))));
+            this.rbPets.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(102)))), ((int)(((byte)(15)))));
+            this.rbPets.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkOrange;
             this.rbPets.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rbPets.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbPets.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(39)))), ((int)(((byte)(16)))));
+            this.rbPets.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(34)))), ((int)(((byte)(6)))));
             this.rbPets.Location = new System.Drawing.Point(0, 245);
             this.rbPets.Margin = new System.Windows.Forms.Padding(0);
             this.rbPets.Name = "rbPets";

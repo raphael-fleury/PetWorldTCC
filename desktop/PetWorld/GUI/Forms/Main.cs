@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PetWorld.GUI.UserControls.Screens;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,10 +22,10 @@ namespace PetWorld.GUI.Forms
         {
             Instance = this;
             InitializeComponent();
-            Load += (x, y) => sidebar.LoadScreen(new UserControls.UserControl1());
+            Load += (x, y) => sidebar.LoadScreen(new UserControl1());
         }
 
-        public void LoadScreen(UserControls.Screen control)
+        public void LoadScreen(Tab control)
         {
             control.Hide();
             Controls.Remove(screen);

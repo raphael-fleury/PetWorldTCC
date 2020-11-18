@@ -31,8 +31,8 @@ namespace PetWorld.GUI.Forms
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
-            this.screen = new PetWorld.GUI.UserControls.Screen();
-            this.sidebar = new PetWorld.GUI.UserControls.Sidebar();
+            this.screen = new PetWorld.GUI.UserControls.Screens.Tab();
+            this.sidebar = new PetWorld.GUI.UserControls.Components.Sidebar();
             this.SuspendLayout();
             // 
             // screen
@@ -40,7 +40,7 @@ namespace PetWorld.GUI.Forms
             this.screen.Dock = System.Windows.Forms.DockStyle.Fill;
             this.screen.Location = new System.Drawing.Point(200, 0);
             this.screen.Name = "screen";
-            this.screen.Size = new System.Drawing.Size(584, 561);
+            this.screen.Size = new System.Drawing.Size(600, 600);
             this.screen.TabIndex = 3;
             // 
             // sidebar
@@ -48,16 +48,17 @@ namespace PetWorld.GUI.Forms
             this.sidebar.Dock = System.Windows.Forms.DockStyle.Left;
             this.sidebar.Location = new System.Drawing.Point(0, 0);
             this.sidebar.Name = "sidebar";
-            this.sidebar.Size = new System.Drawing.Size(200, 561);
+            this.sidebar.Size = new System.Drawing.Size(200, 600);
             this.sidebar.TabIndex = 2;
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 561);
+            this.ClientSize = new System.Drawing.Size(800, 600);
             this.Controls.Add(this.screen);
             this.Controls.Add(this.sidebar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(600, 400);
             this.Name = "Main";
@@ -69,8 +70,8 @@ namespace PetWorld.GUI.Forms
 
         #endregion
 
-        private UserControls.Sidebar sidebar;
-        private UserControls.Screen screen;
+        private UserControls.Components.Sidebar sidebar;
+        private UserControls.Screens.Tab screen;
     }
 }
 

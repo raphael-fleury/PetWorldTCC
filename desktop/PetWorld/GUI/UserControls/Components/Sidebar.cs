@@ -9,19 +9,20 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using PetWorld.GUI.Forms;
+using PetWorld.GUI.UserControls.Screens;
 
-namespace PetWorld.GUI.UserControls
+namespace PetWorld.GUI.UserControls.Components
 {
     public partial class Sidebar : UserControl
     {
         private Color radioButtonsForeColor;
-        private Dictionary<RadioButton, Screen> tabs;
+        private Dictionary<RadioButton, Tab> tabs;
 
         public Sidebar()
         {
             InitializeComponent();
 
-            tabs = new Dictionary<RadioButton, Screen>
+            tabs = new Dictionary<RadioButton, Tab>
             {
                 [rbHome] = new UserControl1(),
                 [rbPets] = new Pets()
@@ -49,13 +50,13 @@ namespace PetWorld.GUI.UserControls
             }
         }
 
-        public void LoadScreen(Screen screen)
+        public void LoadScreen(Tab tab)
         {
             foreach (var pair in tabs)
             {               
-                if (screen.GetType() == pair.Value.GetType())
+                if (tab.GetType() == pair.Value.GetType())
                 {
-                    tabs[pair.Key] = screen;
+                    tabs[pair.Key] = tab;
                     pair.Key.PerformClick();
                     return;
                 }

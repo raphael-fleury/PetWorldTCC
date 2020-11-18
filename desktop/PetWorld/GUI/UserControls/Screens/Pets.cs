@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PetWorld.GUI.UserControls
+namespace PetWorld.GUI.UserControls.Screens
 {
-    public partial class Pet : UserControl
+    public partial class Pets : Tab
     {
-        public Pet()
+        public Pets()
         {
             InitializeComponent();
         }
