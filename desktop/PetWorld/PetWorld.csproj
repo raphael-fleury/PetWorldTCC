@@ -52,6 +52,12 @@
     <Compile Include="GUI\Forms\Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\UserControls\Components\ElementsDisplay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UserControls\Components\ElementsDisplay.Designer.cs">
+      <DependentUpon>ElementsDisplay.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\UserControls\Components\Pet.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -86,6 +92,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GUI\Forms\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UserControls\Components\ElementsDisplay.resx">
+      <DependentUpon>ElementsDisplay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UserControls\Components\Pet.resx">
       <DependentUpon>Pet.cs</DependentUpon>

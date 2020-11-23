@@ -72,10 +72,10 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblName);
-            this.Margin = new System.Windows.Forms.Padding(5);
+            this.Margin = new System.Windows.Forms.Padding(0, 0, 10, 10);
             this.Name = "Pet";
             this.Padding = new System.Windows.Forms.Padding(10);
-            this.Size = new System.Drawing.Size(280, 150);
+            this.Size = new System.Drawing.Size(270, 150);
             this.ResumeLayout(false);
             this.PerformLayout();
 

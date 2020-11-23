@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PetWorld.GUI.UserControls.Components;
 
 namespace PetWorld.GUI.UserControls.Screens
 {
@@ -15,6 +16,7 @@ namespace PetWorld.GUI.UserControls.Screens
         public Pets()
         {
             InitializeComponent();
+            button1.Click += (x, y) => elementsDisplay1.Add(new Pet());
         }
     }
 }
