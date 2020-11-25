@@ -16,7 +16,7 @@ namespace PetWorld.GUI.UserControls.Screens
         public Pets()
         {
             InitializeComponent();
-            button1.Click += (x, y) => elementsDisplay1.Add(new Pet());
+            btAdd.Click += (x, y) => elementsDisplay1.Add(new Pet());
         }
     }
 }

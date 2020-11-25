@@ -28,50 +28,44 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.topButtons = new System.Windows.Forms.FlowLayoutPanel();
+            this.btAdd = new System.Windows.Forms.Button();
             this.elementsDisplay1 = new PetWorld.GUI.UserControls.Components.ElementsDisplay();
             this.topButtons.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(105, 0);
-            this.button2.Margin = new System.Windows.Forms.Padding(0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(100, 25);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Margin = new System.Windows.Forms.Padding(0, 0, 5, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 25);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "New";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // topButtons
             // 
-            this.topButtons.Controls.Add(this.button1);
-            this.topButtons.Controls.Add(this.button2);
+            this.topButtons.Controls.Add(this.btAdd);
             this.topButtons.Dock = System.Windows.Forms.DockStyle.Top;
             this.topButtons.Location = new System.Drawing.Point(10, 10);
             this.topButtons.Margin = new System.Windows.Forms.Padding(0, 0, 0, 20);
             this.topButtons.Name = "topButtons";
-            this.topButtons.Size = new System.Drawing.Size(580, 25);
+            this.topButtons.Size = new System.Drawing.Size(580, 50);
             this.topButtons.TabIndex = 2;
+            // 
+            // btAdd
+            // 
+            this.btAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(164)))), ((int)(((byte)(0)))));
+            this.btAdd.FlatAppearance.BorderSize = 0;
+            this.btAdd.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(102)))), ((int)(((byte)(15)))));
+            this.btAdd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkOrange;
+            this.btAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btAdd.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btAdd.Location = new System.Drawing.Point(0, 0);
+            this.btAdd.Margin = new System.Windows.Forms.Padding(0);
+            this.btAdd.Name = "btAdd";
+            this.btAdd.Size = new System.Drawing.Size(50, 50);
+            this.btAdd.TabIndex = 1;
+            this.btAdd.Text = "Add";
+            this.btAdd.UseVisualStyleBackColor = false;
             // 
             // elementsDisplay1
             // 
             this.elementsDisplay1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.elementsDisplay1.Location = new System.Drawing.Point(10, 58);
+            this.elementsDisplay1.Location = new System.Drawing.Point(10, 90);
             this.elementsDisplay1.Name = "elementsDisplay1";
-            this.elementsDisplay1.Size = new System.Drawing.Size(580, 532);
+            this.elementsDisplay1.Size = new System.Drawing.Size(580, 500);
             this.elementsDisplay1.TabIndex = 3;
             // 
             // Pets
@@ -91,10 +85,8 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.FlowLayoutPanel topButtons;
+        private System.Windows.Forms.Button btAdd;
         private Components.ElementsDisplay elementsDisplay1;
     }
 }
