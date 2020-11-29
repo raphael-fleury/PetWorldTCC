@@ -61,7 +61,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(580, 25);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Filter by name";
+            this.label1.Text = "Filtrar por nome";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // ElementsDisplay

@@ -22,7 +22,7 @@ namespace PetWorld.GUI.Forms
         {
             Instance = this;
             InitializeComponent();
-            Load += (x, y) => sidebar.LoadScreen(new UserControl1());
+            Load += (x, y) => sidebar.LoadScreen(new Tab());
         }
 
         public void LoadScreen(Tab control)

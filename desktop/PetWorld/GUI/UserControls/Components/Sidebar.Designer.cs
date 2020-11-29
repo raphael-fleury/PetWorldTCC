@@ -32,6 +32,7 @@
             this.logoBox = new System.Windows.Forms.PictureBox();
             this.rbHome = new System.Windows.Forms.RadioButton();
             this.rbPets = new System.Windows.Forms.RadioButton();
+            this.rbClientes = new System.Windows.Forms.RadioButton();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoBox)).BeginInit();
             this.SuspendLayout();
@@ -42,6 +43,7 @@
             this.flowLayoutPanel1.Controls.Add(this.logoBox);
             this.flowLayoutPanel1.Controls.Add(this.rbHome);
             this.flowLayoutPanel1.Controls.Add(this.rbPets);
+            this.flowLayoutPanel1.Controls.Add(this.rbClientes);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
@@ -76,7 +78,7 @@
             this.rbHome.Name = "rbHome";
             this.rbHome.Size = new System.Drawing.Size(200, 45);
             this.rbHome.TabIndex = 1;
-            this.rbHome.Text = "Home";
+            this.rbHome.Text = "Início";
             this.rbHome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.rbHome.UseVisualStyleBackColor = true;
             // 
@@ -100,6 +102,26 @@
             this.rbPets.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.rbPets.UseVisualStyleBackColor = true;
             // 
+            // rbClientes
+            // 
+            this.rbClientes.Appearance = System.Windows.Forms.Appearance.Button;
+            this.rbClientes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.rbClientes.FlatAppearance.BorderSize = 0;
+            this.rbClientes.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(34)))), ((int)(((byte)(6)))));
+            this.rbClientes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(102)))), ((int)(((byte)(15)))));
+            this.rbClientes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkOrange;
+            this.rbClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rbClientes.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbClientes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(34)))), ((int)(((byte)(6)))));
+            this.rbClientes.Location = new System.Drawing.Point(0, 290);
+            this.rbClientes.Margin = new System.Windows.Forms.Padding(0);
+            this.rbClientes.Name = "rbClientes";
+            this.rbClientes.Size = new System.Drawing.Size(200, 45);
+            this.rbClientes.TabIndex = 3;
+            this.rbClientes.Text = "Clientes";
+            this.rbClientes.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.rbClientes.UseVisualStyleBackColor = true;
+            // 
             // Sidebar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -119,5 +141,6 @@
         private System.Windows.Forms.PictureBox logoBox;
         private System.Windows.Forms.RadioButton rbHome;
         private System.Windows.Forms.RadioButton rbPets;
+        private System.Windows.Forms.RadioButton rbClientes;
     }
 }

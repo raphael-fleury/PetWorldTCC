@@ -76,12 +76,6 @@
     <Compile Include="GUI\UserControls\Components\Sidebar.Designer.cs">
       <DependentUpon>Sidebar.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\UserControls\Screens\UserControl1.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="GUI\UserControls\Screens\UserControl1.Designer.cs">
-      <DependentUpon>UserControl1.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI\UserControls\Screens\Pets.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -104,9 +98,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UserControls\Components\Sidebar.resx">
       <DependentUpon>Sidebar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\UserControls\Screens\UserControl1.resx">
-      <DependentUpon>UserControl1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UserControls\Screens\Pets.resx">
       <DependentUpon>Pets.cs</DependentUpon>
@@ -136,6 +127,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\PetWorld.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Data\Entities\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

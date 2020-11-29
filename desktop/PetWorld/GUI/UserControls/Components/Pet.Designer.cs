@@ -34,9 +34,9 @@
             this.lblResponsavel = new System.Windows.Forms.Label();
             this.buttonsPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.btDetails = new System.Windows.Forms.Button();
-            this.labelsPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.labelsPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.buttonsPanel.SuspendLayout();
             this.labelsPanel.SuspendLayout();
             this.SuspendLayout();
@@ -113,23 +113,12 @@
             this.btDetails.Text = "...";
             this.btDetails.UseVisualStyleBackColor = false;
             // 
-            // labelsPanel
-            // 
-            this.labelsPanel.Controls.Add(this.lblName);
-            this.labelsPanel.Controls.Add(this.lblRaça);
-            this.labelsPanel.Controls.Add(this.lblEspecie);
-            this.labelsPanel.Controls.Add(this.lblResponsavel);
-            this.labelsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelsPanel.Location = new System.Drawing.Point(0, 0);
-            this.labelsPanel.Name = "labelsPanel";
-            this.labelsPanel.Padding = new System.Windows.Forms.Padding(5, 10, 5, 5);
-            this.labelsPanel.Size = new System.Drawing.Size(220, 150);
-            this.labelsPanel.TabIndex = 5;
-            // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(179)))), ((int)(((byte)(83)))));
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(171)))), ((int)(((byte)(39)))));
             this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(120)))), ((int)(((byte)(28)))));
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(145)))), ((int)(((byte)(34)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
@@ -143,8 +132,10 @@
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(55)))), ((int)(((byte)(0)))));
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(44)))), ((int)(((byte)(34)))));
             this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(33)))), ((int)(((byte)(26)))));
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(51)))), ((int)(((byte)(39)))));
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
@@ -155,6 +146,19 @@
             this.button2.TabIndex = 2;
             this.button2.Text = "Delete";
             this.button2.UseVisualStyleBackColor = false;
+            // 
+            // labelsPanel
+            // 
+            this.labelsPanel.Controls.Add(this.lblName);
+            this.labelsPanel.Controls.Add(this.lblRaça);
+            this.labelsPanel.Controls.Add(this.lblEspecie);
+            this.labelsPanel.Controls.Add(this.lblResponsavel);
+            this.labelsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelsPanel.Location = new System.Drawing.Point(0, 0);
+            this.labelsPanel.Name = "labelsPanel";
+            this.labelsPanel.Padding = new System.Windows.Forms.Padding(5, 10, 5, 5);
+            this.labelsPanel.Size = new System.Drawing.Size(220, 150);
+            this.labelsPanel.TabIndex = 5;
             // 
             // Pet
             // 
