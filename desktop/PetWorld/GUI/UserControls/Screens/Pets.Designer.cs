@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.topButtons = new System.Windows.Forms.FlowLayoutPanel();
-            this.btAdd = new System.Windows.Forms.Button();
             this.elementsDisplay1 = new PetWorld.GUI.UserControls.Components.ElementsDisplay();
+            this.btAdd = new System.Windows.Forms.Button();
             this.topButtons.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -44,6 +44,14 @@
             this.topButtons.Size = new System.Drawing.Size(580, 50);
             this.topButtons.TabIndex = 2;
             // 
+            // elementsDisplay1
+            // 
+            this.elementsDisplay1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.elementsDisplay1.Location = new System.Drawing.Point(10, 90);
+            this.elementsDisplay1.Name = "elementsDisplay1";
+            this.elementsDisplay1.Size = new System.Drawing.Size(580, 500);
+            this.elementsDisplay1.TabIndex = 3;
+            // 
             // btAdd
             // 
             this.btAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(164)))), ((int)(((byte)(0)))));
@@ -52,21 +60,13 @@
             this.btAdd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkOrange;
             this.btAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btAdd.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btAdd.Image = global::PetWorld.Properties.Resources.Add__Black_18px_;
             this.btAdd.Location = new System.Drawing.Point(0, 0);
             this.btAdd.Margin = new System.Windows.Forms.Padding(0);
             this.btAdd.Name = "btAdd";
             this.btAdd.Size = new System.Drawing.Size(50, 50);
             this.btAdd.TabIndex = 1;
-            this.btAdd.Text = "Add";
             this.btAdd.UseVisualStyleBackColor = false;
-            // 
-            // elementsDisplay1
-            // 
-            this.elementsDisplay1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.elementsDisplay1.Location = new System.Drawing.Point(10, 90);
-            this.elementsDisplay1.Name = "elementsDisplay1";
-            this.elementsDisplay1.Size = new System.Drawing.Size(580, 500);
-            this.elementsDisplay1.TabIndex = 3;
             // 
             // Pets
             // 

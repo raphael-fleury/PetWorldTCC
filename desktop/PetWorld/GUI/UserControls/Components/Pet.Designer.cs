@@ -33,10 +33,10 @@
             this.lblEspecie = new System.Windows.Forms.Label();
             this.lblResponsavel = new System.Windows.Forms.Label();
             this.buttonsPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.btDetails = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.labelsPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.btDetails = new System.Windows.Forms.Button();
+            this.editButton = new System.Windows.Forms.Button();
+            this.deleteButton = new System.Windows.Forms.Button();
             this.buttonsPanel.SuspendLayout();
             this.labelsPanel.SuspendLayout();
             this.SuspendLayout();
@@ -89,63 +89,13 @@
             // buttonsPanel
             // 
             this.buttonsPanel.Controls.Add(this.btDetails);
-            this.buttonsPanel.Controls.Add(this.button1);
-            this.buttonsPanel.Controls.Add(this.button2);
+            this.buttonsPanel.Controls.Add(this.editButton);
+            this.buttonsPanel.Controls.Add(this.deleteButton);
             this.buttonsPanel.Dock = System.Windows.Forms.DockStyle.Right;
             this.buttonsPanel.Location = new System.Drawing.Point(220, 0);
             this.buttonsPanel.Name = "buttonsPanel";
             this.buttonsPanel.Size = new System.Drawing.Size(50, 150);
             this.buttonsPanel.TabIndex = 4;
-            // 
-            // btDetails
-            // 
-            this.btDetails.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(164)))), ((int)(((byte)(0)))));
-            this.btDetails.FlatAppearance.BorderSize = 0;
-            this.btDetails.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(102)))), ((int)(((byte)(15)))));
-            this.btDetails.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkOrange;
-            this.btDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btDetails.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btDetails.Location = new System.Drawing.Point(0, 0);
-            this.btDetails.Margin = new System.Windows.Forms.Padding(0);
-            this.btDetails.Name = "btDetails";
-            this.btDetails.Size = new System.Drawing.Size(50, 50);
-            this.btDetails.TabIndex = 0;
-            this.btDetails.Text = "...";
-            this.btDetails.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(171)))), ((int)(((byte)(39)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(120)))), ((int)(((byte)(28)))));
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(145)))), ((int)(((byte)(34)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(0, 50);
-            this.button1.Margin = new System.Windows.Forms.Padding(0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(50, 50);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Edit";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(44)))), ((int)(((byte)(34)))));
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(33)))), ((int)(((byte)(26)))));
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(51)))), ((int)(((byte)(39)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(0, 100);
-            this.button2.Margin = new System.Windows.Forms.Padding(0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(50, 50);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Delete";
-            this.button2.UseVisualStyleBackColor = false;
             // 
             // labelsPanel
             // 
@@ -159,6 +109,56 @@
             this.labelsPanel.Padding = new System.Windows.Forms.Padding(5, 10, 5, 5);
             this.labelsPanel.Size = new System.Drawing.Size(220, 150);
             this.labelsPanel.TabIndex = 5;
+            // 
+            // btDetails
+            // 
+            this.btDetails.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(164)))), ((int)(((byte)(0)))));
+            this.btDetails.FlatAppearance.BorderSize = 0;
+            this.btDetails.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(102)))), ((int)(((byte)(15)))));
+            this.btDetails.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkOrange;
+            this.btDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btDetails.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btDetails.Image = global::PetWorld.Properties.Resources.More_Horizontal__Black_18px_;
+            this.btDetails.Location = new System.Drawing.Point(0, 0);
+            this.btDetails.Margin = new System.Windows.Forms.Padding(0);
+            this.btDetails.Name = "btDetails";
+            this.btDetails.Size = new System.Drawing.Size(50, 50);
+            this.btDetails.TabIndex = 0;
+            this.btDetails.UseVisualStyleBackColor = false;
+            // 
+            // editButton
+            // 
+            this.editButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(171)))), ((int)(((byte)(39)))));
+            this.editButton.FlatAppearance.BorderSize = 0;
+            this.editButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(120)))), ((int)(((byte)(28)))));
+            this.editButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(145)))), ((int)(((byte)(34)))));
+            this.editButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.editButton.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editButton.ForeColor = System.Drawing.Color.White;
+            this.editButton.Image = global::PetWorld.Properties.Resources.Edit__White_18px_;
+            this.editButton.Location = new System.Drawing.Point(0, 50);
+            this.editButton.Margin = new System.Windows.Forms.Padding(0);
+            this.editButton.Name = "editButton";
+            this.editButton.Size = new System.Drawing.Size(50, 50);
+            this.editButton.TabIndex = 1;
+            this.editButton.UseVisualStyleBackColor = false;
+            // 
+            // deleteButton
+            // 
+            this.deleteButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(44)))), ((int)(((byte)(34)))));
+            this.deleteButton.FlatAppearance.BorderSize = 0;
+            this.deleteButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(33)))), ((int)(((byte)(26)))));
+            this.deleteButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(51)))), ((int)(((byte)(39)))));
+            this.deleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.deleteButton.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deleteButton.ForeColor = System.Drawing.Color.White;
+            this.deleteButton.Image = global::PetWorld.Properties.Resources.X__White_18px_;
+            this.deleteButton.Location = new System.Drawing.Point(0, 100);
+            this.deleteButton.Margin = new System.Windows.Forms.Padding(0);
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.Size = new System.Drawing.Size(50, 50);
+            this.deleteButton.TabIndex = 2;
+            this.deleteButton.UseVisualStyleBackColor = false;
             // 
             // Pet
             // 
@@ -185,7 +185,7 @@
         private System.Windows.Forms.FlowLayoutPanel buttonsPanel;
         private System.Windows.Forms.FlowLayoutPanel labelsPanel;
         private System.Windows.Forms.Button btDetails;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button editButton;
+        private System.Windows.Forms.Button deleteButton;
     }
 }
