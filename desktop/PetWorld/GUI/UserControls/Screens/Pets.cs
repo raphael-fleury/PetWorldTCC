@@ -26,12 +26,15 @@ namespace PetWorld.GUI.UserControls.Screens
             Main.LoadScreen(new PetsForm(this));
         }
 
-        private void Reload(object sender, EventArgs e)
+        public override void Reload(object sender, EventArgs e)
         {
-            foreach (Pet pet in PetsRepository.FindAll())
-            {
-                elements.Add(new PetDisplay(pet));
-            }
+            elements.Clear();
+
+            elements.Add(
+                PetsRepository.FindAll()
+                .Select(pet => new PetDisplay(pet))
+                .ToArray()
+            );
         }
     }
 }

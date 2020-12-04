@@ -95,6 +95,7 @@
             this.btReturn.Size = new System.Drawing.Size(50, 50);
             this.btReturn.TabIndex = 8;
             this.btReturn.UseVisualStyleBackColor = false;
+            this.btReturn.Click += new System.EventHandler(this.Return);
             // 
             // btDone
             // 

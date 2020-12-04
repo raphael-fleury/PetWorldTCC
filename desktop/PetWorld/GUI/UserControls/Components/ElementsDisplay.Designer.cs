@@ -28,29 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox = new System.Windows.Forms.TextBox();
-            this.items = new System.Windows.Forms.FlowLayoutPanel();
+            this.txtFilter = new System.Windows.Forms.TextBox();
+            this.panel = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // textBox
+            // txtFilter
             // 
-            this.textBox.Dock = System.Windows.Forms.DockStyle.Top;
-            this.textBox.Location = new System.Drawing.Point(0, 25);
-            this.textBox.Name = "textBox";
-            this.textBox.Size = new System.Drawing.Size(580, 20);
-            this.textBox.TabIndex = 0;
+            this.txtFilter.Dock = System.Windows.Forms.DockStyle.Top;
+            this.txtFilter.Location = new System.Drawing.Point(0, 25);
+            this.txtFilter.Name = "txtFilter";
+            this.txtFilter.Size = new System.Drawing.Size(580, 20);
+            this.txtFilter.TabIndex = 0;
             // 
-            // items
+            // panel
             // 
-            this.items.AutoScroll = true;
-            this.items.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.items.Location = new System.Drawing.Point(0, 45);
-            this.items.Margin = new System.Windows.Forms.Padding(0);
-            this.items.Name = "items";
-            this.items.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.items.Size = new System.Drawing.Size(580, 455);
-            this.items.TabIndex = 2;
+            this.panel.AutoScroll = true;
+            this.panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel.Location = new System.Drawing.Point(0, 45);
+            this.panel.Margin = new System.Windows.Forms.Padding(0);
+            this.panel.Name = "panel";
+            this.panel.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.panel.Size = new System.Drawing.Size(580, 455);
+            this.panel.TabIndex = 2;
             // 
             // label1
             // 
@@ -68,8 +68,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.items);
-            this.Controls.Add(this.textBox);
+            this.Controls.Add(this.panel);
+            this.Controls.Add(this.txtFilter);
             this.Controls.Add(this.label1);
             this.Name = "ElementsDisplay";
             this.Size = new System.Drawing.Size(580, 500);
@@ -81,8 +81,8 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox;
-        private System.Windows.Forms.FlowLayoutPanel items;
+        private System.Windows.Forms.TextBox txtFilter;
+        private System.Windows.Forms.FlowLayoutPanel panel;
         private System.Windows.Forms.Label label1;
     }
 }

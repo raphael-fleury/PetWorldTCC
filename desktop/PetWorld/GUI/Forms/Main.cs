@@ -41,6 +41,7 @@ namespace PetWorld.GUI.Forms
 
         public static void LoadScreen(Tab tab)
         {
+            tab.Reload(instance, EventArgs.Empty);
             instance.sidebar.LoadScreen(tab);
             instance.LoadTab(tab);
         }

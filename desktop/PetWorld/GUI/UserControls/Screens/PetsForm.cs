@@ -34,7 +34,7 @@ namespace PetWorld.GUI.UserControls.Screens
             Sexo sexo = rbMasculino.Checked ? Sexo.MASCULINO : Sexo.FEMININO;
             Pet pet = new Pet(txtNome.Text, txtEspecie.Text, txtRaca.Text, cbCastrado.Checked, sexo, null);
             PetsRepository.Save(pet);
-            
+
             Return(sender, e);
         }
     }
