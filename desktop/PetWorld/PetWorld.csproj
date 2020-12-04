@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\Entities\Cliente.cs" />
     <Compile Include="Data\Entities\Pet.cs" />
     <Compile Include="Data\Entities\Enums\Sexo.cs" />
     <Compile Include="Data\Repositories\Exceptions\IdNotFoundException.cs" />
@@ -62,11 +63,17 @@
     <Compile Include="GUI\UserControls\Components\ElementsDisplay.Designer.cs">
       <DependentUpon>ElementsDisplay.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\UserControls\Components\Pet.cs">
+    <Compile Include="GUI\UserControls\Components\PetDisplay.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\UserControls\Components\Pet.Designer.cs">
-      <DependentUpon>Pet.cs</DependentUpon>
+    <Compile Include="GUI\UserControls\Components\PetDisplay.Designer.cs">
+      <DependentUpon>PetDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UserControls\Screens\PetsForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UserControls\Screens\PetsForm.Designer.cs">
+      <DependentUpon>PetsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\UserControls\Screens\Tab.cs">
       <SubType>UserControl</SubType>
@@ -94,8 +101,11 @@
     <EmbeddedResource Include="GUI\UserControls\Components\ElementsDisplay.resx">
       <DependentUpon>ElementsDisplay.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\UserControls\Components\Pet.resx">
-      <DependentUpon>Pet.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\UserControls\Components\PetDisplay.resx">
+      <DependentUpon>PetDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UserControls\Screens\PetsForm.resx">
+      <DependentUpon>PetsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UserControls\Screens\Tab.resx">
       <DependentUpon>Tab.cs</DependentUpon>
@@ -132,7 +142,9 @@
   <ItemGroup>
     <None Include="Resources\PetWorld.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\Icons\Arrow-Left %28Black 18px%29.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Icons\Add %28Black 18px%29.png" />
   </ItemGroup>
@@ -174,6 +186,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Icons\Edit %28White 18px%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\Arrow-Left %28Black 36px%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\Done %28Black 18px%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

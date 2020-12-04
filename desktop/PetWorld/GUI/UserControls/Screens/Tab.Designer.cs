@@ -30,12 +30,12 @@
         {
             this.SuspendLayout();
             // 
-            // Screen
+            // Tab
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(233)))), ((int)(((byte)(205)))));
-            this.Name = "Screen";
+            this.Name = "Tab";
             this.ResumeLayout(false);
 
         }

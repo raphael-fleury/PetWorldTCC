@@ -1,6 +1,6 @@
 ﻿namespace PetWorld.GUI.UserControls.Components
 {
-    partial class Pet
+    partial class PetDisplay
     {
         /// <summary> 
         /// Variável de designer necessária.
@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.lblName = new System.Windows.Forms.Label();
-            this.lblRaça = new System.Windows.Forms.Label();
+            this.lblRaca = new System.Windows.Forms.Label();
             this.lblEspecie = new System.Windows.Forms.Label();
             this.lblResponsavel = new System.Windows.Forms.Label();
             this.buttonsPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.labelsPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.btDetails = new System.Windows.Forms.Button();
+            this.moreButton = new System.Windows.Forms.Button();
             this.editButton = new System.Windows.Forms.Button();
             this.deleteButton = new System.Windows.Forms.Button();
+            this.labelsPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.buttonsPanel.SuspendLayout();
             this.labelsPanel.SuspendLayout();
             this.SuspendLayout();
@@ -53,27 +53,27 @@
             this.lblName.Text = "Nome";
             this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // lblRaça
+            // lblRaca
             // 
-            this.lblRaça.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRaça.Location = new System.Drawing.Point(5, 45);
-            this.lblRaça.Margin = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.lblRaça.Name = "lblRaça";
-            this.lblRaça.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.lblRaça.Size = new System.Drawing.Size(153, 15);
-            this.lblRaça.TabIndex = 1;
-            this.lblRaça.Text = "Raça:";
+            this.lblRaca.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRaca.Location = new System.Drawing.Point(5, 65);
+            this.lblRaca.Margin = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.lblRaca.Name = "lblRaca";
+            this.lblRaca.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.lblRaca.Size = new System.Drawing.Size(153, 15);
+            this.lblRaca.TabIndex = 1;
+            this.lblRaca.Text = "Raça: ";
             // 
             // lblEspecie
             // 
             this.lblEspecie.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEspecie.Location = new System.Drawing.Point(5, 65);
+            this.lblEspecie.Location = new System.Drawing.Point(5, 45);
             this.lblEspecie.Margin = new System.Windows.Forms.Padding(0, 0, 0, 5);
             this.lblEspecie.Name = "lblEspecie";
             this.lblEspecie.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.lblEspecie.Size = new System.Drawing.Size(153, 15);
             this.lblEspecie.TabIndex = 2;
-            this.lblEspecie.Text = "Espécie:";
+            this.lblEspecie.Text = "Espécie: ";
             // 
             // lblResponsavel
             // 
@@ -84,11 +84,11 @@
             this.lblResponsavel.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.lblResponsavel.Size = new System.Drawing.Size(153, 15);
             this.lblResponsavel.TabIndex = 3;
-            this.lblResponsavel.Text = "Responsável:";
+            this.lblResponsavel.Text = "Responsável: ";
             // 
             // buttonsPanel
             // 
-            this.buttonsPanel.Controls.Add(this.btDetails);
+            this.buttonsPanel.Controls.Add(this.moreButton);
             this.buttonsPanel.Controls.Add(this.editButton);
             this.buttonsPanel.Controls.Add(this.deleteButton);
             this.buttonsPanel.Dock = System.Windows.Forms.DockStyle.Right;
@@ -97,34 +97,21 @@
             this.buttonsPanel.Size = new System.Drawing.Size(50, 150);
             this.buttonsPanel.TabIndex = 4;
             // 
-            // labelsPanel
+            // moreButton
             // 
-            this.labelsPanel.Controls.Add(this.lblName);
-            this.labelsPanel.Controls.Add(this.lblRaça);
-            this.labelsPanel.Controls.Add(this.lblEspecie);
-            this.labelsPanel.Controls.Add(this.lblResponsavel);
-            this.labelsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelsPanel.Location = new System.Drawing.Point(0, 0);
-            this.labelsPanel.Name = "labelsPanel";
-            this.labelsPanel.Padding = new System.Windows.Forms.Padding(5, 10, 5, 5);
-            this.labelsPanel.Size = new System.Drawing.Size(220, 150);
-            this.labelsPanel.TabIndex = 5;
-            // 
-            // btDetails
-            // 
-            this.btDetails.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(164)))), ((int)(((byte)(0)))));
-            this.btDetails.FlatAppearance.BorderSize = 0;
-            this.btDetails.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(102)))), ((int)(((byte)(15)))));
-            this.btDetails.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkOrange;
-            this.btDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btDetails.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btDetails.Image = global::PetWorld.Properties.Resources.More_Horizontal__Black_18px_;
-            this.btDetails.Location = new System.Drawing.Point(0, 0);
-            this.btDetails.Margin = new System.Windows.Forms.Padding(0);
-            this.btDetails.Name = "btDetails";
-            this.btDetails.Size = new System.Drawing.Size(50, 50);
-            this.btDetails.TabIndex = 0;
-            this.btDetails.UseVisualStyleBackColor = false;
+            this.moreButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(164)))), ((int)(((byte)(0)))));
+            this.moreButton.FlatAppearance.BorderSize = 0;
+            this.moreButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(102)))), ((int)(((byte)(15)))));
+            this.moreButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkOrange;
+            this.moreButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.moreButton.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.moreButton.Image = global::PetWorld.Properties.Resources.More_Horizontal__Black_18px_;
+            this.moreButton.Location = new System.Drawing.Point(0, 0);
+            this.moreButton.Margin = new System.Windows.Forms.Padding(0);
+            this.moreButton.Name = "moreButton";
+            this.moreButton.Size = new System.Drawing.Size(50, 50);
+            this.moreButton.TabIndex = 0;
+            this.moreButton.UseVisualStyleBackColor = false;
             // 
             // editButton
             // 
@@ -160,7 +147,20 @@
             this.deleteButton.TabIndex = 2;
             this.deleteButton.UseVisualStyleBackColor = false;
             // 
-            // Pet
+            // labelsPanel
+            // 
+            this.labelsPanel.Controls.Add(this.lblName);
+            this.labelsPanel.Controls.Add(this.lblEspecie);
+            this.labelsPanel.Controls.Add(this.lblRaca);
+            this.labelsPanel.Controls.Add(this.lblResponsavel);
+            this.labelsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelsPanel.Location = new System.Drawing.Point(0, 0);
+            this.labelsPanel.Name = "labelsPanel";
+            this.labelsPanel.Padding = new System.Windows.Forms.Padding(5, 10, 5, 5);
+            this.labelsPanel.Size = new System.Drawing.Size(220, 150);
+            this.labelsPanel.TabIndex = 5;
+            // 
+            // PetDisplay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -168,7 +168,7 @@
             this.Controls.Add(this.labelsPanel);
             this.Controls.Add(this.buttonsPanel);
             this.Margin = new System.Windows.Forms.Padding(0, 0, 10, 10);
-            this.Name = "Pet";
+            this.Name = "PetDisplay";
             this.Size = new System.Drawing.Size(270, 150);
             this.buttonsPanel.ResumeLayout(false);
             this.labelsPanel.ResumeLayout(false);
@@ -179,12 +179,12 @@
         #endregion
 
         private System.Windows.Forms.Label lblName;
-        private System.Windows.Forms.Label lblRaça;
+        private System.Windows.Forms.Label lblRaca;
         private System.Windows.Forms.Label lblEspecie;
         private System.Windows.Forms.Label lblResponsavel;
         private System.Windows.Forms.FlowLayoutPanel buttonsPanel;
         private System.Windows.Forms.FlowLayoutPanel labelsPanel;
-        private System.Windows.Forms.Button btDetails;
+        private System.Windows.Forms.Button moreButton;
         private System.Windows.Forms.Button editButton;
         private System.Windows.Forms.Button deleteButton;
     }

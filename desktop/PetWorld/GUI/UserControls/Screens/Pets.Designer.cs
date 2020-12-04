@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.topButtons = new System.Windows.Forms.FlowLayoutPanel();
-            this.elementsDisplay1 = new PetWorld.GUI.UserControls.Components.ElementsDisplay();
             this.btAdd = new System.Windows.Forms.Button();
+            this.elements = new PetWorld.GUI.UserControls.Components.ElementsDisplay();
             this.topButtons.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -43,14 +43,6 @@
             this.topButtons.Name = "topButtons";
             this.topButtons.Size = new System.Drawing.Size(580, 50);
             this.topButtons.TabIndex = 2;
-            // 
-            // elementsDisplay1
-            // 
-            this.elementsDisplay1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.elementsDisplay1.Location = new System.Drawing.Point(10, 90);
-            this.elementsDisplay1.Name = "elementsDisplay1";
-            this.elementsDisplay1.Size = new System.Drawing.Size(580, 500);
-            this.elementsDisplay1.TabIndex = 3;
             // 
             // btAdd
             // 
@@ -67,6 +59,15 @@
             this.btAdd.Size = new System.Drawing.Size(50, 50);
             this.btAdd.TabIndex = 1;
             this.btAdd.UseVisualStyleBackColor = false;
+            this.btAdd.Click += new System.EventHandler(this.Add);
+            // 
+            // elements
+            // 
+            this.elements.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.elements.Location = new System.Drawing.Point(10, 90);
+            this.elements.Name = "elements";
+            this.elements.Size = new System.Drawing.Size(580, 500);
+            this.elements.TabIndex = 3;
             // 
             // Pets
             // 
@@ -74,11 +75,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(234)))), ((int)(((byte)(205)))));
-            this.Controls.Add(this.elementsDisplay1);
+            this.Controls.Add(this.elements);
             this.Controls.Add(this.topButtons);
             this.Name = "Pets";
             this.Padding = new System.Windows.Forms.Padding(10);
             this.Size = new System.Drawing.Size(600, 600);
+            this.Load += new System.EventHandler(this.Reload);
             this.topButtons.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -87,6 +89,6 @@
         #endregion
         private System.Windows.Forms.FlowLayoutPanel topButtons;
         private System.Windows.Forms.Button btAdd;
-        private Components.ElementsDisplay elementsDisplay1;
+        private Components.ElementsDisplay elements;
     }
 }

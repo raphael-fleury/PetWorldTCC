@@ -14,18 +14,16 @@ namespace PetWorld.GUI.Forms
 {
     public partial class Main : Form
     {
-        public static Main Instance { get; private set; }
+        private static Main instance;
 
-        public static void Create() { Instance = new Main(); }
-
-        private Main()
+        public Main()
         {
-            Instance = this;
+            instance = this;
             InitializeComponent();
-            Load += (x, y) => sidebar.LoadScreen(new Tab());
+            Load += (x, y) => LoadScreen(new Tab());
         }
 
-        public void LoadScreen(Tab control)
+        private void LoadTab(Tab control)
         {
             control.Hide();
             Controls.Remove(screen);
@@ -39,6 +37,12 @@ namespace PetWorld.GUI.Forms
 
             control.Show();
             screen = control;
+        }
+
+        public static void LoadScreen(Tab tab)
+        {
+            instance.sidebar.LoadScreen(tab);
+            instance.LoadTab(tab);
         }
     }
 }

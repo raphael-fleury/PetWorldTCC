@@ -33,12 +33,12 @@ namespace PetWorld.GUI.UserControls.Components
             foreach (var pair in tabs)
             {
                 var button = pair.Key;
-                button.CheckedChanged += (x, y) =>
+                button.CheckedChanged += (sender, args) =>
                 {
                     button.Enabled = !button.Checked;
 
                     if (button.Checked)
-                        Main.Instance.LoadScreen(pair.Value);
+                        Main.LoadScreen(pair.Value);
                 };
                 button.EnabledChanged += (x, y) =>
                     button.ForeColor = button.Checked ? Color.White : radioButtonsForeColor;
@@ -54,7 +54,7 @@ namespace PetWorld.GUI.UserControls.Components
         public void LoadScreen(Tab tab)
         {
             foreach (var pair in tabs)
-            {               
+            {
                 if (tab.GetType() == pair.Value.GetType())
                 {
                     tabs[pair.Key] = tab;

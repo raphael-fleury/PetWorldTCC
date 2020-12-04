@@ -1,6 +1,6 @@
 ﻿namespace PetWorld.Data.Entities.Enums
 {
-    enum Sexo
+    public enum Sexo
     {
         MASCULINO, FEMININO
     }

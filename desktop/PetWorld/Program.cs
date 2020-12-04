@@ -19,8 +19,7 @@ namespace PetWorld
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             
-            MainForm.Create();
-            Application.Run(MainForm.Instance);
+            Application.Run(new MainForm());
         }
     }
 }

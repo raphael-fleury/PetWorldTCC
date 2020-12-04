@@ -10,8 +10,16 @@ namespace PetWorld.Data.Repositories
 {
     static class PetsRepository
     {
-        private static List<Pet> pets;
-        private static uint maxId => pets.Max(p => p.Id);
+        private static List<Pet> pets = new List<Pet>();
+        
+        private static uint maxId
+        {
+            get
+            {
+                try { return pets.Max(p => p.Id.Value); }
+                catch { return 0; }
+            }
+        }
 
         public static int Count => pets.Count;
 
@@ -47,14 +55,19 @@ namespace PetWorld.Data.Repositories
 
         public static void Save(Pet pet)
         {
-            if (ExistsWithId(pet.Id))
-                DeleteById(pet.Id);
+            if (!pet.Id.HasValue)
+                pet.Id = maxId + 1;
+            else if (ExistsWithId(pet.Id.Value))
+                DeleteById(pet.Id.Value);
 
             pets.Add(pet);
         }
 
         public static void DeleteById(uint id)
         {
+            if (!ExistsWithId(id))
+                throw new IdNotFoundException("Nenhum pet com esse ID encontrado");
+
             pets.RemoveAll(pet => pet.Id == id);
         }
     }
