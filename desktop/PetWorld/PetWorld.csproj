@@ -46,6 +46,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\Entities\Pet.cs" />
+    <Compile Include="Data\Entities\Enums\Sexo.cs" />
+    <Compile Include="Data\Repositories\Exceptions\IdNotFoundException.cs" />
+    <Compile Include="Data\Repositories\PetsRepository.cs" />
     <Compile Include="GUI\Forms\Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,9 +132,7 @@
   <ItemGroup>
     <None Include="Resources\PetWorld.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Data\Entities\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\Icons\Add %28Black 18px%29.png" />
   </ItemGroup>
