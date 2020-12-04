@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using PetWorld.Data.Entities;
 
@@ -13,17 +6,42 @@ namespace PetWorld.GUI.UserControls.Components
 {
     public partial class PetDisplay : UserControl
     {
+        private Pet pet;
+
+        #region Events
+        private Action<Pet> editButtonClick;
+        private Action<Pet> deleteButtonClick;
+
+        public event Action<Pet> EditButtonClick
+        {
+            add { editButtonClick += value; }
+            remove { editButtonClick -= value; }
+        }
+
+        public event Action<Pet> DeleteButtonClick
+        {
+            add { deleteButtonClick += value; }
+            remove { deleteButtonClick -= value; }
+        }
+        #endregion
+
+        #region Constructors
         public PetDisplay()
         {
             InitializeComponent();
+            editButton.Click += (x, y) => editButtonClick?.Invoke(pet);
+            deleteButton.Click += (x, y) => deleteButtonClick?.Invoke(pet);
         }
 
         public PetDisplay(Pet pet) : this()
         {
+            this.pet = pet;
+
             lblName.Text = pet.Nome;
             lblEspecie.Text += pet.Especie;
             lblRaca.Text += pet.Raca;
             lblResponsavel.Text += "";
         }
+        #endregion
     }
 }

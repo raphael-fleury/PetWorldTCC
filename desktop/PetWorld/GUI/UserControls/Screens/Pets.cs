@@ -31,12 +31,25 @@ namespace PetWorld.GUI.UserControls.Screens
         {
             elements.Clear();
 
-            elements.Add(
-                PetsRepository.FindAll()
+            var displays = PetsRepository.FindAll()
                 .Where(pet => pet.Nome.ToLower().Contains(elements.FilterText.ToLower()))
                 .Select(pet => new PetDisplay(pet))
-                .ToArray()
-            );
+                .ToArray();
+
+            foreach (var display in displays)
+            {
+                display.EditButtonClick += (pet) => 
+                    Main.LoadScreen(new PetsForm(this, pet));
+                display.DeleteButtonClick += (pet) =>
+                {
+                    var result = MessageBox.Show("Deseja deletar " + pet.Nome + "?", "Deletar Pet", MessageBoxButtons.OKCancel);
+                    if (result == DialogResult.OK)
+                        PetsRepository.DeleteById(pet.Id.Value);
+                    Reload(this, EventArgs.Empty);
+                };
+            }
+            
+            elements.Add(displays.ToArray());
         }
     }
 }
