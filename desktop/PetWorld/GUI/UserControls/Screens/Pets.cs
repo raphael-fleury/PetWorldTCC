@@ -19,6 +19,7 @@ namespace PetWorld.GUI.UserControls.Screens
         public Pets()
         {
             InitializeComponent();
+            elements.FilterTextChanged += () => Reload(this, EventArgs.Empty);
         }
 
         private void Add(object sender, EventArgs e)
@@ -32,6 +33,7 @@ namespace PetWorld.GUI.UserControls.Screens
 
             elements.Add(
                 PetsRepository.FindAll()
+                .Where(pet => pet.Nome.ToLower().Contains(elements.FilterText.ToLower()))
                 .Select(pet => new PetDisplay(pet))
                 .ToArray()
             );
