@@ -23,11 +23,20 @@ namespace PetWorld.GUI.UserControls.Screens
         private Cliente petResponsavel;
         #endregion
 
+        public bool FieldsAreValid => !string.IsNullOrEmpty(txtNome.Text)
+            && !string.IsNullOrEmpty(txtEspecie.Text)
+            && !string.IsNullOrEmpty(txtRaca.Text);
+
         #region Constructors
         public PetsForm(Tab callback)
         {
             InitializeComponent();
             this.callback = callback;
+
+            Load += (x, y) => btDone.Enabled = FieldsAreValid;
+            txtNome.TextChanged += (x, y) => btDone.Enabled = FieldsAreValid;
+            txtEspecie.TextChanged += (x, y) => btDone.Enabled = FieldsAreValid;
+            txtRaca.TextChanged += (x, y) => btDone.Enabled = FieldsAreValid;
         }
 
         public PetsForm(Tab callback, Pet pet) : this(callback)
@@ -63,6 +72,7 @@ namespace PetWorld.GUI.UserControls.Screens
                 sexo,
                 petResponsavel
             );
+            pet.Id = petId;
             PetsRepository.Save(pet);
 
             Return(sender, e);
