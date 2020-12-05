@@ -193,5 +193,11 @@
   <ItemGroup>
     <None Include="Resources\Icons\Done %28Black 18px%29.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\Male.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\Female.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using PetWorld.Data.Entities;
+using PetWorld.Data.Entities.Enums;
 
 namespace PetWorld.GUI.UserControls.Components
 {
@@ -41,6 +42,8 @@ namespace PetWorld.GUI.UserControls.Components
             lblEspecie.Text += pet.Especie;
             lblRaca.Text += pet.Raca;
             lblResponsavel.Text += "";
+            if (pet.Sexo == Sexo.FEMININO)
+                sexIconBox.Image = Properties.Resources.Female;
         }
         #endregion
     }
