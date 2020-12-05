@@ -37,6 +37,7 @@ namespace PetWorld.GUI.Forms
             // 
             // screen
             // 
+            this.screen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(233)))), ((int)(((byte)(205)))));
             this.screen.Dock = System.Windows.Forms.DockStyle.Fill;
             this.screen.Location = new System.Drawing.Point(200, 0);
             this.screen.Name = "screen";
@@ -60,6 +61,7 @@ namespace PetWorld.GUI.Forms
             this.Controls.Add(this.sidebar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(600, 400);
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
