@@ -16,5 +16,15 @@ namespace PetWorld.GUI.UserControls.Screens
         {
             InitializeComponent();
         }
+
+        private void rbHome_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void vitoria_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
