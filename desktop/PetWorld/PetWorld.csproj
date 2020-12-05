@@ -69,6 +69,12 @@
     <Compile Include="GUI\UserControls\Components\PetDisplay.Designer.cs">
       <DependentUpon>PetDisplay.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\UserControls\Screens\PetDetails.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UserControls\Screens\PetDetails.Designer.cs">
+      <DependentUpon>PetDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\UserControls\Screens\PetsForm.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -103,6 +109,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UserControls\Components\PetDisplay.resx">
       <DependentUpon>PetDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UserControls\Screens\PetDetails.resx">
+      <DependentUpon>PetDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UserControls\Screens\PetsForm.resx">
       <DependentUpon>PetsForm.cs</DependentUpon>

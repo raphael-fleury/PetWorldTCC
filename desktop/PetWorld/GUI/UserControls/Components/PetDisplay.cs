@@ -10,8 +10,15 @@ namespace PetWorld.GUI.UserControls.Components
         private Pet pet;
 
         #region Events
+        private Action<Pet> detailsButtonClick;
         private Action<Pet> editButtonClick;
         private Action<Pet> deleteButtonClick;
+
+        public event Action<Pet> DetailsButtonClick
+        {
+            add { detailsButtonClick += value; }
+            remove { detailsButtonClick -= value; }
+        }
 
         public event Action<Pet> EditButtonClick
         {
@@ -30,6 +37,7 @@ namespace PetWorld.GUI.UserControls.Components
         public PetDisplay()
         {
             InitializeComponent();
+            detailsButton.Click += (x, y) => detailsButtonClick?.Invoke(pet);
             editButton.Click += (x, y) => editButtonClick?.Invoke(pet);
             deleteButton.Click += (x, y) => deleteButtonClick?.Invoke(pet);
         }

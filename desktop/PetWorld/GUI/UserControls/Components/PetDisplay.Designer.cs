@@ -33,11 +33,11 @@
             this.lblEspecie = new System.Windows.Forms.Label();
             this.lblResponsavel = new System.Windows.Forms.Label();
             this.buttonsPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.labelsPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.sexIconBox = new System.Windows.Forms.PictureBox();
-            this.moreButton = new System.Windows.Forms.Button();
+            this.detailsButton = new System.Windows.Forms.Button();
             this.editButton = new System.Windows.Forms.Button();
             this.deleteButton = new System.Windows.Forms.Button();
+            this.labelsPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.sexIconBox = new System.Windows.Forms.PictureBox();
             this.buttonsPanel.SuspendLayout();
             this.labelsPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sexIconBox)).BeginInit();
@@ -94,7 +94,7 @@
             // 
             // buttonsPanel
             // 
-            this.buttonsPanel.Controls.Add(this.moreButton);
+            this.buttonsPanel.Controls.Add(this.detailsButton);
             this.buttonsPanel.Controls.Add(this.editButton);
             this.buttonsPanel.Controls.Add(this.deleteButton);
             this.buttonsPanel.Dock = System.Windows.Forms.DockStyle.Right;
@@ -103,44 +103,21 @@
             this.buttonsPanel.Size = new System.Drawing.Size(50, 150);
             this.buttonsPanel.TabIndex = 4;
             // 
-            // labelsPanel
+            // detailsButton
             // 
-            this.labelsPanel.Controls.Add(this.lblName);
-            this.labelsPanel.Controls.Add(this.lblEspecie);
-            this.labelsPanel.Controls.Add(this.lblRaca);
-            this.labelsPanel.Controls.Add(this.lblResponsavel);
-            this.labelsPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelsPanel.Location = new System.Drawing.Point(0, 0);
-            this.labelsPanel.Name = "labelsPanel";
-            this.labelsPanel.Padding = new System.Windows.Forms.Padding(5, 10, 5, 5);
-            this.labelsPanel.Size = new System.Drawing.Size(220, 120);
-            this.labelsPanel.TabIndex = 5;
-            // 
-            // sexIconBox
-            // 
-            this.sexIconBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.sexIconBox.Image = global::PetWorld.Properties.Resources.Male;
-            this.sexIconBox.Location = new System.Drawing.Point(198, 126);
-            this.sexIconBox.Name = "sexIconBox";
-            this.sexIconBox.Size = new System.Drawing.Size(16, 16);
-            this.sexIconBox.TabIndex = 6;
-            this.sexIconBox.TabStop = false;
-            // 
-            // moreButton
-            // 
-            this.moreButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(164)))), ((int)(((byte)(0)))));
-            this.moreButton.FlatAppearance.BorderSize = 0;
-            this.moreButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(102)))), ((int)(((byte)(15)))));
-            this.moreButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkOrange;
-            this.moreButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.moreButton.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.moreButton.Image = global::PetWorld.Properties.Resources.More_Horizontal__Black_18px_;
-            this.moreButton.Location = new System.Drawing.Point(0, 0);
-            this.moreButton.Margin = new System.Windows.Forms.Padding(0);
-            this.moreButton.Name = "moreButton";
-            this.moreButton.Size = new System.Drawing.Size(50, 50);
-            this.moreButton.TabIndex = 0;
-            this.moreButton.UseVisualStyleBackColor = false;
+            this.detailsButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(164)))), ((int)(((byte)(0)))));
+            this.detailsButton.FlatAppearance.BorderSize = 0;
+            this.detailsButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(102)))), ((int)(((byte)(15)))));
+            this.detailsButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkOrange;
+            this.detailsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.detailsButton.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.detailsButton.Image = global::PetWorld.Properties.Resources.More_Horizontal__Black_18px_;
+            this.detailsButton.Location = new System.Drawing.Point(0, 0);
+            this.detailsButton.Margin = new System.Windows.Forms.Padding(0);
+            this.detailsButton.Name = "detailsButton";
+            this.detailsButton.Size = new System.Drawing.Size(50, 50);
+            this.detailsButton.TabIndex = 0;
+            this.detailsButton.UseVisualStyleBackColor = false;
             // 
             // editButton
             // 
@@ -176,6 +153,29 @@
             this.deleteButton.TabIndex = 2;
             this.deleteButton.UseVisualStyleBackColor = false;
             // 
+            // labelsPanel
+            // 
+            this.labelsPanel.Controls.Add(this.lblName);
+            this.labelsPanel.Controls.Add(this.lblEspecie);
+            this.labelsPanel.Controls.Add(this.lblRaca);
+            this.labelsPanel.Controls.Add(this.lblResponsavel);
+            this.labelsPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.labelsPanel.Location = new System.Drawing.Point(0, 0);
+            this.labelsPanel.Name = "labelsPanel";
+            this.labelsPanel.Padding = new System.Windows.Forms.Padding(5, 10, 5, 5);
+            this.labelsPanel.Size = new System.Drawing.Size(220, 120);
+            this.labelsPanel.TabIndex = 5;
+            // 
+            // sexIconBox
+            // 
+            this.sexIconBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.sexIconBox.Image = global::PetWorld.Properties.Resources.Male;
+            this.sexIconBox.Location = new System.Drawing.Point(198, 126);
+            this.sexIconBox.Name = "sexIconBox";
+            this.sexIconBox.Size = new System.Drawing.Size(16, 16);
+            this.sexIconBox.TabIndex = 6;
+            this.sexIconBox.TabStop = false;
+            // 
             // PetDisplay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -202,7 +202,7 @@
         private System.Windows.Forms.Label lblResponsavel;
         private System.Windows.Forms.FlowLayoutPanel buttonsPanel;
         private System.Windows.Forms.FlowLayoutPanel labelsPanel;
-        private System.Windows.Forms.Button moreButton;
+        private System.Windows.Forms.Button detailsButton;
         private System.Windows.Forms.Button editButton;
         private System.Windows.Forms.Button deleteButton;
         private System.Windows.Forms.PictureBox sexIconBox;

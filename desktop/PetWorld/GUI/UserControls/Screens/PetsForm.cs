@@ -1,12 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using PetWorld.GUI.Forms;
 using PetWorld.Data.Entities;
 using PetWorld.Data.Entities.Enums;
@@ -23,7 +15,7 @@ namespace PetWorld.GUI.UserControls.Screens
         private Cliente petResponsavel;
         #endregion
 
-        public bool FieldsAreValid => !string.IsNullOrEmpty(txtNome.Text)
+        private bool fieldsAreValid => !string.IsNullOrEmpty(txtNome.Text)
             && !string.IsNullOrEmpty(txtEspecie.Text)
             && !string.IsNullOrEmpty(txtRaca.Text);
 
@@ -33,10 +25,10 @@ namespace PetWorld.GUI.UserControls.Screens
             InitializeComponent();
             this.callback = callback;
 
-            Load += (x, y) => btDone.Enabled = FieldsAreValid;
-            txtNome.TextChanged += (x, y) => btDone.Enabled = FieldsAreValid;
-            txtEspecie.TextChanged += (x, y) => btDone.Enabled = FieldsAreValid;
-            txtRaca.TextChanged += (x, y) => btDone.Enabled = FieldsAreValid;
+            Load += (x, y) => btDone.Enabled = fieldsAreValid;
+            txtNome.TextChanged += (x, y) => btDone.Enabled = fieldsAreValid;
+            txtEspecie.TextChanged += (x, y) => btDone.Enabled = fieldsAreValid;
+            txtRaca.TextChanged += (x, y) => btDone.Enabled = fieldsAreValid;
         }
 
         public PetsForm(Tab callback, Pet pet) : this(callback)
