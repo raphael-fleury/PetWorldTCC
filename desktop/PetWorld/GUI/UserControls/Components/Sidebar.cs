@@ -24,7 +24,7 @@ namespace PetWorld.GUI.UserControls.Components
 
             tabs = new Dictionary<RadioButton, Tab>
             {
-                [rbHome] = new Tab(),
+                [rbHome] = new Home(),
                 [rbPets] = new Pets(),
                 [rbClientes] = new Tab()
             };
