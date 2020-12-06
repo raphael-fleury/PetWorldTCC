@@ -1,13 +1,5 @@
 ﻿using PetWorld.GUI.UserControls.Screens;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PetWorld.GUI.Forms
@@ -20,7 +12,7 @@ namespace PetWorld.GUI.Forms
         {
             instance = this;
             InitializeComponent();
-            Load += (x, y) => LoadScreen(new Tab());
+            Load += (x, y) => LoadScreen(new Home());
         }
 
         private void LoadTab(Tab control)
