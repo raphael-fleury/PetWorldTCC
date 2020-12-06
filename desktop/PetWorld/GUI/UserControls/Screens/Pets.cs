@@ -38,6 +38,8 @@ namespace PetWorld.GUI.UserControls.Screens
 
             foreach (var display in displays)
             {
+                display.DetailsButtonClick += (pet) =>
+                    Main.LoadScreen(new PetDetails(this, pet));
                 display.EditButtonClick += (pet) => 
                     Main.LoadScreen(new PetsForm(this, pet));
                 display.DeleteButtonClick += (pet) =>

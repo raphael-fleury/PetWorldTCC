@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using PetWorld.Data.Entities;
+using PetWorld.Data.Entities.Enums;
 
 namespace PetWorld.GUI.UserControls.Components
 {
@@ -9,8 +10,15 @@ namespace PetWorld.GUI.UserControls.Components
         private Pet pet;
 
         #region Events
+        private Action<Pet> detailsButtonClick;
         private Action<Pet> editButtonClick;
         private Action<Pet> deleteButtonClick;
+
+        public event Action<Pet> DetailsButtonClick
+        {
+            add { detailsButtonClick += value; }
+            remove { detailsButtonClick -= value; }
+        }
 
         public event Action<Pet> EditButtonClick
         {
@@ -29,6 +37,7 @@ namespace PetWorld.GUI.UserControls.Components
         public PetDisplay()
         {
             InitializeComponent();
+            detailsButton.Click += (x, y) => detailsButtonClick?.Invoke(pet);
             editButton.Click += (x, y) => editButtonClick?.Invoke(pet);
             deleteButton.Click += (x, y) => deleteButtonClick?.Invoke(pet);
         }
@@ -41,6 +50,8 @@ namespace PetWorld.GUI.UserControls.Components
             lblEspecie.Text += pet.Especie;
             lblRaca.Text += pet.Raca;
             lblResponsavel.Text += "";
+            if (pet.Sexo == Sexo.FEMININO)
+                sexIconBox.Image = Properties.Resources.Female;
         }
         #endregion
     }

@@ -69,6 +69,12 @@
     <Compile Include="GUI\UserControls\Components\PetDisplay.Designer.cs">
       <DependentUpon>PetDisplay.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\UserControls\Screens\PetDetails.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UserControls\Screens\PetDetails.Designer.cs">
+      <DependentUpon>PetDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\UserControls\Screens\Home.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -109,6 +115,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UserControls\Components\PetDisplay.resx">
       <DependentUpon>PetDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UserControls\Screens\PetDetails.resx">
+      <DependentUpon>PetDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UserControls\Screens\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
@@ -201,6 +210,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Icons\Done %28Black 18px%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\Male.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\Female.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
