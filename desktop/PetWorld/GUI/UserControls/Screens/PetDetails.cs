@@ -27,7 +27,7 @@ namespace PetWorld.GUI.UserControls.Screens
 
         private void Return(object sender, EventArgs e)
         {
-            Main.LoadScreen(callback ?? new Pets());
+            Main.LoadScreen(callback ?? new TabPets());
         }
     }
 }

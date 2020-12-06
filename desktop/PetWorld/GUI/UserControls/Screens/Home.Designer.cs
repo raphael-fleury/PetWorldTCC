@@ -70,7 +70,6 @@ namespace PetWorld.GUI.UserControls.Screens
             this.vitoria.TabIndex = 2;
             this.vitoria.Text = "Vitória Basile";
             this.vitoria.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.vitoria.Click += new System.EventHandler(this.vitoria_Click);
             // 
             // logoBox
             // 

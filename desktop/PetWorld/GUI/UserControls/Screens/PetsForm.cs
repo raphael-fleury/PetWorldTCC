@@ -50,7 +50,7 @@ namespace PetWorld.GUI.UserControls.Screens
         #region Button Events
         private void Return(object sender, EventArgs e)
         {
-            Main.LoadScreen(callback ?? new Pets());
+            Main.LoadScreen(callback ?? new TabPets());
         }
 
         private void Done(object sender, EventArgs e)

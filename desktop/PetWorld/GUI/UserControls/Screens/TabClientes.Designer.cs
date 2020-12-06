@@ -1,6 +1,6 @@
 ﻿namespace PetWorld.GUI.UserControls.Screens
 {
-    partial class Pets
+    partial class TabClientes
     {
         /// <summary> 
         /// Required designer variable.

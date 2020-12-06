@@ -65,11 +65,11 @@
     <Compile Include="GUI\UserControls\Components\ElementsDisplay.Designer.cs">
       <DependentUpon>ElementsDisplay.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\UserControls\Components\ClienteDisplay.cs">
+    <Compile Include="GUI\UserControls\Components\CardCliente.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\UserControls\Components\ClienteDisplay.Designer.cs">
-      <DependentUpon>ClienteDisplay.cs</DependentUpon>
+    <Compile Include="GUI\UserControls\Components\CardCliente.Designer.cs">
+      <DependentUpon>CardCliente.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\UserControls\Components\EnderecoForm.cs">
       <SubType>UserControl</SubType>
@@ -77,11 +77,11 @@
     <Compile Include="GUI\UserControls\Components\EnderecoForm.Designer.cs">
       <DependentUpon>EnderecoForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\UserControls\Components\PetDisplay.cs">
+    <Compile Include="GUI\UserControls\Components\CardPet.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\UserControls\Components\PetDisplay.Designer.cs">
-      <DependentUpon>PetDisplay.cs</DependentUpon>
+    <Compile Include="GUI\UserControls\Components\CardPet.Designer.cs">
+      <DependentUpon>CardPet.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\UserControls\Screens\ClienteDetails.cs">
       <SubType>UserControl</SubType>
@@ -101,11 +101,11 @@
     <Compile Include="GUI\UserControls\Screens\Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\UserControls\Screens\Clientes.cs">
+    <Compile Include="GUI\UserControls\Screens\TabClientes.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\UserControls\Screens\Clientes.Designer.cs">
-      <DependentUpon>Clientes.cs</DependentUpon>
+    <Compile Include="GUI\UserControls\Screens\TabClientes.Designer.cs">
+      <DependentUpon>TabClientes.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\UserControls\Screens\ClientesForm.cs">
       <SubType>UserControl</SubType>
@@ -131,11 +131,11 @@
     <Compile Include="GUI\UserControls\Components\Sidebar.Designer.cs">
       <DependentUpon>Sidebar.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\UserControls\Screens\Pets.cs">
+    <Compile Include="GUI\UserControls\Screens\TabPets.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\UserControls\Screens\Pets.Designer.cs">
-      <DependentUpon>Pets.cs</DependentUpon>
+    <Compile Include="GUI\UserControls\Screens\TabPets.Designer.cs">
+      <DependentUpon>TabPets.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -145,14 +145,14 @@
     <EmbeddedResource Include="GUI\UserControls\Components\ElementsDisplay.resx">
       <DependentUpon>ElementsDisplay.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\UserControls\Components\ClienteDisplay.resx">
-      <DependentUpon>ClienteDisplay.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\UserControls\Components\CardCliente.resx">
+      <DependentUpon>CardCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UserControls\Components\EnderecoForm.resx">
       <DependentUpon>EnderecoForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\UserControls\Components\PetDisplay.resx">
-      <DependentUpon>PetDisplay.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\UserControls\Components\CardPet.resx">
+      <DependentUpon>CardPet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UserControls\Screens\ClienteDetails.resx">
       <DependentUpon>ClienteDetails.cs</DependentUpon>
@@ -163,8 +163,8 @@
     <EmbeddedResource Include="GUI\UserControls\Screens\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\UserControls\Screens\Clientes.resx">
-      <DependentUpon>Clientes.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\UserControls\Screens\TabClientes.resx">
+      <DependentUpon>TabClientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UserControls\Screens\ClientesForm.resx">
       <DependentUpon>ClientesForm.cs</DependentUpon>
@@ -178,8 +178,8 @@
     <EmbeddedResource Include="GUI\UserControls\Components\Sidebar.resx">
       <DependentUpon>Sidebar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\UserControls\Screens\Pets.resx">
-      <DependentUpon>Pets.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\UserControls\Screens\TabPets.resx">
+      <DependentUpon>TabPets.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

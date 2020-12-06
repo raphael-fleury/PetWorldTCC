@@ -5,7 +5,7 @@ using PetWorld.Data.Entities.Enums;
 
 namespace PetWorld.GUI.UserControls.Components
 {
-    public partial class PetDisplay : UserControl
+    public partial class CardPet : UserControl
     {
         private Pet pet;
 
@@ -34,7 +34,7 @@ namespace PetWorld.GUI.UserControls.Components
         #endregion
 
         #region Constructors
-        public PetDisplay()
+        public CardPet()
         {
             InitializeComponent();
             detailsButton.Click += (x, y) => detailsButtonClick?.Invoke(pet);
@@ -42,7 +42,7 @@ namespace PetWorld.GUI.UserControls.Components
             deleteButton.Click += (x, y) => deleteButtonClick?.Invoke(pet);
         }
 
-        public PetDisplay(Pet pet) : this()
+        public CardPet(Pet pet) : this()
         {
             this.pet = pet;
 

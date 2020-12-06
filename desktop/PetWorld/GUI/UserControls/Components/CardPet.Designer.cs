@@ -1,6 +1,6 @@
 ﻿namespace PetWorld.GUI.UserControls.Components
 {
-    partial class PetDisplay
+    partial class CardPet
     {
         /// <summary> 
         /// Variável de designer necessária.

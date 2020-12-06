@@ -25,8 +25,8 @@ namespace PetWorld.GUI.UserControls.Components
             tabs = new Dictionary<RadioButton, Tab>
             {
                 [rbHome] = new Home(),
-                [rbPets] = new Pets(),
-                [rbClientes] = new Clientes()
+                [rbPets] = new TabPets(),
+                [rbClientes] = new TabClientes()
             };
 
             radioButtonsForeColor = rbHome.ForeColor;

@@ -14,9 +14,9 @@ using PetWorld.Data.Entities;
 
 namespace PetWorld.GUI.UserControls.Screens
 {
-    public partial class Clientes : Tab
+    public partial class TabPets : Tab
     {
-        public Clientes()
+        public TabPets()
         {
             InitializeComponent();
             elements.FilterTextChanged += () => Reload(this, EventArgs.Empty);
@@ -24,29 +24,29 @@ namespace PetWorld.GUI.UserControls.Screens
 
         private void Add(object sender, EventArgs e)
         {
-            Main.LoadScreen(new ClientesForm(this));
+            Main.LoadScreen(new PetsForm(this));
         }
 
         public override void Reload(object sender, EventArgs e)
         {
             elements.Clear();
 
-            var displays = ClientesRepository.FindAll()
-                .Where(cliente => cliente.Nome.ToLower().Contains(elements.FilterText.ToLower()))
-                .Select(cliente => new ClienteDisplay(cliente))
+            var displays = PetsRepository.FindAll()
+                .Where(pet => pet.Nome.ToLower().Contains(elements.FilterText.ToLower()))
+                .Select(pet => new CardPet(pet))
                 .ToArray();
 
             foreach (var display in displays)
             {
-                display.DetailsButtonClick += (cliente) =>
-                    Main.LoadScreen(new ClienteDetails(this, cliente));
-                display.EditButtonClick += (cliente) => 
-                    Main.LoadScreen(new ClientesForm(this, cliente));
-                display.DeleteButtonClick += (cliente) =>
+                display.DetailsButtonClick += (pet) =>
+                    Main.LoadScreen(new PetDetails(this, pet));
+                display.EditButtonClick += (pet) => 
+                    Main.LoadScreen(new PetsForm(this, pet));
+                display.DeleteButtonClick += (pet) =>
                 {
-                    var result = MessageBox.Show("Deseja deletar " + cliente.Nome + "?", "Deletar Cliente", MessageBoxButtons.OKCancel);
+                    var result = MessageBox.Show("Deseja deletar " + pet.Nome + "?", "Deletar Pet", MessageBoxButtons.OKCancel);
                     if (result == DialogResult.OK)
-                        ClientesRepository.DeleteById(cliente.Id.Value);
+                        PetsRepository.DeleteById(pet.Id.Value);
                     Reload(this, EventArgs.Empty);
                 };
             }
