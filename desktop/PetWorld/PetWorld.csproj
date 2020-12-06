@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\Entities\Cliente.cs" />
+    <Compile Include="Data\Entities\Endereco.cs" />
     <Compile Include="Data\Entities\Pet.cs" />
     <Compile Include="Data\Entities\Enums\Sexo.cs" />
     <Compile Include="Data\Repositories\Exceptions\IdNotFoundException.cs" />
@@ -69,6 +70,12 @@
     </Compile>
     <Compile Include="GUI\UserControls\Components\ClienteDisplay.Designer.cs">
       <DependentUpon>ClienteDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UserControls\Components\EnderecoForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UserControls\Components\EnderecoForm.Designer.cs">
+      <DependentUpon>EnderecoForm.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\UserControls\Components\PetDisplay.cs">
       <SubType>UserControl</SubType>
@@ -140,6 +147,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UserControls\Components\ClienteDisplay.resx">
       <DependentUpon>ClienteDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UserControls\Components\EnderecoForm.resx">
+      <DependentUpon>EnderecoForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UserControls\Components\PetDisplay.resx">
       <DependentUpon>PetDisplay.cs</DependentUpon>

@@ -17,7 +17,7 @@ namespace PetWorld.GUI.UserControls.Screens
             lbNome.Text = cliente.Nome;
             lbCPF.Text = cliente.CPF;
             lbTelefone.Text = cliente.Telefone;
-            lbEndereco.Text = cliente.Endereco;
+            lbEndereco.Text = cliente.Endereco.ToString();
         }
 
         private void Return(object sender, EventArgs e)

@@ -34,14 +34,13 @@
             this.btDone = new System.Windows.Forms.Button();
             this.formPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.txtNome = new System.Windows.Forms.TextBox();
-            this.txtCPF = new System.Windows.Forms.TextBox();
-            this.txtTelefone = new System.Windows.Forms.TextBox();
+            this.txtCPF = new System.Windows.Forms.MaskedTextBox();
+            this.txtTelefone = new System.Windows.Forms.MaskedTextBox();
             this.labelsPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.lbNome = new System.Windows.Forms.Label();
             this.lbCPF = new System.Windows.Forms.Label();
             this.lbTelefone = new System.Windows.Forms.Label();
-            this.lbEndereco = new System.Windows.Forms.Label();
-            this.txtEndereco = new System.Windows.Forms.TextBox();
+            this.enderecoForm = new PetWorld.GUI.UserControls.Components.EnderecoForm();
             this.panel1.SuspendLayout();
             this.formPanel.SuspendLayout();
             this.labelsPanel.SuspendLayout();
@@ -55,7 +54,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(10, 10);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(580, 50);
+            this.panel1.Size = new System.Drawing.Size(586, 50);
             this.panel1.TabIndex = 3;
             // 
             // title
@@ -67,7 +66,7 @@
             this.title.Name = "title";
             this.title.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.title.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.title.Size = new System.Drawing.Size(480, 50);
+            this.title.Size = new System.Drawing.Size(486, 50);
             this.title.TabIndex = 9;
             this.title.Text = "Adicionar Cliente";
             this.title.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -100,7 +99,7 @@
             this.btDone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btDone.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btDone.Image = global::PetWorld.Properties.Resources.Done__Black_18px_;
-            this.btDone.Location = new System.Drawing.Point(530, 0);
+            this.btDone.Location = new System.Drawing.Point(536, 0);
             this.btDone.Margin = new System.Windows.Forms.Padding(0);
             this.btDone.Name = "btDone";
             this.btDone.Size = new System.Drawing.Size(50, 50);
@@ -113,12 +112,11 @@
             this.formPanel.Controls.Add(this.txtNome);
             this.formPanel.Controls.Add(this.txtCPF);
             this.formPanel.Controls.Add(this.txtTelefone);
-            this.formPanel.Controls.Add(this.txtEndereco);
             this.formPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.formPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.formPanel.Location = new System.Drawing.Point(110, 60);
             this.formPanel.Name = "formPanel";
-            this.formPanel.Size = new System.Drawing.Size(480, 530);
+            this.formPanel.Size = new System.Drawing.Size(486, 111);
             this.formPanel.TabIndex = 5;
             // 
             // txtNome
@@ -133,29 +131,30 @@
             // 
             this.txtCPF.Location = new System.Drawing.Point(0, 40);
             this.txtCPF.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.txtCPF.Mask = "000.000.000-00";
             this.txtCPF.Name = "txtCPF";
             this.txtCPF.Size = new System.Drawing.Size(250, 20);
-            this.txtCPF.TabIndex = 1;
+            this.txtCPF.TabIndex = 4;
             // 
             // txtTelefone
             // 
             this.txtTelefone.Location = new System.Drawing.Point(0, 70);
             this.txtTelefone.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.txtTelefone.Mask = "(99) 000000000";
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(250, 20);
-            this.txtTelefone.TabIndex = 2;
+            this.txtTelefone.TabIndex = 5;
             // 
             // labelsPanel
             // 
             this.labelsPanel.Controls.Add(this.lbNome);
             this.labelsPanel.Controls.Add(this.lbCPF);
             this.labelsPanel.Controls.Add(this.lbTelefone);
-            this.labelsPanel.Controls.Add(this.lbEndereco);
             this.labelsPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.labelsPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.labelsPanel.Location = new System.Drawing.Point(10, 60);
             this.labelsPanel.Name = "labelsPanel";
-            this.labelsPanel.Size = new System.Drawing.Size(100, 530);
+            this.labelsPanel.Size = new System.Drawing.Size(100, 111);
             this.labelsPanel.TabIndex = 4;
             // 
             // lbNome
@@ -166,7 +165,7 @@
             this.lbNome.Name = "lbNome";
             this.lbNome.Size = new System.Drawing.Size(100, 20);
             this.lbNome.TabIndex = 2;
-            this.lbNome.Text = "Nome:";
+            this.lbNome.Text = "Nome*";
             this.lbNome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lbCPF
@@ -188,27 +187,17 @@
             this.lbTelefone.Name = "lbTelefone";
             this.lbTelefone.Size = new System.Drawing.Size(100, 20);
             this.lbTelefone.TabIndex = 4;
-            this.lbTelefone.Text = "Telefone:";
+            this.lbTelefone.Text = "Telefone*";
             this.lbTelefone.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // lbEndereco
+            // enderecoForm
             // 
-            this.lbEndereco.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbEndereco.Location = new System.Drawing.Point(0, 100);
-            this.lbEndereco.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.lbEndereco.Name = "lbEndereco";
-            this.lbEndereco.Size = new System.Drawing.Size(100, 20);
-            this.lbEndereco.TabIndex = 5;
-            this.lbEndereco.Text = "Endereço:";
-            this.lbEndereco.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // txtEndereco
-            // 
-            this.txtEndereco.Location = new System.Drawing.Point(0, 100);
-            this.txtEndereco.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.txtEndereco.Name = "txtEndereco";
-            this.txtEndereco.Size = new System.Drawing.Size(250, 20);
-            this.txtEndereco.TabIndex = 3;
+            this.enderecoForm.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.enderecoForm.Location = new System.Drawing.Point(10, 171);
+            this.enderecoForm.Margin = new System.Windows.Forms.Padding(0);
+            this.enderecoForm.Name = "enderecoForm";
+            this.enderecoForm.Size = new System.Drawing.Size(586, 419);
+            this.enderecoForm.TabIndex = 6;
             // 
             // ClientesForm
             // 
@@ -218,10 +207,11 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(234)))), ((int)(((byte)(205)))));
             this.Controls.Add(this.formPanel);
             this.Controls.Add(this.labelsPanel);
+            this.Controls.Add(this.enderecoForm);
             this.Controls.Add(this.panel1);
             this.Name = "ClientesForm";
             this.Padding = new System.Windows.Forms.Padding(10);
-            this.Size = new System.Drawing.Size(600, 600);
+            this.Size = new System.Drawing.Size(606, 600);
             this.panel1.ResumeLayout(false);
             this.formPanel.ResumeLayout(false);
             this.formPanel.PerformLayout();
@@ -234,8 +224,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.FlowLayoutPanel formPanel;
         private System.Windows.Forms.TextBox txtNome;
-        private System.Windows.Forms.TextBox txtCPF;
-        private System.Windows.Forms.TextBox txtTelefone;
         private System.Windows.Forms.FlowLayoutPanel labelsPanel;
         private System.Windows.Forms.Label lbNome;
         private System.Windows.Forms.Label lbCPF;
@@ -243,7 +231,8 @@
         private System.Windows.Forms.Label title;
         private System.Windows.Forms.Button btReturn;
         private System.Windows.Forms.Button btDone;
-        private System.Windows.Forms.Label lbEndereco;
-        private System.Windows.Forms.TextBox txtEndereco;
+        private System.Windows.Forms.MaskedTextBox txtCPF;
+        private System.Windows.Forms.MaskedTextBox txtTelefone;
+        private Components.EnderecoForm enderecoForm;
     }
 }

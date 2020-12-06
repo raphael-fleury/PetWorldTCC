@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using PetWorld.GUI.Forms;
 using PetWorld.Data.Entities;
 using PetWorld.Data.Repositories;
@@ -14,7 +15,8 @@ namespace PetWorld.GUI.UserControls.Screens
         #endregion
 
         private bool fieldsAreValid => !string.IsNullOrEmpty(txtNome.Text)
-            && !string.IsNullOrEmpty(txtTelefone.Text);
+            && txtTelefone.Text.Where(c => char.IsNumber(c)).ToArray().Length > 0
+            && enderecoForm.FieldsAreValid;
 
         #region Constructors
         public ClientesForm(Tab callback)
@@ -26,6 +28,7 @@ namespace PetWorld.GUI.UserControls.Screens
             txtNome.TextChanged += (x, y) => btDone.Enabled = fieldsAreValid;
             txtCPF.TextChanged += (x, y) => btDone.Enabled = fieldsAreValid;
             txtTelefone.TextChanged += (x, y) => btDone.Enabled = fieldsAreValid;
+            enderecoForm.FieldsChanged += () => btDone.Enabled = fieldsAreValid;
         }
 
         public ClientesForm(Tab callback, Cliente cliente) : this(callback)
@@ -36,7 +39,7 @@ namespace PetWorld.GUI.UserControls.Screens
             txtNome.Text = cliente.Nome;
             txtCPF.Text = cliente.CPF;
             txtTelefone.Text = cliente.Telefone;
-            txtEndereco.Text = cliente.Endereco;
+            enderecoForm.Endereco = cliente.Endereco;
         }
         #endregion
 
@@ -48,7 +51,12 @@ namespace PetWorld.GUI.UserControls.Screens
 
         private void Done(object sender, EventArgs e)
         {
-            Cliente cliente = new Cliente(txtNome.Text, txtCPF.Text, txtTelefone.Text, txtEndereco.Text);
+            Cliente cliente = new Cliente(
+                txtNome.Text,
+                txtCPF.Text,
+                txtTelefone.Text,
+                enderecoForm.Endereco
+            );
             cliente.Id = clienteId;
             ClientesRepository.Save(cliente);
 

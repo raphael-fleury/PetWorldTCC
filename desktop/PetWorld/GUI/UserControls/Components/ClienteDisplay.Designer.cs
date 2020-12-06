@@ -33,10 +33,10 @@
             this.lbEndereco = new System.Windows.Forms.Label();
             this.lbPets = new System.Windows.Forms.Label();
             this.buttonsPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.labelsPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.detailsButton = new System.Windows.Forms.Button();
             this.editButton = new System.Windows.Forms.Button();
             this.deleteButton = new System.Windows.Forms.Button();
-            this.labelsPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.buttonsPanel.SuspendLayout();
             this.labelsPanel.SuspendLayout();
             this.SuspendLayout();
@@ -58,7 +58,7 @@
             // 
             this.lbTelefone.Dock = System.Windows.Forms.DockStyle.Top;
             this.lbTelefone.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTelefone.Location = new System.Drawing.Point(5, 65);
+            this.lbTelefone.Location = new System.Drawing.Point(5, 64);
             this.lbTelefone.Margin = new System.Windows.Forms.Padding(0, 0, 0, 5);
             this.lbTelefone.Name = "lbTelefone";
             this.lbTelefone.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
@@ -68,13 +68,14 @@
             // 
             // lbEndereco
             // 
+            this.lbEndereco.AutoSize = true;
             this.lbEndereco.Dock = System.Windows.Forms.DockStyle.Top;
             this.lbEndereco.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbEndereco.Location = new System.Drawing.Point(5, 45);
             this.lbEndereco.Margin = new System.Windows.Forms.Padding(0, 0, 0, 5);
             this.lbEndereco.Name = "lbEndereco";
             this.lbEndereco.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.lbEndereco.Size = new System.Drawing.Size(203, 15);
+            this.lbEndereco.Size = new System.Drawing.Size(66, 14);
             this.lbEndereco.TabIndex = 2;
             this.lbEndereco.Text = "Endereço: ";
             // 
@@ -82,7 +83,7 @@
             // 
             this.lbPets.Dock = System.Windows.Forms.DockStyle.Top;
             this.lbPets.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPets.Location = new System.Drawing.Point(5, 85);
+            this.lbPets.Location = new System.Drawing.Point(5, 84);
             this.lbPets.Margin = new System.Windows.Forms.Padding(0, 0, 0, 5);
             this.lbPets.Name = "lbPets";
             this.lbPets.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
@@ -99,6 +100,19 @@
             this.buttonsPanel.Name = "buttonsPanel";
             this.buttonsPanel.Size = new System.Drawing.Size(50, 150);
             this.buttonsPanel.TabIndex = 4;
+            // 
+            // labelsPanel
+            // 
+            this.labelsPanel.Controls.Add(this.lbNome);
+            this.labelsPanel.Controls.Add(this.lbEndereco);
+            this.labelsPanel.Controls.Add(this.lbTelefone);
+            this.labelsPanel.Controls.Add(this.lbPets);
+            this.labelsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelsPanel.Location = new System.Drawing.Point(0, 0);
+            this.labelsPanel.Name = "labelsPanel";
+            this.labelsPanel.Padding = new System.Windows.Forms.Padding(5, 10, 5, 5);
+            this.labelsPanel.Size = new System.Drawing.Size(220, 150);
+            this.labelsPanel.TabIndex = 5;
             // 
             // detailsButton
             // 
@@ -150,19 +164,6 @@
             this.deleteButton.TabIndex = 2;
             this.deleteButton.UseVisualStyleBackColor = false;
             // 
-            // labelsPanel
-            // 
-            this.labelsPanel.Controls.Add(this.lbNome);
-            this.labelsPanel.Controls.Add(this.lbEndereco);
-            this.labelsPanel.Controls.Add(this.lbTelefone);
-            this.labelsPanel.Controls.Add(this.lbPets);
-            this.labelsPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelsPanel.Location = new System.Drawing.Point(0, 0);
-            this.labelsPanel.Name = "labelsPanel";
-            this.labelsPanel.Padding = new System.Windows.Forms.Padding(5, 10, 5, 5);
-            this.labelsPanel.Size = new System.Drawing.Size(220, 120);
-            this.labelsPanel.TabIndex = 5;
-            // 
             // ClienteDisplay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -175,6 +176,7 @@
             this.Size = new System.Drawing.Size(270, 150);
             this.buttonsPanel.ResumeLayout(false);
             this.labelsPanel.ResumeLayout(false);
+            this.labelsPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
