@@ -26,7 +26,7 @@ namespace PetWorld.GUI.UserControls.Components
             {
                 [rbHome] = new Home(),
                 [rbPets] = new Pets(),
-                [rbClientes] = new Tab()
+                [rbClientes] = new Clientes()
             };
 
             radioButtonsForeColor = rbHome.ForeColor;
