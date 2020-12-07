@@ -32,6 +32,13 @@
             this.title = new System.Windows.Forms.Label();
             this.btReturn = new System.Windows.Forms.Button();
             this.formPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.lbNome = new System.Windows.Forms.Label();
+            this.lbEspecie = new System.Windows.Forms.Label();
+            this.lbRaca = new System.Windows.Forms.Label();
+            this.lbSexo = new System.Windows.Forms.Label();
+            this.lbCastrado = new System.Windows.Forms.Label();
+            this.lbResponsavel = new System.Windows.Forms.Label();
+            this.btProntuario = new System.Windows.Forms.Button();
             this.labelsPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.label = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -39,12 +46,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.lbNome = new System.Windows.Forms.Label();
-            this.lbEspecie = new System.Windows.Forms.Label();
-            this.lbRaca = new System.Windows.Forms.Label();
-            this.lbSexo = new System.Windows.Forms.Label();
-            this.lbCastrado = new System.Windows.Forms.Label();
-            this.lbResponsavel = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.formPanel.SuspendLayout();
             this.labelsPanel.SuspendLayout();
@@ -100,12 +102,84 @@
             this.formPanel.Controls.Add(this.lbSexo);
             this.formPanel.Controls.Add(this.lbCastrado);
             this.formPanel.Controls.Add(this.lbResponsavel);
+            this.formPanel.Controls.Add(this.btProntuario);
             this.formPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.formPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.formPanel.Location = new System.Drawing.Point(110, 60);
             this.formPanel.Name = "formPanel";
             this.formPanel.Size = new System.Drawing.Size(480, 530);
             this.formPanel.TabIndex = 5;
+            // 
+            // lbNome
+            // 
+            this.lbNome.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNome.Location = new System.Drawing.Point(0, 10);
+            this.lbNome.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.lbNome.Name = "lbNome";
+            this.lbNome.Size = new System.Drawing.Size(300, 20);
+            this.lbNome.TabIndex = 3;
+            this.lbNome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lbEspecie
+            // 
+            this.lbEspecie.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbEspecie.Location = new System.Drawing.Point(0, 40);
+            this.lbEspecie.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.lbEspecie.Name = "lbEspecie";
+            this.lbEspecie.Size = new System.Drawing.Size(300, 20);
+            this.lbEspecie.TabIndex = 4;
+            this.lbEspecie.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lbRaca
+            // 
+            this.lbRaca.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbRaca.Location = new System.Drawing.Point(0, 70);
+            this.lbRaca.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.lbRaca.Name = "lbRaca";
+            this.lbRaca.Size = new System.Drawing.Size(300, 20);
+            this.lbRaca.TabIndex = 5;
+            this.lbRaca.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lbSexo
+            // 
+            this.lbSexo.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSexo.Location = new System.Drawing.Point(0, 100);
+            this.lbSexo.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.lbSexo.Name = "lbSexo";
+            this.lbSexo.Size = new System.Drawing.Size(300, 20);
+            this.lbSexo.TabIndex = 6;
+            this.lbSexo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lbCastrado
+            // 
+            this.lbCastrado.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCastrado.Location = new System.Drawing.Point(0, 130);
+            this.lbCastrado.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.lbCastrado.Name = "lbCastrado";
+            this.lbCastrado.Size = new System.Drawing.Size(300, 20);
+            this.lbCastrado.TabIndex = 7;
+            this.lbCastrado.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lbResponsavel
+            // 
+            this.lbResponsavel.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbResponsavel.Location = new System.Drawing.Point(0, 160);
+            this.lbResponsavel.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.lbResponsavel.Name = "lbResponsavel";
+            this.lbResponsavel.Size = new System.Drawing.Size(300, 20);
+            this.lbResponsavel.TabIndex = 8;
+            this.lbResponsavel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // btProntuario
+            // 
+            this.btProntuario.Location = new System.Drawing.Point(0, 188);
+            this.btProntuario.Margin = new System.Windows.Forms.Padding(0, 8, 0, 0);
+            this.btProntuario.Name = "btProntuario";
+            this.btProntuario.Size = new System.Drawing.Size(75, 25);
+            this.btProntuario.TabIndex = 9;
+            this.btProntuario.Text = "Exibir";
+            this.btProntuario.UseVisualStyleBackColor = true;
+            this.btProntuario.Click += new System.EventHandler(this.ShowProntuario);
             // 
             // labelsPanel
             // 
@@ -115,6 +189,7 @@
             this.labelsPanel.Controls.Add(this.label3);
             this.labelsPanel.Controls.Add(this.label4);
             this.labelsPanel.Controls.Add(this.label5);
+            this.labelsPanel.Controls.Add(this.label6);
             this.labelsPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.labelsPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.labelsPanel.Location = new System.Drawing.Point(10, 60);
@@ -188,65 +263,16 @@
             this.label5.Text = "Responsável:";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // lbNome
+            // label6
             // 
-            this.lbNome.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNome.Location = new System.Drawing.Point(0, 10);
-            this.lbNome.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.lbNome.Name = "lbNome";
-            this.lbNome.Size = new System.Drawing.Size(300, 20);
-            this.lbNome.TabIndex = 3;
-            this.lbNome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lbEspecie
-            // 
-            this.lbEspecie.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbEspecie.Location = new System.Drawing.Point(0, 40);
-            this.lbEspecie.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.lbEspecie.Name = "lbEspecie";
-            this.lbEspecie.Size = new System.Drawing.Size(300, 20);
-            this.lbEspecie.TabIndex = 4;
-            this.lbEspecie.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lbRaca
-            // 
-            this.lbRaca.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbRaca.Location = new System.Drawing.Point(0, 70);
-            this.lbRaca.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.lbRaca.Name = "lbRaca";
-            this.lbRaca.Size = new System.Drawing.Size(300, 20);
-            this.lbRaca.TabIndex = 5;
-            this.lbRaca.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lbSexo
-            // 
-            this.lbSexo.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSexo.Location = new System.Drawing.Point(0, 100);
-            this.lbSexo.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.lbSexo.Name = "lbSexo";
-            this.lbSexo.Size = new System.Drawing.Size(300, 20);
-            this.lbSexo.TabIndex = 6;
-            this.lbSexo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lbCastrado
-            // 
-            this.lbCastrado.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCastrado.Location = new System.Drawing.Point(0, 130);
-            this.lbCastrado.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.lbCastrado.Name = "lbCastrado";
-            this.lbCastrado.Size = new System.Drawing.Size(300, 20);
-            this.lbCastrado.TabIndex = 7;
-            this.lbCastrado.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lbResponsavel
-            // 
-            this.lbResponsavel.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbResponsavel.Location = new System.Drawing.Point(0, 160);
-            this.lbResponsavel.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.lbResponsavel.Name = "lbResponsavel";
-            this.lbResponsavel.Size = new System.Drawing.Size(300, 20);
-            this.lbResponsavel.TabIndex = 8;
-            this.lbResponsavel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label6.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(0, 190);
+            this.label6.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(100, 20);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "Prontuário:";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // PetDetails
             // 
@@ -285,5 +311,7 @@
         private System.Windows.Forms.Label lbSexo;
         private System.Windows.Forms.Label lbCastrado;
         private System.Windows.Forms.Label lbResponsavel;
+        private System.Windows.Forms.Button btProntuario;
+        private System.Windows.Forms.Label label6;
     }
 }

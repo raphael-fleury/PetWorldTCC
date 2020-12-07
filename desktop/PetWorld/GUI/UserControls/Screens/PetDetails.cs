@@ -7,12 +7,14 @@ namespace PetWorld.GUI.UserControls.Screens
 {
     public partial class PetDetails : Tab
     {
+        private Pet pet;
         private Tab callback;
 
         public PetDetails(Tab callback, Pet pet)
         {
             InitializeComponent();
             this.callback = callback;
+            this.pet = pet;
 
             title.Text = pet.Nome;
             lbNome.Text = pet.Nome;
@@ -28,6 +30,11 @@ namespace PetWorld.GUI.UserControls.Screens
         private void Return(object sender, EventArgs e)
         {
             Main.LoadScreen(callback ?? new Pets());
+        }
+
+        private void ShowProntuario(object sender, EventArgs e)
+        {
+            Main.LoadScreen(new Prontuario(pet));
         }
     }
 }
