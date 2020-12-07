@@ -35,7 +35,6 @@ namespace PetWorld.GUI.UserControls.Screens
         {
             title.Text = "Editar Pet";
 
-            Console.WriteLine(pet.Id);
             petId = pet.Id;
             txtNome.Text = pet.Nome;
             txtEspecie.Text = pet.Especie;

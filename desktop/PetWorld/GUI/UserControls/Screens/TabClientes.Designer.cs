@@ -30,6 +30,7 @@
         {
             this.topButtons = new System.Windows.Forms.FlowLayoutPanel();
             this.btAdd = new System.Windows.Forms.Button();
+            this.title = new System.Windows.Forms.Label();
             this.elements = new PetWorld.GUI.UserControls.Components.ElementsDisplay();
             this.topButtons.SuspendLayout();
             this.SuspendLayout();
@@ -37,6 +38,7 @@
             // topButtons
             // 
             this.topButtons.Controls.Add(this.btAdd);
+            this.topButtons.Controls.Add(this.title);
             this.topButtons.Dock = System.Windows.Forms.DockStyle.Top;
             this.topButtons.Location = new System.Drawing.Point(10, 10);
             this.topButtons.Margin = new System.Windows.Forms.Padding(0, 0, 0, 20);
@@ -61,6 +63,18 @@
             this.btAdd.UseVisualStyleBackColor = false;
             this.btAdd.Click += new System.EventHandler(this.Add);
             // 
+            // title
+            // 
+            this.title.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.title.Location = new System.Drawing.Point(60, 0);
+            this.title.Margin = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.title.Name = "title";
+            this.title.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.title.Size = new System.Drawing.Size(88, 50);
+            this.title.TabIndex = 11;
+            this.title.Text = "Clientes";
+            this.title.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // elements
             // 
             this.elements.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -69,7 +83,7 @@
             this.elements.Size = new System.Drawing.Size(580, 500);
             this.elements.TabIndex = 3;
             // 
-            // Pets
+            // TabClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -77,7 +91,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(234)))), ((int)(((byte)(205)))));
             this.Controls.Add(this.elements);
             this.Controls.Add(this.topButtons);
-            this.Name = "Pets";
+            this.Name = "TabClientes";
             this.Padding = new System.Windows.Forms.Padding(10);
             this.Size = new System.Drawing.Size(600, 600);
             this.Load += new System.EventHandler(this.Reload);
@@ -87,8 +101,9 @@
         }
 
         #endregion
-        private System.Windows.Forms.FlowLayoutPanel topButtons;
         private System.Windows.Forms.Button btAdd;
         private Components.ElementsDisplay elements;
+        private System.Windows.Forms.Label title;
+        protected System.Windows.Forms.FlowLayoutPanel topButtons;
     }
 }
