@@ -119,6 +119,12 @@
     <Compile Include="GUI\UserControls\Screens\PetsForm.Designer.cs">
       <DependentUpon>PetsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\UserControls\Screens\Prontuario.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UserControls\Screens\Prontuario.Designer.cs">
+      <DependentUpon>Prontuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\UserControls\Screens\Tab.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -171,6 +177,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UserControls\Screens\PetsForm.resx">
       <DependentUpon>PetsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UserControls\Screens\Prontuario.resx">
+      <DependentUpon>Prontuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UserControls\Screens\Tab.resx">
       <DependentUpon>Tab.cs</DependentUpon>
