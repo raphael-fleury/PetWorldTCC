@@ -89,6 +89,13 @@
     <Compile Include="GUI\UserControls\Screens\ClienteDetails.Designer.cs">
       <DependentUpon>ClienteDetails.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\UserControls\Screens\IRequester.cs" />
+    <Compile Include="GUI\UserControls\Screens\Selector.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UserControls\Screens\Selector.Designer.cs">
+      <DependentUpon>Selector.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\UserControls\Screens\PetDetails.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -156,6 +163,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UserControls\Screens\ClienteDetails.resx">
       <DependentUpon>ClienteDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UserControls\Screens\Selector.resx">
+      <DependentUpon>Selector.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UserControls\Screens\PetDetails.resx">
       <DependentUpon>PetDetails.cs</DependentUpon>

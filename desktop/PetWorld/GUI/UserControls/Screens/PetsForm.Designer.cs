@@ -40,18 +40,21 @@
             this.rbMasculino = new System.Windows.Forms.RadioButton();
             this.rbFeminino = new System.Windows.Forms.RadioButton();
             this.cbCastrado = new System.Windows.Forms.CheckBox();
-            this.btEscolherCliente = new System.Windows.Forms.Button();
+            this.btSelectCliente = new System.Windows.Forms.Button();
             this.labelsPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.lblNome = new System.Windows.Forms.Label();
-            this.lblEspecie = new System.Windows.Forms.Label();
-            this.lblRaca = new System.Windows.Forms.Label();
-            this.lblSexo = new System.Windows.Forms.Label();
-            this.lblCastrado = new System.Windows.Forms.Label();
-            this.lblResponsavel = new System.Windows.Forms.Label();
+            this.lbNome = new System.Windows.Forms.Label();
+            this.lbEspecie = new System.Windows.Forms.Label();
+            this.lbRaca = new System.Windows.Forms.Label();
+            this.lbSexo = new System.Windows.Forms.Label();
+            this.lbCastrado = new System.Windows.Forms.Label();
+            this.lbResponsavel = new System.Windows.Forms.Label();
+            this.responsavel = new System.Windows.Forms.FlowLayoutPanel();
+            this.lbNomeResponsavel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.formPanel.SuspendLayout();
             this.rbsSexo.SuspendLayout();
             this.labelsPanel.SuspendLayout();
+            this.responsavel.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -122,7 +125,7 @@
             this.formPanel.Controls.Add(this.txtRaca);
             this.formPanel.Controls.Add(this.rbsSexo);
             this.formPanel.Controls.Add(this.cbCastrado);
-            this.formPanel.Controls.Add(this.btEscolherCliente);
+            this.formPanel.Controls.Add(this.responsavel);
             this.formPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.formPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.formPanel.Location = new System.Drawing.Point(110, 60);
@@ -197,24 +200,25 @@
             this.cbCastrado.TabIndex = 4;
             this.cbCastrado.UseVisualStyleBackColor = true;
             // 
-            // btEscolherCliente
+            // btSelectCliente
             // 
-            this.btEscolherCliente.Location = new System.Drawing.Point(0, 158);
-            this.btEscolherCliente.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.btEscolherCliente.Name = "btEscolherCliente";
-            this.btEscolherCliente.Size = new System.Drawing.Size(75, 25);
-            this.btEscolherCliente.TabIndex = 5;
-            this.btEscolherCliente.Text = "Escolher...";
-            this.btEscolherCliente.UseVisualStyleBackColor = true;
+            this.btSelectCliente.Location = new System.Drawing.Point(0, 0);
+            this.btSelectCliente.Margin = new System.Windows.Forms.Padding(0);
+            this.btSelectCliente.Name = "btSelectCliente";
+            this.btSelectCliente.Size = new System.Drawing.Size(75, 25);
+            this.btSelectCliente.TabIndex = 5;
+            this.btSelectCliente.Text = "Escolher...";
+            this.btSelectCliente.UseVisualStyleBackColor = true;
+            this.btSelectCliente.Click += new System.EventHandler(this.SelectCliente);
             // 
             // labelsPanel
             // 
-            this.labelsPanel.Controls.Add(this.lblNome);
-            this.labelsPanel.Controls.Add(this.lblEspecie);
-            this.labelsPanel.Controls.Add(this.lblRaca);
-            this.labelsPanel.Controls.Add(this.lblSexo);
-            this.labelsPanel.Controls.Add(this.lblCastrado);
-            this.labelsPanel.Controls.Add(this.lblResponsavel);
+            this.labelsPanel.Controls.Add(this.lbNome);
+            this.labelsPanel.Controls.Add(this.lbEspecie);
+            this.labelsPanel.Controls.Add(this.lbRaca);
+            this.labelsPanel.Controls.Add(this.lbSexo);
+            this.labelsPanel.Controls.Add(this.lbCastrado);
+            this.labelsPanel.Controls.Add(this.lbResponsavel);
             this.labelsPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.labelsPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.labelsPanel.Location = new System.Drawing.Point(10, 60);
@@ -222,71 +226,91 @@
             this.labelsPanel.Size = new System.Drawing.Size(100, 530);
             this.labelsPanel.TabIndex = 4;
             // 
-            // lblNome
+            // lbNome
             // 
-            this.lblNome.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNome.Location = new System.Drawing.Point(0, 10);
-            this.lblNome.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.lblNome.Name = "lblNome";
-            this.lblNome.Size = new System.Drawing.Size(100, 20);
-            this.lblNome.TabIndex = 2;
-            this.lblNome.Text = "Nome:";
-            this.lblNome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbNome.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNome.Location = new System.Drawing.Point(0, 10);
+            this.lbNome.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.lbNome.Name = "lbNome";
+            this.lbNome.Size = new System.Drawing.Size(100, 20);
+            this.lbNome.TabIndex = 2;
+            this.lbNome.Text = "Nome:";
+            this.lbNome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // lblEspecie
+            // lbEspecie
             // 
-            this.lblEspecie.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEspecie.Location = new System.Drawing.Point(0, 40);
-            this.lblEspecie.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.lblEspecie.Name = "lblEspecie";
-            this.lblEspecie.Size = new System.Drawing.Size(100, 20);
-            this.lblEspecie.TabIndex = 3;
-            this.lblEspecie.Text = "Espécie:";
-            this.lblEspecie.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbEspecie.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbEspecie.Location = new System.Drawing.Point(0, 40);
+            this.lbEspecie.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.lbEspecie.Name = "lbEspecie";
+            this.lbEspecie.Size = new System.Drawing.Size(100, 20);
+            this.lbEspecie.TabIndex = 3;
+            this.lbEspecie.Text = "Espécie:";
+            this.lbEspecie.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // lblRaca
+            // lbRaca
             // 
-            this.lblRaca.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRaca.Location = new System.Drawing.Point(0, 70);
-            this.lblRaca.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.lblRaca.Name = "lblRaca";
-            this.lblRaca.Size = new System.Drawing.Size(100, 20);
-            this.lblRaca.TabIndex = 4;
-            this.lblRaca.Text = "Raça:";
-            this.lblRaca.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbRaca.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbRaca.Location = new System.Drawing.Point(0, 70);
+            this.lbRaca.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.lbRaca.Name = "lbRaca";
+            this.lbRaca.Size = new System.Drawing.Size(100, 20);
+            this.lbRaca.TabIndex = 4;
+            this.lbRaca.Text = "Raça:";
+            this.lbRaca.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // lblSexo
+            // lbSexo
             // 
-            this.lblSexo.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSexo.Location = new System.Drawing.Point(0, 100);
-            this.lblSexo.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.lblSexo.Name = "lblSexo";
-            this.lblSexo.Size = new System.Drawing.Size(100, 20);
-            this.lblSexo.TabIndex = 5;
-            this.lblSexo.Text = "Sexo:";
-            this.lblSexo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbSexo.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSexo.Location = new System.Drawing.Point(0, 100);
+            this.lbSexo.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.lbSexo.Name = "lbSexo";
+            this.lbSexo.Size = new System.Drawing.Size(100, 20);
+            this.lbSexo.TabIndex = 5;
+            this.lbSexo.Text = "Sexo:";
+            this.lbSexo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // lblCastrado
+            // lbCastrado
             // 
-            this.lblCastrado.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCastrado.Location = new System.Drawing.Point(0, 130);
-            this.lblCastrado.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.lblCastrado.Name = "lblCastrado";
-            this.lblCastrado.Size = new System.Drawing.Size(100, 20);
-            this.lblCastrado.TabIndex = 6;
-            this.lblCastrado.Text = "Castrado:";
-            this.lblCastrado.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbCastrado.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCastrado.Location = new System.Drawing.Point(0, 130);
+            this.lbCastrado.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.lbCastrado.Name = "lbCastrado";
+            this.lbCastrado.Size = new System.Drawing.Size(100, 20);
+            this.lbCastrado.TabIndex = 6;
+            this.lbCastrado.Text = "Castrado:";
+            this.lbCastrado.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // lblResponsavel
+            // lbResponsavel
             // 
-            this.lblResponsavel.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblResponsavel.Location = new System.Drawing.Point(0, 160);
-            this.lblResponsavel.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.lblResponsavel.Name = "lblResponsavel";
-            this.lblResponsavel.Size = new System.Drawing.Size(100, 20);
-            this.lblResponsavel.TabIndex = 7;
-            this.lblResponsavel.Text = "Responsável:";
-            this.lblResponsavel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbResponsavel.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbResponsavel.Location = new System.Drawing.Point(0, 160);
+            this.lbResponsavel.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.lbResponsavel.Name = "lbResponsavel";
+            this.lbResponsavel.Size = new System.Drawing.Size(100, 20);
+            this.lbResponsavel.TabIndex = 7;
+            this.lbResponsavel.Text = "Responsável:";
+            this.lbResponsavel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // responsavel
+            // 
+            this.responsavel.Controls.Add(this.btSelectCliente);
+            this.responsavel.Controls.Add(this.lbNomeResponsavel);
+            this.responsavel.Location = new System.Drawing.Point(0, 158);
+            this.responsavel.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.responsavel.Name = "responsavel";
+            this.responsavel.Size = new System.Drawing.Size(430, 25);
+            this.responsavel.TabIndex = 6;
+            // 
+            // lbNomeResponsavel
+            // 
+            this.lbNomeResponsavel.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNomeResponsavel.Location = new System.Drawing.Point(75, 0);
+            this.lbNomeResponsavel.Margin = new System.Windows.Forms.Padding(0);
+            this.lbNomeResponsavel.Name = "lbNomeResponsavel";
+            this.lbNomeResponsavel.Size = new System.Drawing.Size(100, 25);
+            this.lbNomeResponsavel.TabIndex = 8;
+            this.lbNomeResponsavel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // PetsForm
             // 
@@ -299,13 +323,13 @@
             this.Controls.Add(this.panel1);
             this.Name = "PetsForm";
             this.Padding = new System.Windows.Forms.Padding(10);
-            this.Size = new System.Drawing.Size(600, 600);
             this.panel1.ResumeLayout(false);
             this.formPanel.ResumeLayout(false);
             this.formPanel.PerformLayout();
             this.rbsSexo.ResumeLayout(false);
             this.rbsSexo.PerformLayout();
             this.labelsPanel.ResumeLayout(false);
+            this.responsavel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -320,16 +344,18 @@
         private System.Windows.Forms.RadioButton rbMasculino;
         private System.Windows.Forms.RadioButton rbFeminino;
         private System.Windows.Forms.CheckBox cbCastrado;
-        private System.Windows.Forms.Button btEscolherCliente;
+        private System.Windows.Forms.Button btSelectCliente;
         private System.Windows.Forms.FlowLayoutPanel labelsPanel;
-        private System.Windows.Forms.Label lblNome;
-        private System.Windows.Forms.Label lblEspecie;
-        private System.Windows.Forms.Label lblRaca;
-        private System.Windows.Forms.Label lblSexo;
-        private System.Windows.Forms.Label lblCastrado;
-        private System.Windows.Forms.Label lblResponsavel;
+        private System.Windows.Forms.Label lbNome;
+        private System.Windows.Forms.Label lbEspecie;
+        private System.Windows.Forms.Label lbRaca;
+        private System.Windows.Forms.Label lbSexo;
+        private System.Windows.Forms.Label lbCastrado;
+        private System.Windows.Forms.Label lbResponsavel;
         private System.Windows.Forms.Label title;
         private System.Windows.Forms.Button btReturn;
         private System.Windows.Forms.Button btDone;
+        private System.Windows.Forms.FlowLayoutPanel responsavel;
+        private System.Windows.Forms.Label lbNomeResponsavel;
     }
 }

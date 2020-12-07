@@ -6,7 +6,7 @@ using PetWorld.Data.Repositories;
 
 namespace PetWorld.GUI.UserControls.Screens
 {
-    public partial class PetsForm : Tab
+    public partial class PetsForm : Tab, IRequester<Cliente>
     {
         #region Fields
         private Tab callback;
@@ -46,6 +46,12 @@ namespace PetWorld.GUI.UserControls.Screens
         }
         #endregion
 
+        public void Respond(Cliente response)
+        {
+            petResponsavel = response;
+            lbNomeResponsavel.Text = response.Nome;
+        }
+
         #region Button Events
         private void Return(object sender, EventArgs e)
         {
@@ -67,6 +73,11 @@ namespace PetWorld.GUI.UserControls.Screens
             PetsRepository.Save(pet);
 
             Return(sender, e);
+        }
+
+        private void SelectCliente(object sender, EventArgs e)
+        {
+            Main.LoadScreen(new Selector<Cliente>(this, new TabClientes()));
         }
         #endregion
     }

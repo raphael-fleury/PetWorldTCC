@@ -36,6 +36,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(233)))), ((int)(((byte)(205)))));
             this.Name = "Tab";
+            this.Size = new System.Drawing.Size(600, 600);
             this.ResumeLayout(false);
 
         }

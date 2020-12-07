@@ -70,17 +70,19 @@
             this.title.Margin = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.title.Name = "title";
             this.title.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.title.Size = new System.Drawing.Size(88, 50);
+            this.title.Size = new System.Drawing.Size(418, 50);
             this.title.TabIndex = 11;
             this.title.Text = "Clientes";
             this.title.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // elements
             // 
-            this.elements.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.elements.Location = new System.Drawing.Point(10, 90);
+            this.elements.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.elements.Location = new System.Drawing.Point(10, 60);
+            this.elements.Margin = new System.Windows.Forms.Padding(0);
             this.elements.Name = "elements";
-            this.elements.Size = new System.Drawing.Size(580, 500);
+            this.elements.Padding = new System.Windows.Forms.Padding(0, 20, 0, 0);
+            this.elements.Size = new System.Drawing.Size(580, 530);
             this.elements.TabIndex = 3;
             // 
             // TabClientes
@@ -91,6 +93,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(234)))), ((int)(((byte)(205)))));
             this.Controls.Add(this.elements);
             this.Controls.Add(this.topButtons);
+            this.MinimumSize = new System.Drawing.Size(400, 520);
             this.Name = "TabClientes";
             this.Padding = new System.Windows.Forms.Padding(10);
             this.Size = new System.Drawing.Size(600, 600);
