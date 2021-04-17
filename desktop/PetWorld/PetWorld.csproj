@@ -131,7 +131,6 @@
     <Compile Include="GUI\UserControls\Screens\TabScreen.Designer.cs">
       <DependentUpon>TabScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\UserControls\Tabs\ITab.cs" />
     <Compile Include="GUI\UserControls\Tabs\PaginatedTab.cs">
       <SubType>UserControl</SubType>
     </Compile>
