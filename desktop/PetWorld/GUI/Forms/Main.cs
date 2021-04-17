@@ -1,41 +1,58 @@
-﻿using PetWorld.GUI.UserControls.Screens;
-using System;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
+using PetWorld.GUI.UserControls.Components;
+using PetWorld.GUI.UserControls.Screens;
+using PetWorld.GUI.UserControls.Tabs;
 
 namespace PetWorld.GUI.Forms
 {
     public partial class Main : Form
     {
-        private static Main instance;
+        public static Main Instance { get; private set; }
+        public static Sidebar Sidebar => Instance.sidebar;
+        
+        public Tab ActualTab { get; private set; }
+
+        public Tab HomeTab { get; } = new Tab(new Home());
+        public PaginatedTab PetsTab { get; } = new PaginatedTab("Pets", null);
+        public PaginatedTab ClientsTab { get; } = new PaginatedTab("Clients", null);
 
         public Main()
         {
-            instance = this;
+            Instance = this;
+
             InitializeComponent();
-            Load += (x, y) => LoadScreen(new Home());
+            Home();
         }
 
-        private void LoadTab(Tab control)
+        public void Home() { LoadTab(HomeTab); }
+        public void Pets() { LoadTab(PetsTab); }
+        public void Clients() { LoadTab(ClientsTab); }
+
+        public void Pets(TabScreen screen) { LoadTab(PetsTab, screen); }
+        public void Clients(TabScreen screen) { LoadTab(ClientsTab, screen); }
+
+        private void LoadTab(Tab tab)
         {
-            control.Hide();
+            tab.Hide();
             Controls.Remove(screen);
-            Controls.Add(control);
+            Controls.Add(tab);
 
-            control.BringToFront();
-            control.Dock = DockStyle.Fill;
+            tab.BringToFront();
+            tab.Dock = DockStyle.Fill;
 
-            control.TabIndex = screen.TabIndex;
-            control.Name = screen.Name;
+            tab.TabIndex = screen.TabIndex;
+            tab.Name = screen.Name;
 
-            control.Show();
-            screen = control;
+            tab.Show();
+
+            screen = tab;
+            ActualTab = tab;
         }
 
-        public static void LoadScreen(Tab tab)
+        private void LoadTab(PaginatedTab tab, TabScreen screen)
         {
-            tab.Reload(instance, EventArgs.Empty);
-            instance.sidebar.LoadScreen(tab);
-            instance.LoadTab(tab);
+            LoadTab(tab);
+            tab.Goto(screen);
         }
     }
 }

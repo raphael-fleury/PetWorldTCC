@@ -31,7 +31,7 @@ namespace PetWorld.GUI.Forms
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
-            this.screen = new PetWorld.GUI.UserControls.Screens.Tab();
+            this.screen = new PetWorld.GUI.UserControls.Tabs.Tab();
             this.sidebar = new PetWorld.GUI.UserControls.Components.Sidebar();
             this.SuspendLayout();
             // 
@@ -73,7 +73,7 @@ namespace PetWorld.GUI.Forms
         #endregion
 
         private UserControls.Components.Sidebar sidebar;
-        private UserControls.Screens.Tab screen;
+        private UserControls.Tabs.Tab screen;
     }
 }
 

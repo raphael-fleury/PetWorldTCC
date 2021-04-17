@@ -6,23 +6,18 @@ using PetWorld.Data.Repositories;
 
 namespace PetWorld.GUI.UserControls.Screens
 {
-    public partial class ClientesForm : Tab
+    public partial class ClientesForm : TabScreen
     {
-        #region Fields
-        private Tab callback;
-
         private uint? clienteId;
-        #endregion
 
         private bool fieldsAreValid => !string.IsNullOrEmpty(txtNome.Text)
             && txtTelefone.Text.Where(c => char.IsNumber(c)).ToArray().Length > 0
             && enderecoForm.FieldsAreValid;
 
         #region Constructors
-        public ClientesForm(Tab callback)
+        public ClientesForm()
         {
             InitializeComponent();
-            this.callback = callback;
 
             Load += (x, y) => btDone.Enabled = fieldsAreValid;
             txtNome.TextChanged += (x, y) => btDone.Enabled = fieldsAreValid;
@@ -31,7 +26,7 @@ namespace PetWorld.GUI.UserControls.Screens
             enderecoForm.FieldsChanged += () => btDone.Enabled = fieldsAreValid;
         }
 
-        public ClientesForm(Tab callback, Cliente cliente) : this(callback)
+        public ClientesForm(Cliente cliente) : this()
         {
             title.Text = "Editar Cliente";
 
@@ -46,7 +41,7 @@ namespace PetWorld.GUI.UserControls.Screens
         #region Button Events
         private void Return(object sender, EventArgs e)
         {
-            Main.LoadScreen(callback ?? new Clientes());
+            Main.Instance.ClientsTab.Return();
         }
 
         private void Done(object sender, EventArgs e)

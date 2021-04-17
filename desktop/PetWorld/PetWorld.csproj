@@ -125,10 +125,23 @@
     <Compile Include="GUI\UserControls\Screens\Prontuario.Designer.cs">
       <DependentUpon>Prontuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\UserControls\Screens\Tab.cs">
+    <Compile Include="GUI\UserControls\Screens\TabScreen.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\UserControls\Screens\Tab.Designer.cs">
+    <Compile Include="GUI\UserControls\Screens\TabScreen.Designer.cs">
+      <DependentUpon>TabScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UserControls\Tabs\ITab.cs" />
+    <Compile Include="GUI\UserControls\Tabs\PaginatedTab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UserControls\Tabs\PaginatedTab.Designer.cs">
+      <DependentUpon>PaginatedTab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UserControls\Tabs\Tab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UserControls\Tabs\Tab.Designer.cs">
       <DependentUpon>Tab.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\UserControls\Components\Sidebar.cs">
@@ -181,7 +194,13 @@
     <EmbeddedResource Include="GUI\UserControls\Screens\Prontuario.resx">
       <DependentUpon>Prontuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\UserControls\Screens\Tab.resx">
+    <EmbeddedResource Include="GUI\UserControls\Screens\TabScreen.resx">
+      <DependentUpon>TabScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UserControls\Tabs\PaginatedTab.resx">
+      <DependentUpon>PaginatedTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UserControls\Tabs\Tab.resx">
       <DependentUpon>Tab.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UserControls\Components\Sidebar.resx">

@@ -5,15 +5,13 @@ using PetWorld.Data.Entities.Enums;
 
 namespace PetWorld.GUI.UserControls.Screens
 {
-    public partial class PetDetails : Tab
+    public partial class PetDetails : TabScreen
     {
         private Pet pet;
-        private Tab callback;
 
-        public PetDetails(Tab callback, Pet pet)
+        public PetDetails(Pet pet)
         {
             InitializeComponent();
-            this.callback = callback;
             this.pet = pet;
 
             title.Text = pet.Nome;
@@ -29,12 +27,12 @@ namespace PetWorld.GUI.UserControls.Screens
 
         private void Return(object sender, EventArgs e)
         {
-            Main.LoadScreen(callback ?? new Pets());
+            Main.Instance.PetsTab.Return();
         }
 
         private void ShowProntuario(object sender, EventArgs e)
         {
-            Main.LoadScreen(new Prontuario(pet));
+            Main.Instance.Pets(new Prontuario(pet));
         }
     }
 }

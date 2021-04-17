@@ -1,16 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
 using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using PetWorld.GUI.UserControls.Components;
 using PetWorld.GUI.Forms;
 using PetWorld.Data.Repositories;
-using PetWorld.Data.Entities;
+using PetWorld.GUI.UserControls.Tabs;
 
 namespace PetWorld.GUI.UserControls.Screens
 {
@@ -24,10 +19,10 @@ namespace PetWorld.GUI.UserControls.Screens
 
         private void Add(object sender, EventArgs e)
         {
-            Main.LoadScreen(new PetsForm(this));
+            Main.Instance.Pets(new PetsForm());
         }
 
-        public override void Reload(object sender, EventArgs e)
+        public void Reload(object sender, EventArgs e)
         {
             elements.Clear();
 
@@ -39,9 +34,9 @@ namespace PetWorld.GUI.UserControls.Screens
             foreach (var display in displays)
             {
                 display.DetailsButtonClick += (pet) =>
-                    Main.LoadScreen(new PetDetails(this, pet));
-                display.EditButtonClick += (pet) => 
-                    Main.LoadScreen(new PetsForm(this, pet));
+                    Main.Instance.Pets(new PetDetails(pet));
+                display.EditButtonClick += (pet) =>
+                    Main.Instance.Pets(new PetsForm(pet));
                 display.DeleteButtonClick += (pet) =>
                 {
                     var result = MessageBox.Show("Deseja deletar " + pet.Nome + "?", "Deletar Pet", MessageBoxButtons.OKCancel);

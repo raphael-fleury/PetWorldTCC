@@ -1,6 +1,6 @@
 ﻿namespace PetWorld.GUI.UserControls.Screens
 {
-    partial class Tab
+    partial class TabScreen
     {
         /// <summary> 
         /// Required designer variable.
@@ -30,12 +30,14 @@
         {
             this.SuspendLayout();
             // 
-            // Tab
+            // TabScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(233)))), ((int)(((byte)(205)))));
-            this.Name = "Tab";
+            this.Margin = new System.Windows.Forms.Padding(0);
+            this.Name = "TabScreen";
+            this.Size = new System.Drawing.Size(600, 520);
             this.ResumeLayout(false);
 
         }

@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace PetWorld.GUI.UserControls.Screens
 {
-    public partial class Prontuario : Tab
+    public partial class Prontuario : TabScreen
     {
         public Prontuario(Pet pet)
         {

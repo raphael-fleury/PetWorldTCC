@@ -4,14 +4,11 @@ using PetWorld.Data.Entities;
 
 namespace PetWorld.GUI.UserControls.Screens
 {
-    public partial class ClienteDetails : Tab
+    public partial class ClienteDetails : TabScreen
     {
-        private Tab callback;
-
-        public ClienteDetails(Tab callback, Cliente cliente)
+        public ClienteDetails(Cliente cliente)
         {
             InitializeComponent();
-            this.callback = callback;
 
             title.Text = cliente.Nome;
             lbNome.Text = cliente.Nome;
@@ -22,7 +19,7 @@ namespace PetWorld.GUI.UserControls.Screens
 
         private void Return(object sender, EventArgs e)
         {
-            Main.LoadScreen(callback ?? new Clientes());
+            Main.Instance.Clients();
         }
     }
 }
