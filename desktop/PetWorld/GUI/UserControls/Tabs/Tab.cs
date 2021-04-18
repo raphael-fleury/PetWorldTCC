@@ -11,7 +11,24 @@ namespace PetWorld.GUI.UserControls.Tabs
 
         public Tab(TabScreen screen) : this()
         {
-            Load += (sender, e) => { this.screen = screen; };
+            Load += (sender, e) => { LoadScreen(screen); };
+        }
+
+        protected void LoadScreen(TabScreen tabScreen)
+        {
+            tabScreen.Hide();
+            Controls.Remove(screen);
+            Controls.Add(tabScreen);
+
+            tabScreen.BringToFront();
+            tabScreen.Dock = DockStyle.Fill;
+
+            tabScreen.TabIndex = screen.TabIndex;
+            tabScreen.Name = screen.Name;
+
+            tabScreen.Show();
+
+            screen = tabScreen;
         }
     }
 }

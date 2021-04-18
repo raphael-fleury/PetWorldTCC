@@ -41,10 +41,10 @@ namespace PetWorld.GUI.UserControls.Tabs
             // 
             this.screen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(233)))), ((int)(((byte)(205)))));
             this.screen.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.screen.Location = new System.Drawing.Point(0, 0);
+            this.screen.Location = new System.Drawing.Point(0, 70);
             this.screen.Margin = new System.Windows.Forms.Padding(0);
             this.screen.Name = "screen";
-            this.screen.Size = new System.Drawing.Size(600, 600);
+            this.screen.Size = new System.Drawing.Size(600, 530);
             this.screen.TabIndex = 5;
             // 
             // header
@@ -96,11 +96,11 @@ namespace PetWorld.GUI.UserControls.Tabs
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(233)))), ((int)(((byte)(205)))));
-            this.Controls.Add(this.header);
             this.Controls.Add(this.screen);
+            this.Controls.Add(this.header);
             this.Name = "PaginatedTab";
-            this.Controls.SetChildIndex(this.screen, 0);
             this.Controls.SetChildIndex(this.header, 0);
+            this.Controls.SetChildIndex(this.screen, 0);
             this.header.ResumeLayout(false);
             this.ResumeLayout(false);
 

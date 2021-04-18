@@ -36,7 +36,7 @@ namespace PetWorld.GUI.UserControls.Tabs
 
         private void OnPageChange()
         {
-            screen = ActualScreen;
+            LoadScreen(ActualScreen);
             lblTitle.Text = ActualScreen.Name;
         }
     }
