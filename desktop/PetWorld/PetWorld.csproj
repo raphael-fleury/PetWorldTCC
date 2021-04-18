@@ -104,11 +104,11 @@
     <Compile Include="GUI\UserControls\Screens\Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\UserControls\Screens\Clientes.cs">
+    <Compile Include="GUI\UserControls\Screens\ClientesMenu.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\UserControls\Screens\Clientes.Designer.cs">
-      <DependentUpon>Clientes.cs</DependentUpon>
+    <Compile Include="GUI\UserControls\Screens\ClientesMenu.Designer.cs">
+      <DependentUpon>ClientesMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\UserControls\Screens\ClienteForm.cs">
       <SubType>UserControl</SubType>
@@ -146,11 +146,11 @@
     <Compile Include="GUI\UserControls\Tabs\Tab.Designer.cs">
       <DependentUpon>Tab.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\UserControls\Screens\Pets.cs">
+    <Compile Include="GUI\UserControls\Screens\PetsMenu.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\UserControls\Screens\Pets.Designer.cs">
-      <DependentUpon>Pets.cs</DependentUpon>
+    <Compile Include="GUI\UserControls\Screens\PetsMenu.Designer.cs">
+      <DependentUpon>PetsMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -178,8 +178,8 @@
     <EmbeddedResource Include="GUI\UserControls\Screens\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\UserControls\Screens\Clientes.resx">
-      <DependentUpon>Clientes.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\UserControls\Screens\ClientesMenu.resx">
+      <DependentUpon>ClientesMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UserControls\Screens\ClienteForm.resx">
       <DependentUpon>ClienteForm.cs</DependentUpon>
@@ -199,8 +199,8 @@
     <EmbeddedResource Include="GUI\UserControls\Tabs\Tab.resx">
       <DependentUpon>Tab.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\UserControls\Screens\Pets.resx">
-      <DependentUpon>Pets.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\UserControls\Screens\PetsMenu.resx">
+      <DependentUpon>PetsMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

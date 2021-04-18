@@ -1,6 +1,6 @@
 ﻿namespace PetWorld.GUI.UserControls.Screens
 {
-    partial class Pets
+    partial class PetsMenu
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,21 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.topButtons = new System.Windows.Forms.FlowLayoutPanel();
+            this.header = new System.Windows.Forms.FlowLayoutPanel();
             this.btnAdd = new System.Windows.Forms.Button();
             this.elements = new PetWorld.GUI.UserControls.Components.ElementsDisplay();
-            this.topButtons.SuspendLayout();
+            this.header.SuspendLayout();
             this.SuspendLayout();
             // 
-            // topButtons
+            // header
             // 
-            this.topButtons.Controls.Add(this.btnAdd);
-            this.topButtons.Dock = System.Windows.Forms.DockStyle.Top;
-            this.topButtons.Location = new System.Drawing.Point(10, 10);
-            this.topButtons.Margin = new System.Windows.Forms.Padding(0, 0, 0, 20);
-            this.topButtons.Name = "topButtons";
-            this.topButtons.Size = new System.Drawing.Size(580, 50);
-            this.topButtons.TabIndex = 2;
+            this.header.Controls.Add(this.btnAdd);
+            this.header.Dock = System.Windows.Forms.DockStyle.Top;
+            this.header.Location = new System.Drawing.Point(10, 10);
+            this.header.Margin = new System.Windows.Forms.Padding(0, 0, 0, 20);
+            this.header.Name = "header";
+            this.header.Size = new System.Drawing.Size(580, 50);
+            this.header.TabIndex = 2;
             // 
             // btnAdd
             // 
@@ -64,30 +64,30 @@
             // elements
             // 
             this.elements.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.elements.Location = new System.Drawing.Point(10, 90);
+            this.elements.Location = new System.Drawing.Point(10, 60);
             this.elements.Name = "elements";
             this.elements.Size = new System.Drawing.Size(580, 500);
             this.elements.TabIndex = 3;
             // 
-            // Pets
+            // PetsMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(234)))), ((int)(((byte)(205)))));
             this.Controls.Add(this.elements);
-            this.Controls.Add(this.topButtons);
-            this.Name = "Pets";
+            this.Controls.Add(this.header);
+            this.Name = "PetsMenu";
             this.Padding = new System.Windows.Forms.Padding(10);
-            this.Size = new System.Drawing.Size(600, 600);
+            this.Size = new System.Drawing.Size(600, 570);
             this.Load += new System.EventHandler(this.Reload);
-            this.topButtons.ResumeLayout(false);
+            this.header.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.FlowLayoutPanel topButtons;
+        private System.Windows.Forms.FlowLayoutPanel header;
         private System.Windows.Forms.Button btnAdd;
         private Components.ElementsDisplay elements;
     }

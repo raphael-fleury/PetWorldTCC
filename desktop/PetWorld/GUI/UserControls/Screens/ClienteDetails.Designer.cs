@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.header = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
             this.btnReturn = new System.Windows.Forms.Button();
             this.formPanel = new System.Windows.Forms.FlowLayoutPanel();
@@ -41,20 +41,20 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
+            this.header.SuspendLayout();
             this.formPanel.SuspendLayout();
             this.labelsPanel.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // header
             // 
-            this.panel1.Controls.Add(this.lblTitle);
-            this.panel1.Controls.Add(this.btnReturn);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(10, 10);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(580, 50);
-            this.panel1.TabIndex = 3;
+            this.header.Controls.Add(this.lblTitle);
+            this.header.Controls.Add(this.btnReturn);
+            this.header.Dock = System.Windows.Forms.DockStyle.Top;
+            this.header.Location = new System.Drawing.Point(10, 10);
+            this.header.Name = "header";
+            this.header.Size = new System.Drawing.Size(580, 50);
+            this.header.TabIndex = 3;
             // 
             // lblTitle
             // 
@@ -206,11 +206,11 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(234)))), ((int)(((byte)(205)))));
             this.Controls.Add(this.formPanel);
             this.Controls.Add(this.labelsPanel);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.header);
             this.Name = "ClienteDetails";
             this.Padding = new System.Windows.Forms.Padding(10);
             this.Size = new System.Drawing.Size(600, 600);
-            this.panel1.ResumeLayout(false);
+            this.header.ResumeLayout(false);
             this.formPanel.ResumeLayout(false);
             this.labelsPanel.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -218,7 +218,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel header;
         private System.Windows.Forms.FlowLayoutPanel formPanel;
         private System.Windows.Forms.FlowLayoutPanel labelsPanel;
         private System.Windows.Forms.Label label1;

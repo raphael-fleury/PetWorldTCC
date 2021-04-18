@@ -2,11 +2,14 @@
 using PetWorld.GUI.Forms;
 using PetWorld.Data.Entities;
 using PetWorld.Data.Entities.Enums;
+using System.Windows.Forms;
 
 namespace PetWorld.GUI.UserControls.Screens
 {
     public partial class PetDetails : TabScreen
     {
+        public override Panel Header => header;
+
         private Pet pet;
 
         public PetDetails(Pet pet)

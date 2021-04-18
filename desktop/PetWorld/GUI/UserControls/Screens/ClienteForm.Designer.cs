@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.header = new System.Windows.Forms.Panel();
             this.title = new System.Windows.Forms.Label();
             this.btnReturn = new System.Windows.Forms.Button();
             this.btnDone = new System.Windows.Forms.Button();
@@ -41,21 +41,21 @@
             this.lblCPF = new System.Windows.Forms.Label();
             this.lblTelefone = new System.Windows.Forms.Label();
             this.enderecoForm = new PetWorld.GUI.UserControls.Components.EnderecoForm();
-            this.panel1.SuspendLayout();
+            this.header.SuspendLayout();
             this.formPanel.SuspendLayout();
             this.labelsPanel.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // header
             // 
-            this.panel1.Controls.Add(this.title);
-            this.panel1.Controls.Add(this.btnReturn);
-            this.panel1.Controls.Add(this.btnDone);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(10, 10);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(586, 50);
-            this.panel1.TabIndex = 3;
+            this.header.Controls.Add(this.title);
+            this.header.Controls.Add(this.btnReturn);
+            this.header.Controls.Add(this.btnDone);
+            this.header.Dock = System.Windows.Forms.DockStyle.Top;
+            this.header.Location = new System.Drawing.Point(10, 10);
+            this.header.Name = "header";
+            this.header.Size = new System.Drawing.Size(586, 50);
+            this.header.TabIndex = 3;
             // 
             // title
             // 
@@ -199,7 +199,7 @@
             this.enderecoForm.Size = new System.Drawing.Size(586, 419);
             this.enderecoForm.TabIndex = 6;
             // 
-            // ClientesForm
+            // ClienteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -208,11 +208,11 @@
             this.Controls.Add(this.formPanel);
             this.Controls.Add(this.labelsPanel);
             this.Controls.Add(this.enderecoForm);
-            this.Controls.Add(this.panel1);
-            this.Name = "ClientesForm";
+            this.Controls.Add(this.header);
+            this.Name = "ClienteForm";
             this.Padding = new System.Windows.Forms.Padding(10);
             this.Size = new System.Drawing.Size(606, 600);
-            this.panel1.ResumeLayout(false);
+            this.header.ResumeLayout(false);
             this.formPanel.ResumeLayout(false);
             this.formPanel.PerformLayout();
             this.labelsPanel.ResumeLayout(false);
@@ -221,7 +221,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel header;
         private System.Windows.Forms.FlowLayoutPanel formPanel;
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.FlowLayoutPanel labelsPanel;

@@ -1,11 +1,14 @@
 ﻿using System;
 using PetWorld.GUI.Forms;
 using PetWorld.Data.Entities;
+using System.Windows.Forms;
 
 namespace PetWorld.GUI.UserControls.Screens
 {
     public partial class ClienteDetails : TabScreen
     {
+        public override Panel Header => header;
+
         public ClienteDetails(Cliente cliente)
         {
             InitializeComponent();

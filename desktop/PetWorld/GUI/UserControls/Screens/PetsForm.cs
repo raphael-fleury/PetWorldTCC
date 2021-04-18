@@ -3,11 +3,14 @@ using PetWorld.GUI.Forms;
 using PetWorld.Data.Entities;
 using PetWorld.Data.Entities.Enums;
 using PetWorld.Data.Repositories;
+using System.Windows.Forms;
 
 namespace PetWorld.GUI.UserControls.Screens
 {
     public partial class PetsForm : TabScreen
     {
+        public override Panel Header => header;
+
         private uint? petId;
         private Cliente petResponsavel;
 

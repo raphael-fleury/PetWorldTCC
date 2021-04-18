@@ -14,7 +14,7 @@ namespace PetWorld.GUI.UserControls.Tabs
             Load += (sender, e) => { LoadScreen(screen); };
         }
 
-        protected void LoadScreen(TabScreen tabScreen)
+        protected virtual void LoadScreen(TabScreen tabScreen)
         {
             tabScreen.Hide();
             Controls.Remove(screen);

@@ -5,13 +5,14 @@ using System.Windows.Forms;
 using PetWorld.GUI.UserControls.Components;
 using PetWorld.GUI.Forms;
 using PetWorld.Data.Repositories;
-using PetWorld.GUI.UserControls.Tabs;
 
 namespace PetWorld.GUI.UserControls.Screens
 {
-    public partial class Pets : TabScreen
+    public partial class PetsMenu : TabScreen
     {
-        public Pets()
+        public override Panel Header => header;
+
+        public PetsMenu()
         {
             InitializeComponent();
             elements.FilterTextChanged += () => Reload(this, EventArgs.Empty);

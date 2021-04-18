@@ -13,8 +13,8 @@ namespace PetWorld.GUI.Forms
         public Tab ActualTab => screen;
 
         public Tab HomeTab { get; } = new Tab(new Home());
-        public PaginatedTab PetsTab { get; } = new PaginatedTab("Pets", new Pets());
-        public PaginatedTab ClientsTab { get; } = new PaginatedTab("Clientes", new Clientes());
+        public PaginatedTab PetsTab { get; } = new PaginatedTab(new PetsMenu());
+        public PaginatedTab ClientsTab { get; } = new PaginatedTab(new ClientesMenu());
 
         public Main()
         {

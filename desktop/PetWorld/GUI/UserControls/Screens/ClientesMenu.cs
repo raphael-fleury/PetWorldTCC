@@ -8,9 +8,11 @@ using PetWorld.Data.Repositories;
 
 namespace PetWorld.GUI.UserControls.Screens
 {
-    public partial class Clientes : TabScreen
+    public partial class ClientesMenu : TabScreen
     {
-        public Clientes()
+        public override Panel Header => header;
+
+        public ClientesMenu()
         {
             InitializeComponent();
             elements.FilterTextChanged += () => Reload(this, EventArgs.Empty);
