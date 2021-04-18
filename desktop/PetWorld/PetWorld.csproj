@@ -83,6 +83,9 @@
     <Compile Include="GUI\UserControls\Components\PetDisplay.Designer.cs">
       <DependentUpon>PetDisplay.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\UserControls\Components\SidebarButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="GUI\UserControls\Screens\ClienteDetails.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -107,11 +110,11 @@
     <Compile Include="GUI\UserControls\Screens\Clientes.Designer.cs">
       <DependentUpon>Clientes.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\UserControls\Screens\ClientesForm.cs">
+    <Compile Include="GUI\UserControls\Screens\ClienteForm.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\UserControls\Screens\ClientesForm.Designer.cs">
-      <DependentUpon>ClientesForm.cs</DependentUpon>
+    <Compile Include="GUI\UserControls\Screens\ClienteForm.Designer.cs">
+      <DependentUpon>ClienteForm.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\UserControls\Screens\PetsForm.cs">
       <SubType>UserControl</SubType>
@@ -142,12 +145,6 @@
     </Compile>
     <Compile Include="GUI\UserControls\Tabs\Tab.Designer.cs">
       <DependentUpon>Tab.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\UserControls\Components\Sidebar.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="GUI\UserControls\Components\Sidebar.Designer.cs">
-      <DependentUpon>Sidebar.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\UserControls\Screens\Pets.cs">
       <SubType>UserControl</SubType>
@@ -184,8 +181,8 @@
     <EmbeddedResource Include="GUI\UserControls\Screens\Clientes.resx">
       <DependentUpon>Clientes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\UserControls\Screens\ClientesForm.resx">
-      <DependentUpon>ClientesForm.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\UserControls\Screens\ClienteForm.resx">
+      <DependentUpon>ClienteForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UserControls\Screens\PetsForm.resx">
       <DependentUpon>PetsForm.cs</DependentUpon>
@@ -201,9 +198,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UserControls\Tabs\Tab.resx">
       <DependentUpon>Tab.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\UserControls\Components\Sidebar.resx">
-      <DependentUpon>Sidebar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UserControls\Screens\Pets.resx">
       <DependentUpon>Pets.cs</DependentUpon>

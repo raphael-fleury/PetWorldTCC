@@ -6,7 +6,7 @@ using PetWorld.Data.Repositories;
 
 namespace PetWorld.GUI.UserControls.Screens
 {
-    public partial class ClientesForm : TabScreen
+    public partial class ClienteForm : TabScreen
     {
         private uint? clienteId;
 
@@ -15,18 +15,18 @@ namespace PetWorld.GUI.UserControls.Screens
             && enderecoForm.FieldsAreValid;
 
         #region Constructors
-        public ClientesForm()
+        public ClienteForm()
         {
             InitializeComponent();
 
-            Load += (x, y) => btDone.Enabled = fieldsAreValid;
-            txtNome.TextChanged += (x, y) => btDone.Enabled = fieldsAreValid;
-            txtCPF.TextChanged += (x, y) => btDone.Enabled = fieldsAreValid;
-            txtTelefone.TextChanged += (x, y) => btDone.Enabled = fieldsAreValid;
-            enderecoForm.FieldsChanged += () => btDone.Enabled = fieldsAreValid;
+            Load += (x, y) => btnDone.Enabled = fieldsAreValid;
+            txtNome.TextChanged += (x, y) => btnDone.Enabled = fieldsAreValid;
+            txtCPF.TextChanged += (x, y) => btnDone.Enabled = fieldsAreValid;
+            txtTelefone.TextChanged += (x, y) => btnDone.Enabled = fieldsAreValid;
+            enderecoForm.FieldsChanged += () => btnDone.Enabled = fieldsAreValid;
         }
 
-        public ClientesForm(Cliente cliente) : this()
+        public ClienteForm(Cliente cliente) : this()
         {
             title.Text = "Editar Cliente";
 

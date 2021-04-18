@@ -35,7 +35,7 @@
             this.txtBairro = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtNumEndereco = new System.Windows.Forms.MaskedTextBox();
-            this.lbEndereco = new System.Windows.Forms.Label();
+            this.lblEndereco = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtComplemento = new System.Windows.Forms.MaskedTextBox();
@@ -140,16 +140,16 @@
             this.txtNumEndereco.TabIndex = 22;
             this.txtNumEndereco.ValidatingType = typeof(int);
             // 
-            // lbEndereco
+            // lblEndereco
             // 
-            this.lbEndereco.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbEndereco.Location = new System.Drawing.Point(0, 0);
-            this.lbEndereco.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.lbEndereco.Name = "lbEndereco";
-            this.lbEndereco.Size = new System.Drawing.Size(100, 20);
-            this.lbEndereco.TabIndex = 16;
-            this.lbEndereco.Text = "Endereço:";
-            this.lbEndereco.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblEndereco.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEndereco.Location = new System.Drawing.Point(0, 0);
+            this.lblEndereco.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.lblEndereco.Name = "lblEndereco";
+            this.lblEndereco.Size = new System.Drawing.Size(100, 20);
+            this.lblEndereco.TabIndex = 16;
+            this.lblEndereco.Text = "Endereço:";
+            this.lblEndereco.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label1
             // 
@@ -211,7 +211,7 @@
             this.Controls.Add(this.txtBairro);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtNumEndereco);
-            this.Controls.Add(this.lbEndereco);
+            this.Controls.Add(this.lblEndereco);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtComplemento);
@@ -234,7 +234,7 @@
         private System.Windows.Forms.TextBox txtBairro;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.MaskedTextBox txtNumEndereco;
-        private System.Windows.Forms.Label lbEndereco;
+        private System.Windows.Forms.Label lblEndereco;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.MaskedTextBox txtComplemento;

@@ -30,7 +30,7 @@
         {
             this.txtFilter = new System.Windows.Forms.TextBox();
             this.panel = new System.Windows.Forms.FlowLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblFilterByName = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtFilter
@@ -52,17 +52,17 @@
             this.panel.Size = new System.Drawing.Size(580, 455);
             this.panel.TabIndex = 2;
             // 
-            // label1
+            // lblFilterByName
             // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Margin = new System.Windows.Forms.Padding(0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(580, 25);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Filtrar por nome";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblFilterByName.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblFilterByName.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFilterByName.Location = new System.Drawing.Point(0, 0);
+            this.lblFilterByName.Margin = new System.Windows.Forms.Padding(0);
+            this.lblFilterByName.Name = "lblFilterByName";
+            this.lblFilterByName.Size = new System.Drawing.Size(580, 25);
+            this.lblFilterByName.TabIndex = 3;
+            this.lblFilterByName.Text = "Filtrar por nome";
+            this.lblFilterByName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // ElementsDisplay
             // 
@@ -70,7 +70,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel);
             this.Controls.Add(this.txtFilter);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblFilterByName);
             this.Name = "ElementsDisplay";
             this.Size = new System.Drawing.Size(580, 500);
             this.Resize += new System.EventHandler(this.OnResize);
@@ -83,6 +83,6 @@
 
         private System.Windows.Forms.TextBox txtFilter;
         private System.Windows.Forms.FlowLayoutPanel panel;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblFilterByName;
     }
 }

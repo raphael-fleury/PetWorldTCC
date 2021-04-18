@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.title = new System.Windows.Forms.Label();
-            this.btReturn = new System.Windows.Forms.Button();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.btnReturn = new System.Windows.Forms.Button();
             this.formPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.lbNome = new System.Windows.Forms.Label();
-            this.lbCPF = new System.Windows.Forms.Label();
-            this.lbTelefone = new System.Windows.Forms.Label();
-            this.lbEndereco = new System.Windows.Forms.Label();
+            this.lblNome = new System.Windows.Forms.Label();
+            this.lblCPF = new System.Windows.Forms.Label();
+            this.lblTelefone = new System.Windows.Forms.Label();
+            this.lblEndereco = new System.Windows.Forms.Label();
             this.labelsPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.label = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.formPanel.SuspendLayout();
             this.labelsPanel.SuspendLayout();
@@ -48,52 +48,52 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.title);
-            this.panel1.Controls.Add(this.btReturn);
+            this.panel1.Controls.Add(this.lblTitle);
+            this.panel1.Controls.Add(this.btnReturn);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(10, 10);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(580, 50);
             this.panel1.TabIndex = 3;
             // 
-            // title
+            // lblTitle
             // 
-            this.title.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.title.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.title.Location = new System.Drawing.Point(50, 0);
-            this.title.Margin = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.title.Name = "title";
-            this.title.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.title.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.title.Size = new System.Drawing.Size(530, 50);
-            this.title.TabIndex = 9;
-            this.title.Text = "Nome";
-            this.title.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblTitle.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblTitle.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.Location = new System.Drawing.Point(50, 0);
+            this.lblTitle.Margin = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.lblTitle.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblTitle.Size = new System.Drawing.Size(530, 50);
+            this.lblTitle.TabIndex = 9;
+            this.lblTitle.Text = "Nome";
+            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // btReturn
+            // btnReturn
             // 
-            this.btReturn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(164)))), ((int)(((byte)(0)))));
-            this.btReturn.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btReturn.FlatAppearance.BorderSize = 0;
-            this.btReturn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(102)))), ((int)(((byte)(15)))));
-            this.btReturn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkOrange;
-            this.btReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btReturn.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btReturn.Image = global::PetWorld.Properties.Resources.Arrow_Left__Black_18px_;
-            this.btReturn.Location = new System.Drawing.Point(0, 0);
-            this.btReturn.Margin = new System.Windows.Forms.Padding(0);
-            this.btReturn.Name = "btReturn";
-            this.btReturn.Size = new System.Drawing.Size(50, 50);
-            this.btReturn.TabIndex = 8;
-            this.btReturn.UseVisualStyleBackColor = false;
-            this.btReturn.Click += new System.EventHandler(this.Return);
+            this.btnReturn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(164)))), ((int)(((byte)(0)))));
+            this.btnReturn.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnReturn.FlatAppearance.BorderSize = 0;
+            this.btnReturn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(102)))), ((int)(((byte)(15)))));
+            this.btnReturn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkOrange;
+            this.btnReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReturn.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReturn.Image = global::PetWorld.Properties.Resources.Arrow_Left__Black_18px_;
+            this.btnReturn.Location = new System.Drawing.Point(0, 0);
+            this.btnReturn.Margin = new System.Windows.Forms.Padding(0);
+            this.btnReturn.Name = "btnReturn";
+            this.btnReturn.Size = new System.Drawing.Size(50, 50);
+            this.btnReturn.TabIndex = 8;
+            this.btnReturn.UseVisualStyleBackColor = false;
+            this.btnReturn.Click += new System.EventHandler(this.Return);
             // 
             // formPanel
             // 
-            this.formPanel.Controls.Add(this.lbNome);
-            this.formPanel.Controls.Add(this.lbCPF);
-            this.formPanel.Controls.Add(this.lbTelefone);
-            this.formPanel.Controls.Add(this.lbEndereco);
+            this.formPanel.Controls.Add(this.lblNome);
+            this.formPanel.Controls.Add(this.lblCPF);
+            this.formPanel.Controls.Add(this.lblTelefone);
+            this.formPanel.Controls.Add(this.lblEndereco);
             this.formPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.formPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.formPanel.Location = new System.Drawing.Point(110, 60);
@@ -101,52 +101,52 @@
             this.formPanel.Size = new System.Drawing.Size(480, 530);
             this.formPanel.TabIndex = 5;
             // 
-            // lbNome
+            // lblNome
             // 
-            this.lbNome.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNome.Location = new System.Drawing.Point(0, 10);
-            this.lbNome.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.lbNome.Name = "lbNome";
-            this.lbNome.Size = new System.Drawing.Size(300, 20);
-            this.lbNome.TabIndex = 3;
-            this.lbNome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblNome.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNome.Location = new System.Drawing.Point(0, 10);
+            this.lblNome.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.lblNome.Name = "lblNome";
+            this.lblNome.Size = new System.Drawing.Size(300, 20);
+            this.lblNome.TabIndex = 3;
+            this.lblNome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // lbCPF
+            // lblCPF
             // 
-            this.lbCPF.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCPF.Location = new System.Drawing.Point(0, 40);
-            this.lbCPF.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.lbCPF.Name = "lbCPF";
-            this.lbCPF.Size = new System.Drawing.Size(300, 20);
-            this.lbCPF.TabIndex = 4;
-            this.lbCPF.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblCPF.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCPF.Location = new System.Drawing.Point(0, 40);
+            this.lblCPF.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.lblCPF.Name = "lblCPF";
+            this.lblCPF.Size = new System.Drawing.Size(300, 20);
+            this.lblCPF.TabIndex = 4;
+            this.lblCPF.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // lbTelefone
+            // lblTelefone
             // 
-            this.lbTelefone.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTelefone.Location = new System.Drawing.Point(0, 70);
-            this.lbTelefone.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.lbTelefone.Name = "lbTelefone";
-            this.lbTelefone.Size = new System.Drawing.Size(300, 20);
-            this.lbTelefone.TabIndex = 5;
-            this.lbTelefone.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblTelefone.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTelefone.Location = new System.Drawing.Point(0, 70);
+            this.lblTelefone.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.lblTelefone.Name = "lblTelefone";
+            this.lblTelefone.Size = new System.Drawing.Size(300, 20);
+            this.lblTelefone.TabIndex = 5;
+            this.lblTelefone.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // lbEndereco
+            // lblEndereco
             // 
-            this.lbEndereco.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbEndereco.Location = new System.Drawing.Point(0, 100);
-            this.lbEndereco.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.lbEndereco.Name = "lbEndereco";
-            this.lbEndereco.Size = new System.Drawing.Size(300, 20);
-            this.lbEndereco.TabIndex = 6;
-            this.lbEndereco.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblEndereco.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEndereco.Location = new System.Drawing.Point(0, 100);
+            this.lblEndereco.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.lblEndereco.Name = "lblEndereco";
+            this.lblEndereco.Size = new System.Drawing.Size(300, 20);
+            this.lblEndereco.TabIndex = 6;
+            this.lblEndereco.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // labelsPanel
             // 
-            this.labelsPanel.Controls.Add(this.label);
             this.labelsPanel.Controls.Add(this.label1);
             this.labelsPanel.Controls.Add(this.label2);
             this.labelsPanel.Controls.Add(this.label3);
+            this.labelsPanel.Controls.Add(this.label4);
             this.labelsPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.labelsPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.labelsPanel.Location = new System.Drawing.Point(10, 60);
@@ -154,49 +154,49 @@
             this.labelsPanel.Size = new System.Drawing.Size(100, 530);
             this.labelsPanel.TabIndex = 4;
             // 
-            // label
-            // 
-            this.label.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label.Location = new System.Drawing.Point(0, 10);
-            this.label.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.label.Name = "label";
-            this.label.Size = new System.Drawing.Size(100, 20);
-            this.label.TabIndex = 2;
-            this.label.Text = "Nome:";
-            this.label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(0, 40);
+            this.label1.Location = new System.Drawing.Point(0, 10);
             this.label1.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(100, 20);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "CPF:";
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Nome:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(0, 70);
+            this.label2.Location = new System.Drawing.Point(0, 40);
             this.label2.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(100, 20);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Telefone:";
+            this.label2.TabIndex = 3;
+            this.label2.Text = "CPF:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(0, 100);
+            this.label3.Location = new System.Drawing.Point(0, 70);
             this.label3.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(100, 20);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Endereço:";
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Telefone:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label4
+            // 
+            this.label4.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(0, 100);
+            this.label4.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(100, 20);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Endereço:";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // ClienteDetails
             // 
@@ -221,15 +221,15 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.FlowLayoutPanel formPanel;
         private System.Windows.Forms.FlowLayoutPanel labelsPanel;
-        private System.Windows.Forms.Label label;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label title;
-        private System.Windows.Forms.Button btReturn;
-        private System.Windows.Forms.Label lbNome;
-        private System.Windows.Forms.Label lbCPF;
-        private System.Windows.Forms.Label lbTelefone;
-        private System.Windows.Forms.Label lbEndereco;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.Button btnReturn;
+        private System.Windows.Forms.Label lblNome;
+        private System.Windows.Forms.Label lblCPF;
+        private System.Windows.Forms.Label lblTelefone;
+        private System.Windows.Forms.Label lblEndereco;
     }
 }

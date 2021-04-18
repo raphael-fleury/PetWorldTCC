@@ -31,10 +31,10 @@ namespace PetWorld.GUI.UserControls.Screens
         #region Initialization
         private void ConfigureEvents()
         {
-            Load += (x, y) => btDone.Enabled = fieldsAreValid;
-            txtNome.TextChanged += (x, y) => btDone.Enabled = fieldsAreValid;
-            txtEspecie.TextChanged += (x, y) => btDone.Enabled = fieldsAreValid;
-            txtRaca.TextChanged += (x, y) => btDone.Enabled = fieldsAreValid;
+            Load += (x, y) => btnDone.Enabled = fieldsAreValid;
+            txtNome.TextChanged += (x, y) => btnDone.Enabled = fieldsAreValid;
+            txtEspecie.TextChanged += (x, y) => btnDone.Enabled = fieldsAreValid;
+            txtRaca.TextChanged += (x, y) => btnDone.Enabled = fieldsAreValid;
         }
 
         private void SetPet(Pet pet)
@@ -48,7 +48,7 @@ namespace PetWorld.GUI.UserControls.Screens
             txtNome.Text = pet.Nome;
             txtEspecie.Text = pet.Especie;
             txtRaca.Text = pet.Raca;
-            cbCastrado.Checked = pet.Castrado;
+            chkCastrado.Checked = pet.Castrado;
             if (pet.Sexo == Sexo.FEMININO)
                 rbFeminino.Checked = true;
         }
@@ -67,7 +67,7 @@ namespace PetWorld.GUI.UserControls.Screens
                 txtNome.Text,
                 txtEspecie.Text,
                 txtRaca.Text,
-                cbCastrado.Checked,
+                chkCastrado.Checked,
                 sexo,
                 petResponsavel
             );

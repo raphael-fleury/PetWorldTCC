@@ -14,15 +14,15 @@ namespace PetWorld.GUI.UserControls.Screens
             InitializeComponent();
             this.pet = pet;
 
-            title.Text = pet.Nome;
-            lbNome.Text = pet.Nome;
-            lbEspecie.Text = pet.Especie;
-            lbRaca.Text = pet.Raca;
-            lbCastrado.Text = pet.Castrado ? "Sim" : "Não";
+            lblTitle.Text = pet.Nome;
+            lblNome.Text = pet.Nome;
+            lblEspecie.Text = pet.Especie;
+            lblRaca.Text = pet.Raca;
+            lblCastrado.Text = pet.Castrado ? "Sim" : "Não";
             if (pet.Sexo == Sexo.MASCULINO)
-                lbSexo.Text = "Masculino";
+                lblSexo.Text = "Masculino";
             else if (pet.Sexo == Sexo.FEMININO)
-                lbSexo.Text = "Feminino";
+                lblSexo.Text = "Feminino";
         }
 
         private void Return(object sender, EventArgs e)

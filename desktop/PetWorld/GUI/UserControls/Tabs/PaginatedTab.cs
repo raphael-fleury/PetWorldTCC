@@ -1,6 +1,5 @@
 ﻿using PetWorld.GUI.UserControls.Screens;
 using System.Collections.Generic;
-using System.Windows.Forms;
 
 namespace PetWorld.GUI.UserControls.Tabs
 {
@@ -8,15 +7,15 @@ namespace PetWorld.GUI.UserControls.Tabs
     {
         public Stack<TabScreen> Screens { get; } = new Stack<TabScreen>();
 
-        public TabScreen Actual => Screens.Peek();
+        public override TabScreen ActualScreen => Screens.Peek();
 
         #region Constructors
         public PaginatedTab() => InitializeComponent();
 
         public PaginatedTab(string name, TabScreen root) : this()
         {
-            title.Text = name;
-            Goto(root);
+            lblTitle.Text = name;
+            Load += (sender, e) => Goto(root);
         }
         #endregion
 
@@ -37,7 +36,8 @@ namespace PetWorld.GUI.UserControls.Tabs
 
         private void OnPageChange()
         {
-            screen = Actual;
+            screen = ActualScreen;
+            lblTitle.Text = ActualScreen.Name;
         }
     }
 }

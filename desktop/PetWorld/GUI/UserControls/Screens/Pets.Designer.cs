@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.topButtons = new System.Windows.Forms.FlowLayoutPanel();
-            this.btAdd = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.elements = new PetWorld.GUI.UserControls.Components.ElementsDisplay();
             this.topButtons.SuspendLayout();
             this.SuspendLayout();
             // 
             // topButtons
             // 
-            this.topButtons.Controls.Add(this.btAdd);
+            this.topButtons.Controls.Add(this.btnAdd);
             this.topButtons.Dock = System.Windows.Forms.DockStyle.Top;
             this.topButtons.Location = new System.Drawing.Point(10, 10);
             this.topButtons.Margin = new System.Windows.Forms.Padding(0, 0, 0, 20);
@@ -44,22 +44,22 @@
             this.topButtons.Size = new System.Drawing.Size(580, 50);
             this.topButtons.TabIndex = 2;
             // 
-            // btAdd
+            // btnAdd
             // 
-            this.btAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(164)))), ((int)(((byte)(0)))));
-            this.btAdd.FlatAppearance.BorderSize = 0;
-            this.btAdd.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(102)))), ((int)(((byte)(15)))));
-            this.btAdd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkOrange;
-            this.btAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btAdd.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btAdd.Image = global::PetWorld.Properties.Resources.Add__Black_18px_;
-            this.btAdd.Location = new System.Drawing.Point(0, 0);
-            this.btAdd.Margin = new System.Windows.Forms.Padding(0);
-            this.btAdd.Name = "btAdd";
-            this.btAdd.Size = new System.Drawing.Size(50, 50);
-            this.btAdd.TabIndex = 1;
-            this.btAdd.UseVisualStyleBackColor = false;
-            this.btAdd.Click += new System.EventHandler(this.Add);
+            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(164)))), ((int)(((byte)(0)))));
+            this.btnAdd.FlatAppearance.BorderSize = 0;
+            this.btnAdd.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(102)))), ((int)(((byte)(15)))));
+            this.btnAdd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkOrange;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Image = global::PetWorld.Properties.Resources.Add__Black_18px_;
+            this.btnAdd.Location = new System.Drawing.Point(0, 0);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(0);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(50, 50);
+            this.btnAdd.TabIndex = 1;
+            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.Add);
             // 
             // elements
             // 
@@ -88,7 +88,7 @@
 
         #endregion
         private System.Windows.Forms.FlowLayoutPanel topButtons;
-        private System.Windows.Forms.Button btAdd;
+        private System.Windows.Forms.Button btnAdd;
         private Components.ElementsDisplay elements;
     }
 }

@@ -1,18 +1,17 @@
-﻿using PetWorld.GUI.UserControls.Screens;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
+using PetWorld.GUI.UserControls.Screens;
 
 namespace PetWorld.GUI.UserControls.Tabs
 {
     public partial class Tab : UserControl
     {
-        public TabScreen ActualScreen { get; private set; }
+        public virtual TabScreen ActualScreen => screen;
 
         public Tab() => InitializeComponent();
 
         public Tab(TabScreen screen) : this()
         {
-            ActualScreen = screen;
-            this.screen = screen;
+            Load += (sender, e) => { this.screen = screen; };
         }
     }
 }

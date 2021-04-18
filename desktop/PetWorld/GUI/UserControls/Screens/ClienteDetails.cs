@@ -10,11 +10,11 @@ namespace PetWorld.GUI.UserControls.Screens
         {
             InitializeComponent();
 
-            title.Text = cliente.Nome;
-            lbNome.Text = cliente.Nome;
-            lbCPF.Text = cliente.CPF;
-            lbTelefone.Text = cliente.Telefone;
-            lbEndereco.Text = cliente.Endereco.ToString();
+            lblTitle.Text = cliente.Nome;
+            lblNome.Text = cliente.Nome;
+            lblCPF.Text = cliente.CPF;
+            lblTelefone.Text = cliente.Telefone;
+            lblEndereco.Text = cliente.Endereco.ToString();
         }
 
         private void Return(object sender, EventArgs e)

@@ -32,12 +32,12 @@ namespace PetWorld.GUI.Forms
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.screen = new PetWorld.GUI.UserControls.Tabs.Tab();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.sidebar = new System.Windows.Forms.FlowLayoutPanel();
             this.logoBox = new System.Windows.Forms.PictureBox();
             this.rbHome = new System.Windows.Forms.RadioButton();
             this.rbPets = new System.Windows.Forms.RadioButton();
-            this.rbClientes = new System.Windows.Forms.RadioButton();
-            this.flowLayoutPanel1.SuspendLayout();
+            this.rbCustomers = new System.Windows.Forms.RadioButton();
+            this.sidebar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,18 +51,18 @@ namespace PetWorld.GUI.Forms
             this.screen.Size = new System.Drawing.Size(600, 600);
             this.screen.TabIndex = 3;
             // 
-            // flowLayoutPanel1
+            // sidebar
             // 
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(164)))), ((int)(((byte)(0)))));
-            this.flowLayoutPanel1.Controls.Add(this.logoBox);
-            this.flowLayoutPanel1.Controls.Add(this.rbHome);
-            this.flowLayoutPanel1.Controls.Add(this.rbPets);
-            this.flowLayoutPanel1.Controls.Add(this.rbClientes);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(200, 600);
-            this.flowLayoutPanel1.TabIndex = 4;
+            this.sidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(164)))), ((int)(((byte)(0)))));
+            this.sidebar.Controls.Add(this.logoBox);
+            this.sidebar.Controls.Add(this.rbHome);
+            this.sidebar.Controls.Add(this.rbPets);
+            this.sidebar.Controls.Add(this.rbCustomers);
+            this.sidebar.Dock = System.Windows.Forms.DockStyle.Left;
+            this.sidebar.Location = new System.Drawing.Point(0, 0);
+            this.sidebar.Name = "sidebar";
+            this.sidebar.Size = new System.Drawing.Size(200, 600);
+            this.sidebar.TabIndex = 4;
             // 
             // logoBox
             // 
@@ -115,25 +115,25 @@ namespace PetWorld.GUI.Forms
             this.rbPets.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.rbPets.UseVisualStyleBackColor = true;
             // 
-            // rbClientes
+            // rbCustomers
             // 
-            this.rbClientes.Appearance = System.Windows.Forms.Appearance.Button;
-            this.rbClientes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.rbClientes.FlatAppearance.BorderSize = 0;
-            this.rbClientes.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(34)))), ((int)(((byte)(6)))));
-            this.rbClientes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(102)))), ((int)(((byte)(15)))));
-            this.rbClientes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkOrange;
-            this.rbClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rbClientes.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbClientes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(34)))), ((int)(((byte)(6)))));
-            this.rbClientes.Location = new System.Drawing.Point(0, 290);
-            this.rbClientes.Margin = new System.Windows.Forms.Padding(0);
-            this.rbClientes.Name = "rbClientes";
-            this.rbClientes.Size = new System.Drawing.Size(200, 45);
-            this.rbClientes.TabIndex = 4;
-            this.rbClientes.Text = "Clientes";
-            this.rbClientes.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.rbClientes.UseVisualStyleBackColor = true;
+            this.rbCustomers.Appearance = System.Windows.Forms.Appearance.Button;
+            this.rbCustomers.Dock = System.Windows.Forms.DockStyle.Top;
+            this.rbCustomers.FlatAppearance.BorderSize = 0;
+            this.rbCustomers.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(34)))), ((int)(((byte)(6)))));
+            this.rbCustomers.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(102)))), ((int)(((byte)(15)))));
+            this.rbCustomers.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkOrange;
+            this.rbCustomers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rbCustomers.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbCustomers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(34)))), ((int)(((byte)(6)))));
+            this.rbCustomers.Location = new System.Drawing.Point(0, 290);
+            this.rbCustomers.Margin = new System.Windows.Forms.Padding(0);
+            this.rbCustomers.Name = "rbCustomers";
+            this.rbCustomers.Size = new System.Drawing.Size(200, 45);
+            this.rbCustomers.TabIndex = 4;
+            this.rbCustomers.Text = "Clientes";
+            this.rbCustomers.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.rbCustomers.UseVisualStyleBackColor = true;
             // 
             // Main
             // 
@@ -141,7 +141,7 @@ namespace PetWorld.GUI.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 600);
             this.Controls.Add(this.screen);
-            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.sidebar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -149,7 +149,7 @@ namespace PetWorld.GUI.Forms
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pet World";
-            this.flowLayoutPanel1.ResumeLayout(false);
+            this.sidebar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.logoBox)).EndInit();
             this.ResumeLayout(false);
 
@@ -158,11 +158,11 @@ namespace PetWorld.GUI.Forms
         #endregion
 
         private UserControls.Tabs.Tab screen;
-        private FlowLayoutPanel flowLayoutPanel1;
+        private FlowLayoutPanel sidebar;
         private PictureBox logoBox;
         private RadioButton rbHome;
         private RadioButton rbPets;
-        private RadioButton rbClientes;
+        private RadioButton rbCustomers;
     }
 }
 

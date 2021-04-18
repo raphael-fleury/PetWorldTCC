@@ -37,16 +37,16 @@ namespace PetWorld.GUI.UserControls.Components
         public PetDisplay()
         {
             InitializeComponent();
-            detailsButton.Click += (x, y) => detailsButtonClick?.Invoke(pet);
-            editButton.Click += (x, y) => editButtonClick?.Invoke(pet);
-            deleteButton.Click += (x, y) => deleteButtonClick?.Invoke(pet);
+            btnDetails.Click += (x, y) => detailsButtonClick?.Invoke(pet);
+            btnEdit.Click += (x, y) => editButtonClick?.Invoke(pet);
+            btnDelete.Click += (x, y) => deleteButtonClick?.Invoke(pet);
         }
 
         public PetDisplay(Pet pet) : this()
         {
             this.pet = pet;
 
-            lblName.Text = pet.Nome;
+            lblNome.Text = pet.Nome;
             lblEspecie.Text += pet.Especie;
             lblRaca.Text += pet.Raca;
             lblResponsavel.Text += "";

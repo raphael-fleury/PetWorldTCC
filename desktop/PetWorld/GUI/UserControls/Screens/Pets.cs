@@ -9,7 +9,7 @@ using PetWorld.GUI.UserControls.Tabs;
 
 namespace PetWorld.GUI.UserControls.Screens
 {
-    public partial class Pets : Tab
+    public partial class Pets : TabScreen
     {
         public Pets()
         {
@@ -22,7 +22,7 @@ namespace PetWorld.GUI.UserControls.Screens
             Main.Instance.Pets(new PetsForm());
         }
 
-        public void Reload(object sender, EventArgs e)
+        protected override void Reload(object sender, EventArgs e)
         {
             elements.Clear();
 

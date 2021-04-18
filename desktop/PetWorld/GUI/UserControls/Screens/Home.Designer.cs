@@ -29,52 +29,40 @@ namespace PetWorld.GUI.UserControls.Screens
         /// </summary>
         private void InitializeComponent()
         {
-            this.raphael = new System.Windows.Forms.Label();
-            this.steffanie = new System.Windows.Forms.Label();
-            this.vitoria = new System.Windows.Forms.Label();
+            this.lblRaphael = new System.Windows.Forms.Label();
+            this.lblVitoria = new System.Windows.Forms.Label();
             this.logoBox = new System.Windows.Forms.PictureBox();
-            this.chamada = new System.Windows.Forms.Label();
-            this.criacao = new System.Windows.Forms.Label();
+            this.lblSlogan = new System.Windows.Forms.Label();
+            this.lblCriacao = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.logoBox)).BeginInit();
             this.SuspendLayout();
             // 
-            // raphael
+            // lblRaphael
             // 
-            this.raphael.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.raphael.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(34)))), ((int)(((byte)(6)))));
-            this.raphael.Location = new System.Drawing.Point(10, 500);
-            this.raphael.Name = "raphael";
-            this.raphael.Size = new System.Drawing.Size(580, 25);
-            this.raphael.TabIndex = 0;
-            this.raphael.Text = "Raphael Imperator";
-            this.raphael.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblRaphael.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRaphael.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(34)))), ((int)(((byte)(6)))));
+            this.lblRaphael.Location = new System.Drawing.Point(10, 539);
+            this.lblRaphael.Name = "lblRaphael";
+            this.lblRaphael.Size = new System.Drawing.Size(580, 25);
+            this.lblRaphael.TabIndex = 0;
+            this.lblRaphael.Text = "Raphael Fleury";
+            this.lblRaphael.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // steffanie
+            // lblVitoria
             // 
-            this.steffanie.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.steffanie.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(34)))), ((int)(((byte)(6)))));
-            this.steffanie.Location = new System.Drawing.Point(10, 525);
-            this.steffanie.Name = "steffanie";
-            this.steffanie.Size = new System.Drawing.Size(580, 25);
-            this.steffanie.TabIndex = 1;
-            this.steffanie.Text = "Steffanie Graner";
-            this.steffanie.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // vitoria
-            // 
-            this.vitoria.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vitoria.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(34)))), ((int)(((byte)(6)))));
-            this.vitoria.Location = new System.Drawing.Point(10, 550);
-            this.vitoria.Name = "vitoria";
-            this.vitoria.Size = new System.Drawing.Size(580, 25);
-            this.vitoria.TabIndex = 2;
-            this.vitoria.Text = "Vitória Basile";
-            this.vitoria.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblVitoria.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVitoria.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(34)))), ((int)(((byte)(6)))));
+            this.lblVitoria.Location = new System.Drawing.Point(10, 564);
+            this.lblVitoria.Name = "lblVitoria";
+            this.lblVitoria.Size = new System.Drawing.Size(580, 25);
+            this.lblVitoria.TabIndex = 2;
+            this.lblVitoria.Text = "Vitória Basile";
+            this.lblVitoria.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // logoBox
             // 
             this.logoBox.Image = global::PetWorld.Properties.Resources.PetWorld;
-            this.logoBox.Location = new System.Drawing.Point(230, 92);
+            this.logoBox.Location = new System.Drawing.Point(230, 84);
             this.logoBox.Margin = new System.Windows.Forms.Padding(40);
             this.logoBox.Name = "logoBox";
             this.logoBox.Size = new System.Drawing.Size(140, 140);
@@ -82,38 +70,37 @@ namespace PetWorld.GUI.UserControls.Screens
             this.logoBox.TabIndex = 3;
             this.logoBox.TabStop = false;
             // 
-            // chamada
+            // lblSlogan
             // 
-            this.chamada.Font = new System.Drawing.Font("Bahnschrift SemiBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chamada.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(34)))), ((int)(((byte)(6)))));
-            this.chamada.Location = new System.Drawing.Point(9, 252);
-            this.chamada.Name = "chamada";
-            this.chamada.Size = new System.Drawing.Size(580, 25);
-            this.chamada.TabIndex = 4;
-            this.chamada.Text = "A melhor solução para a sua clínica veterinária.";
-            this.chamada.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblSlogan.Font = new System.Drawing.Font("Bahnschrift SemiBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSlogan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(34)))), ((int)(((byte)(6)))));
+            this.lblSlogan.Location = new System.Drawing.Point(9, 244);
+            this.lblSlogan.Name = "lblSlogan";
+            this.lblSlogan.Size = new System.Drawing.Size(580, 25);
+            this.lblSlogan.TabIndex = 4;
+            this.lblSlogan.Text = "A melhor solução para a sua clínica veterinária.";
+            this.lblSlogan.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // criacao
+            // lblCriacao
             // 
-            this.criacao.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.criacao.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(34)))), ((int)(((byte)(6)))));
-            this.criacao.Location = new System.Drawing.Point(10, 475);
-            this.criacao.Name = "criacao";
-            this.criacao.Size = new System.Drawing.Size(580, 25);
-            this.criacao.TabIndex = 5;
-            this.criacao.Text = "Criação de:";
-            this.criacao.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblCriacao.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCriacao.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(34)))), ((int)(((byte)(6)))));
+            this.lblCriacao.Location = new System.Drawing.Point(10, 514);
+            this.lblCriacao.Name = "lblCriacao";
+            this.lblCriacao.Size = new System.Drawing.Size(580, 25);
+            this.lblCriacao.TabIndex = 5;
+            this.lblCriacao.Text = "Criação de:";
+            this.lblCriacao.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.criacao);
-            this.Controls.Add(this.chamada);
+            this.Controls.Add(this.lblCriacao);
+            this.Controls.Add(this.lblSlogan);
             this.Controls.Add(this.logoBox);
-            this.Controls.Add(this.vitoria);
-            this.Controls.Add(this.steffanie);
-            this.Controls.Add(this.raphael);
+            this.Controls.Add(this.lblVitoria);
+            this.Controls.Add(this.lblRaphael);
             this.Name = "Home";
             this.Padding = new System.Windows.Forms.Padding(10);
             this.Size = new System.Drawing.Size(600, 600);
@@ -124,11 +111,10 @@ namespace PetWorld.GUI.UserControls.Screens
 
         #endregion
 
-        private System.Windows.Forms.Label raphael;
-        private System.Windows.Forms.Label steffanie;
-        private System.Windows.Forms.Label vitoria;
+        private System.Windows.Forms.Label lblRaphael;
+        private System.Windows.Forms.Label lblVitoria;
         private System.Windows.Forms.PictureBox logoBox;
-        private System.Windows.Forms.Label chamada;
-        private System.Windows.Forms.Label criacao;
+        private System.Windows.Forms.Label lblSlogan;
+        private System.Windows.Forms.Label lblCriacao;
     }
 }

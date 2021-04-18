@@ -32,8 +32,8 @@ namespace PetWorld.GUI.UserControls.Tabs
         {
             this.screen = new PetWorld.GUI.UserControls.Screens.TabScreen();
             this.header = new System.Windows.Forms.Panel();
-            this.title = new System.Windows.Forms.Label();
-            this.btReturn = new System.Windows.Forms.Button();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.btnReturn = new System.Windows.Forms.Button();
             this.header.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,8 +49,8 @@ namespace PetWorld.GUI.UserControls.Tabs
             // 
             // header
             // 
-            this.header.Controls.Add(this.title);
-            this.header.Controls.Add(this.btReturn);
+            this.header.Controls.Add(this.lblTitle);
+            this.header.Controls.Add(this.btnReturn);
             this.header.Dock = System.Windows.Forms.DockStyle.Top;
             this.header.Location = new System.Drawing.Point(0, 0);
             this.header.Margin = new System.Windows.Forms.Padding(0);
@@ -59,48 +59,48 @@ namespace PetWorld.GUI.UserControls.Tabs
             this.header.Size = new System.Drawing.Size(600, 70);
             this.header.TabIndex = 6;
             // 
-            // title
+            // lblTitle
             // 
-            this.title.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.title.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.title.Location = new System.Drawing.Point(60, 10);
-            this.title.Margin = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.title.Name = "title";
-            this.title.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.title.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.title.Size = new System.Drawing.Size(530, 50);
-            this.title.TabIndex = 9;
-            this.title.Text = "Título";
-            this.title.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblTitle.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblTitle.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.Location = new System.Drawing.Point(60, 10);
+            this.lblTitle.Margin = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.lblTitle.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblTitle.Size = new System.Drawing.Size(530, 50);
+            this.lblTitle.TabIndex = 9;
+            this.lblTitle.Text = "Título";
+            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // btReturn
+            // btnReturn
             // 
-            this.btReturn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(164)))), ((int)(((byte)(0)))));
-            this.btReturn.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btReturn.Enabled = false;
-            this.btReturn.FlatAppearance.BorderSize = 0;
-            this.btReturn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(102)))), ((int)(((byte)(15)))));
-            this.btReturn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkOrange;
-            this.btReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btReturn.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btReturn.Image = global::PetWorld.Properties.Resources.Arrow_Left__Black_18px_;
-            this.btReturn.Location = new System.Drawing.Point(10, 10);
-            this.btReturn.Margin = new System.Windows.Forms.Padding(0);
-            this.btReturn.Name = "btReturn";
-            this.btReturn.Size = new System.Drawing.Size(50, 50);
-            this.btReturn.TabIndex = 8;
-            this.btReturn.UseVisualStyleBackColor = false;
+            this.btnReturn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(164)))), ((int)(((byte)(0)))));
+            this.btnReturn.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnReturn.Enabled = false;
+            this.btnReturn.FlatAppearance.BorderSize = 0;
+            this.btnReturn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(102)))), ((int)(((byte)(15)))));
+            this.btnReturn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkOrange;
+            this.btnReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReturn.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReturn.Image = global::PetWorld.Properties.Resources.Arrow_Left__Black_18px_;
+            this.btnReturn.Location = new System.Drawing.Point(10, 10);
+            this.btnReturn.Margin = new System.Windows.Forms.Padding(0);
+            this.btnReturn.Name = "btnReturn";
+            this.btnReturn.Size = new System.Drawing.Size(50, 50);
+            this.btnReturn.TabIndex = 8;
+            this.btnReturn.UseVisualStyleBackColor = false;
             // 
-            // Tab
+            // PaginatedTab
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(233)))), ((int)(((byte)(205)))));
             this.Controls.Add(this.header);
             this.Controls.Add(this.screen);
-            this.Margin = new System.Windows.Forms.Padding(0);
-            this.Name = "Tab";
-            this.Size = new System.Drawing.Size(600, 600);
+            this.Name = "PaginatedTab";
+            this.Controls.SetChildIndex(this.screen, 0);
+            this.Controls.SetChildIndex(this.header, 0);
             this.header.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -109,7 +109,7 @@ namespace PetWorld.GUI.UserControls.Tabs
         #endregion
         private TabScreen screen;
         private System.Windows.Forms.Panel header;
-        private System.Windows.Forms.Label title;
-        private System.Windows.Forms.Button btReturn;
+        private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.Button btnReturn;
     }
 }

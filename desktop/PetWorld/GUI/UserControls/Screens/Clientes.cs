@@ -18,10 +18,10 @@ namespace PetWorld.GUI.UserControls.Screens
 
         private void Add(object sender, EventArgs e)
         {
-            Main.Instance.Clients(new ClientesForm());
+            Main.Instance.Clients(new ClienteForm());
         }
 
-        public override void Reload(object sender, EventArgs e)
+        protected override void Reload(object sender, EventArgs e)
         {
             elements.Clear();
 
@@ -35,7 +35,7 @@ namespace PetWorld.GUI.UserControls.Screens
                 display.DetailsButtonClick += (cliente) =>
                     Main.Instance.Clients(new ClienteDetails(cliente));
                 display.EditButtonClick += (cliente) =>
-                    Main.Instance.Clients(new ClientesForm(cliente));
+                    Main.Instance.Clients(new ClienteForm(cliente));
                 display.DeleteButtonClick += (cliente) =>
                 {
                     var result = MessageBox.Show("Deseja deletar " + cliente.Nome + "?", "Deletar Cliente", MessageBoxButtons.OKCancel);

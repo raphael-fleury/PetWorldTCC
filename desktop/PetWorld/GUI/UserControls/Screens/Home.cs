@@ -1,4 +1,6 @@
-﻿namespace PetWorld.GUI.UserControls.Screens
+﻿using PetWorld.GUI.UserControls.Tabs;
+
+namespace PetWorld.GUI.UserControls.Screens
 {
     public partial class Home : TabScreen
     {

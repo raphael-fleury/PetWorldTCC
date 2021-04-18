@@ -1,6 +1,6 @@
 ﻿namespace PetWorld.GUI.UserControls.Screens
 {
-    partial class ClientesForm
+    partial class ClienteForm
     {
         /// <summary> 
         /// Variável de designer necessária.
@@ -30,16 +30,16 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.title = new System.Windows.Forms.Label();
-            this.btReturn = new System.Windows.Forms.Button();
-            this.btDone = new System.Windows.Forms.Button();
+            this.btnReturn = new System.Windows.Forms.Button();
+            this.btnDone = new System.Windows.Forms.Button();
             this.formPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.txtCPF = new System.Windows.Forms.MaskedTextBox();
             this.txtTelefone = new System.Windows.Forms.MaskedTextBox();
             this.labelsPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.lbNome = new System.Windows.Forms.Label();
-            this.lbCPF = new System.Windows.Forms.Label();
-            this.lbTelefone = new System.Windows.Forms.Label();
+            this.lblNome = new System.Windows.Forms.Label();
+            this.lblCPF = new System.Windows.Forms.Label();
+            this.lblTelefone = new System.Windows.Forms.Label();
             this.enderecoForm = new PetWorld.GUI.UserControls.Components.EnderecoForm();
             this.panel1.SuspendLayout();
             this.formPanel.SuspendLayout();
@@ -49,8 +49,8 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.title);
-            this.panel1.Controls.Add(this.btReturn);
-            this.panel1.Controls.Add(this.btDone);
+            this.panel1.Controls.Add(this.btnReturn);
+            this.panel1.Controls.Add(this.btnDone);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(10, 10);
             this.panel1.Name = "panel1";
@@ -71,41 +71,41 @@
             this.title.Text = "Adicionar Cliente";
             this.title.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // btReturn
+            // btnReturn
             // 
-            this.btReturn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(164)))), ((int)(((byte)(0)))));
-            this.btReturn.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btReturn.FlatAppearance.BorderSize = 0;
-            this.btReturn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(102)))), ((int)(((byte)(15)))));
-            this.btReturn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkOrange;
-            this.btReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btReturn.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btReturn.Image = global::PetWorld.Properties.Resources.Arrow_Left__Black_18px_;
-            this.btReturn.Location = new System.Drawing.Point(0, 0);
-            this.btReturn.Margin = new System.Windows.Forms.Padding(0);
-            this.btReturn.Name = "btReturn";
-            this.btReturn.Size = new System.Drawing.Size(50, 50);
-            this.btReturn.TabIndex = 8;
-            this.btReturn.UseVisualStyleBackColor = false;
-            this.btReturn.Click += new System.EventHandler(this.Return);
+            this.btnReturn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(164)))), ((int)(((byte)(0)))));
+            this.btnReturn.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnReturn.FlatAppearance.BorderSize = 0;
+            this.btnReturn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(102)))), ((int)(((byte)(15)))));
+            this.btnReturn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkOrange;
+            this.btnReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReturn.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReturn.Image = global::PetWorld.Properties.Resources.Arrow_Left__Black_18px_;
+            this.btnReturn.Location = new System.Drawing.Point(0, 0);
+            this.btnReturn.Margin = new System.Windows.Forms.Padding(0);
+            this.btnReturn.Name = "btnReturn";
+            this.btnReturn.Size = new System.Drawing.Size(50, 50);
+            this.btnReturn.TabIndex = 8;
+            this.btnReturn.UseVisualStyleBackColor = false;
+            this.btnReturn.Click += new System.EventHandler(this.Return);
             // 
-            // btDone
+            // btnDone
             // 
-            this.btDone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(164)))), ((int)(((byte)(0)))));
-            this.btDone.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btDone.FlatAppearance.BorderSize = 0;
-            this.btDone.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(102)))), ((int)(((byte)(15)))));
-            this.btDone.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkOrange;
-            this.btDone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btDone.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btDone.Image = global::PetWorld.Properties.Resources.Done__Black_18px_;
-            this.btDone.Location = new System.Drawing.Point(536, 0);
-            this.btDone.Margin = new System.Windows.Forms.Padding(0);
-            this.btDone.Name = "btDone";
-            this.btDone.Size = new System.Drawing.Size(50, 50);
-            this.btDone.TabIndex = 10;
-            this.btDone.UseVisualStyleBackColor = false;
-            this.btDone.Click += new System.EventHandler(this.Done);
+            this.btnDone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(164)))), ((int)(((byte)(0)))));
+            this.btnDone.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnDone.FlatAppearance.BorderSize = 0;
+            this.btnDone.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(102)))), ((int)(((byte)(15)))));
+            this.btnDone.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkOrange;
+            this.btnDone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDone.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDone.Image = global::PetWorld.Properties.Resources.Done__Black_18px_;
+            this.btnDone.Location = new System.Drawing.Point(536, 0);
+            this.btnDone.Margin = new System.Windows.Forms.Padding(0);
+            this.btnDone.Name = "btnDone";
+            this.btnDone.Size = new System.Drawing.Size(50, 50);
+            this.btnDone.TabIndex = 10;
+            this.btnDone.UseVisualStyleBackColor = false;
+            this.btnDone.Click += new System.EventHandler(this.Done);
             // 
             // formPanel
             // 
@@ -147,9 +147,9 @@
             // 
             // labelsPanel
             // 
-            this.labelsPanel.Controls.Add(this.lbNome);
-            this.labelsPanel.Controls.Add(this.lbCPF);
-            this.labelsPanel.Controls.Add(this.lbTelefone);
+            this.labelsPanel.Controls.Add(this.lblNome);
+            this.labelsPanel.Controls.Add(this.lblCPF);
+            this.labelsPanel.Controls.Add(this.lblTelefone);
             this.labelsPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.labelsPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.labelsPanel.Location = new System.Drawing.Point(10, 60);
@@ -157,38 +157,38 @@
             this.labelsPanel.Size = new System.Drawing.Size(100, 111);
             this.labelsPanel.TabIndex = 4;
             // 
-            // lbNome
+            // lblNome
             // 
-            this.lbNome.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNome.Location = new System.Drawing.Point(0, 10);
-            this.lbNome.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.lbNome.Name = "lbNome";
-            this.lbNome.Size = new System.Drawing.Size(100, 20);
-            this.lbNome.TabIndex = 2;
-            this.lbNome.Text = "Nome*";
-            this.lbNome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblNome.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNome.Location = new System.Drawing.Point(0, 10);
+            this.lblNome.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.lblNome.Name = "lblNome";
+            this.lblNome.Size = new System.Drawing.Size(100, 20);
+            this.lblNome.TabIndex = 2;
+            this.lblNome.Text = "Nome*";
+            this.lblNome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // lbCPF
+            // lblCPF
             // 
-            this.lbCPF.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCPF.Location = new System.Drawing.Point(0, 40);
-            this.lbCPF.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.lbCPF.Name = "lbCPF";
-            this.lbCPF.Size = new System.Drawing.Size(100, 20);
-            this.lbCPF.TabIndex = 3;
-            this.lbCPF.Text = "CPF:";
-            this.lbCPF.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblCPF.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCPF.Location = new System.Drawing.Point(0, 40);
+            this.lblCPF.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.lblCPF.Name = "lblCPF";
+            this.lblCPF.Size = new System.Drawing.Size(100, 20);
+            this.lblCPF.TabIndex = 3;
+            this.lblCPF.Text = "CPF:";
+            this.lblCPF.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // lbTelefone
+            // lblTelefone
             // 
-            this.lbTelefone.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTelefone.Location = new System.Drawing.Point(0, 70);
-            this.lbTelefone.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.lbTelefone.Name = "lbTelefone";
-            this.lbTelefone.Size = new System.Drawing.Size(100, 20);
-            this.lbTelefone.TabIndex = 4;
-            this.lbTelefone.Text = "Telefone*";
-            this.lbTelefone.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblTelefone.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTelefone.Location = new System.Drawing.Point(0, 70);
+            this.lblTelefone.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.lblTelefone.Name = "lblTelefone";
+            this.lblTelefone.Size = new System.Drawing.Size(100, 20);
+            this.lblTelefone.TabIndex = 4;
+            this.lblTelefone.Text = "Telefone*";
+            this.lblTelefone.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // enderecoForm
             // 
@@ -225,12 +225,12 @@
         private System.Windows.Forms.FlowLayoutPanel formPanel;
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.FlowLayoutPanel labelsPanel;
-        private System.Windows.Forms.Label lbNome;
-        private System.Windows.Forms.Label lbCPF;
-        private System.Windows.Forms.Label lbTelefone;
+        private System.Windows.Forms.Label lblNome;
+        private System.Windows.Forms.Label lblCPF;
+        private System.Windows.Forms.Label lblTelefone;
         private System.Windows.Forms.Label title;
-        private System.Windows.Forms.Button btReturn;
-        private System.Windows.Forms.Button btDone;
+        private System.Windows.Forms.Button btnReturn;
+        private System.Windows.Forms.Button btnDone;
         private System.Windows.Forms.MaskedTextBox txtCPF;
         private System.Windows.Forms.MaskedTextBox txtTelefone;
         private Components.EnderecoForm enderecoForm;

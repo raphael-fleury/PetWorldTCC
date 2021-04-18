@@ -30,8 +30,8 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.title = new System.Windows.Forms.Label();
-            this.btReturn = new System.Windows.Forms.Button();
-            this.btDone = new System.Windows.Forms.Button();
+            this.btnReturn = new System.Windows.Forms.Button();
+            this.btnDone = new System.Windows.Forms.Button();
             this.formPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.txtEspecie = new System.Windows.Forms.TextBox();
@@ -39,8 +39,8 @@
             this.rbsSexo = new System.Windows.Forms.FlowLayoutPanel();
             this.rbMasculino = new System.Windows.Forms.RadioButton();
             this.rbFeminino = new System.Windows.Forms.RadioButton();
-            this.cbCastrado = new System.Windows.Forms.CheckBox();
-            this.btEscolherCliente = new System.Windows.Forms.Button();
+            this.chkCastrado = new System.Windows.Forms.CheckBox();
+            this.btnEscolherCliente = new System.Windows.Forms.Button();
             this.labelsPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.lblNome = new System.Windows.Forms.Label();
             this.lblEspecie = new System.Windows.Forms.Label();
@@ -57,8 +57,8 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.title);
-            this.panel1.Controls.Add(this.btReturn);
-            this.panel1.Controls.Add(this.btDone);
+            this.panel1.Controls.Add(this.btnReturn);
+            this.panel1.Controls.Add(this.btnDone);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(10, 10);
             this.panel1.Name = "panel1";
@@ -79,41 +79,41 @@
             this.title.Text = "Adicionar Pet";
             this.title.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // btReturn
+            // btnReturn
             // 
-            this.btReturn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(164)))), ((int)(((byte)(0)))));
-            this.btReturn.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btReturn.FlatAppearance.BorderSize = 0;
-            this.btReturn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(102)))), ((int)(((byte)(15)))));
-            this.btReturn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkOrange;
-            this.btReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btReturn.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btReturn.Image = global::PetWorld.Properties.Resources.Arrow_Left__Black_18px_;
-            this.btReturn.Location = new System.Drawing.Point(0, 0);
-            this.btReturn.Margin = new System.Windows.Forms.Padding(0);
-            this.btReturn.Name = "btReturn";
-            this.btReturn.Size = new System.Drawing.Size(50, 50);
-            this.btReturn.TabIndex = 8;
-            this.btReturn.UseVisualStyleBackColor = false;
-            this.btReturn.Click += new System.EventHandler(this.Return);
+            this.btnReturn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(164)))), ((int)(((byte)(0)))));
+            this.btnReturn.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnReturn.FlatAppearance.BorderSize = 0;
+            this.btnReturn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(102)))), ((int)(((byte)(15)))));
+            this.btnReturn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkOrange;
+            this.btnReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReturn.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReturn.Image = global::PetWorld.Properties.Resources.Arrow_Left__Black_18px_;
+            this.btnReturn.Location = new System.Drawing.Point(0, 0);
+            this.btnReturn.Margin = new System.Windows.Forms.Padding(0);
+            this.btnReturn.Name = "btnReturn";
+            this.btnReturn.Size = new System.Drawing.Size(50, 50);
+            this.btnReturn.TabIndex = 8;
+            this.btnReturn.UseVisualStyleBackColor = false;
+            this.btnReturn.Click += new System.EventHandler(this.Return);
             // 
-            // btDone
+            // btnDone
             // 
-            this.btDone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(164)))), ((int)(((byte)(0)))));
-            this.btDone.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btDone.FlatAppearance.BorderSize = 0;
-            this.btDone.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(102)))), ((int)(((byte)(15)))));
-            this.btDone.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkOrange;
-            this.btDone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btDone.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btDone.Image = global::PetWorld.Properties.Resources.Done__Black_18px_;
-            this.btDone.Location = new System.Drawing.Point(530, 0);
-            this.btDone.Margin = new System.Windows.Forms.Padding(0);
-            this.btDone.Name = "btDone";
-            this.btDone.Size = new System.Drawing.Size(50, 50);
-            this.btDone.TabIndex = 10;
-            this.btDone.UseVisualStyleBackColor = false;
-            this.btDone.Click += new System.EventHandler(this.Done);
+            this.btnDone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(164)))), ((int)(((byte)(0)))));
+            this.btnDone.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnDone.FlatAppearance.BorderSize = 0;
+            this.btnDone.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(102)))), ((int)(((byte)(15)))));
+            this.btnDone.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkOrange;
+            this.btnDone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDone.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDone.Image = global::PetWorld.Properties.Resources.Done__Black_18px_;
+            this.btnDone.Location = new System.Drawing.Point(530, 0);
+            this.btnDone.Margin = new System.Windows.Forms.Padding(0);
+            this.btnDone.Name = "btnDone";
+            this.btnDone.Size = new System.Drawing.Size(50, 50);
+            this.btnDone.TabIndex = 10;
+            this.btnDone.UseVisualStyleBackColor = false;
+            this.btnDone.Click += new System.EventHandler(this.Done);
             // 
             // formPanel
             // 
@@ -121,8 +121,8 @@
             this.formPanel.Controls.Add(this.txtEspecie);
             this.formPanel.Controls.Add(this.txtRaca);
             this.formPanel.Controls.Add(this.rbsSexo);
-            this.formPanel.Controls.Add(this.cbCastrado);
-            this.formPanel.Controls.Add(this.btEscolherCliente);
+            this.formPanel.Controls.Add(this.chkCastrado);
+            this.formPanel.Controls.Add(this.btnEscolherCliente);
             this.formPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.formPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.formPanel.Location = new System.Drawing.Point(110, 60);
@@ -187,25 +187,25 @@
             this.rbFeminino.Text = "Feminino";
             this.rbFeminino.UseVisualStyleBackColor = true;
             // 
-            // cbCastrado
+            // chkCastrado
             // 
-            this.cbCastrado.AutoSize = true;
-            this.cbCastrado.Location = new System.Drawing.Point(3, 134);
-            this.cbCastrado.Margin = new System.Windows.Forms.Padding(3, 14, 0, 0);
-            this.cbCastrado.Name = "cbCastrado";
-            this.cbCastrado.Size = new System.Drawing.Size(15, 14);
-            this.cbCastrado.TabIndex = 4;
-            this.cbCastrado.UseVisualStyleBackColor = true;
+            this.chkCastrado.AutoSize = true;
+            this.chkCastrado.Location = new System.Drawing.Point(3, 134);
+            this.chkCastrado.Margin = new System.Windows.Forms.Padding(3, 14, 0, 0);
+            this.chkCastrado.Name = "chkCastrado";
+            this.chkCastrado.Size = new System.Drawing.Size(15, 14);
+            this.chkCastrado.TabIndex = 4;
+            this.chkCastrado.UseVisualStyleBackColor = true;
             // 
-            // btEscolherCliente
+            // btnEscolherCliente
             // 
-            this.btEscolherCliente.Location = new System.Drawing.Point(0, 158);
-            this.btEscolherCliente.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.btEscolherCliente.Name = "btEscolherCliente";
-            this.btEscolherCliente.Size = new System.Drawing.Size(75, 25);
-            this.btEscolherCliente.TabIndex = 5;
-            this.btEscolherCliente.Text = "Escolher...";
-            this.btEscolherCliente.UseVisualStyleBackColor = true;
+            this.btnEscolherCliente.Location = new System.Drawing.Point(0, 158);
+            this.btnEscolherCliente.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.btnEscolherCliente.Name = "btnEscolherCliente";
+            this.btnEscolherCliente.Size = new System.Drawing.Size(75, 25);
+            this.btnEscolherCliente.TabIndex = 5;
+            this.btnEscolherCliente.Text = "Escolher...";
+            this.btnEscolherCliente.UseVisualStyleBackColor = true;
             // 
             // labelsPanel
             // 
@@ -319,8 +319,8 @@
         private System.Windows.Forms.FlowLayoutPanel rbsSexo;
         private System.Windows.Forms.RadioButton rbMasculino;
         private System.Windows.Forms.RadioButton rbFeminino;
-        private System.Windows.Forms.CheckBox cbCastrado;
-        private System.Windows.Forms.Button btEscolherCliente;
+        private System.Windows.Forms.CheckBox chkCastrado;
+        private System.Windows.Forms.Button btnEscolherCliente;
         private System.Windows.Forms.FlowLayoutPanel labelsPanel;
         private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.Label lblEspecie;
@@ -329,7 +329,7 @@
         private System.Windows.Forms.Label lblCastrado;
         private System.Windows.Forms.Label lblResponsavel;
         private System.Windows.Forms.Label title;
-        private System.Windows.Forms.Button btReturn;
-        private System.Windows.Forms.Button btDone;
+        private System.Windows.Forms.Button btnReturn;
+        private System.Windows.Forms.Button btnDone;
     }
 }
