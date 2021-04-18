@@ -1,30 +1,22 @@
-﻿using System;
-using System.Drawing;
+﻿using System.Drawing;
 using System.Windows.Forms;
 
 namespace PetWorld.GUI.UserControls.Components
 {
-    public class SidebarButton : RadioButton
+    class SidebarButton : RadioButton
     {
         private Color defaultForeColor;
 
-        public SidebarButton() : base() { }
-
-        public SidebarButton(string text, Action onClickAction) : this()
+        public SidebarButton() : base()
         {
-            Text = text;
             defaultForeColor = ForeColor;
 
-            CheckedChanged += (sender, args) =>
-            {
-                Enabled = !Checked;
+            ConfigureEvents();
+        }
 
-                if (Checked)
-                    onClickAction();
-            };
-
-            EnabledChanged += (x, y) =>
-                    ForeColor = Checked ? Color.White : defaultForeColor;
+        private void ConfigureEvents()
+        {
+            EnabledChanged += (x, y) => ForeColor = Checked ? Color.White : defaultForeColor;
 
             Paint += (sender, e) =>
             {
