@@ -10,11 +10,9 @@ import javax.persistence.ManyToOne;
 
 import com.petworld.restapi.entities.enums.Sexo;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
-@Entity @Getter @Setter @AllArgsConstructor
+@Entity @Data
 public class Pet {
     
     @ManyToOne

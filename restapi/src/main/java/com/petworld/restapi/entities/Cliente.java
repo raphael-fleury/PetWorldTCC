@@ -9,11 +9,9 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
-@Entity @Getter @Setter @AllArgsConstructor
+@Entity @Data
 public class Cliente {
     
     @ManyToOne
