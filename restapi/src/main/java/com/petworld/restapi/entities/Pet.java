@@ -17,6 +17,7 @@ import lombok.Setter;
 @Entity @Getter @Setter @AllArgsConstructor
 public class Pet {
     
+    @ManyToOne
     private Clinica clinica;
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
