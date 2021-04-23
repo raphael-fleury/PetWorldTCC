@@ -9,9 +9,12 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity @Data
+@NoArgsConstructor @AllArgsConstructor
 public class Cliente {
     
     @ManyToOne
@@ -26,4 +29,11 @@ public class Cliente {
 
     @OneToMany(mappedBy = "dono")
     private List<Pet> pets;
+
+    public Cliente(String nome, String email, String endereco, String telefone) {
+        this.nome = nome;
+        this.email = email;
+        this.endereco = endereco;
+        this.telefone = telefone;
+    }
 }

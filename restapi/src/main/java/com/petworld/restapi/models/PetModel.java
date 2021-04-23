@@ -25,7 +25,7 @@ public class PetModel {
         castrado = entity.getCastrado();
         sexo = entity.getSexo();
         dono = new ClienteModel(entity.getDono());
-        dono.setPets(null);
+        //dono.setPets(null);
     }
 
     public static List<PetModel> list(List<Pet> entities) {

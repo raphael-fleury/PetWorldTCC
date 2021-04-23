@@ -10,9 +10,12 @@ import javax.persistence.ManyToOne;
 
 import com.petworld.restapi.entities.enums.Sexo;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity @Data
+@NoArgsConstructor @AllArgsConstructor
 public class Pet {
     
     @ManyToOne
@@ -30,4 +33,13 @@ public class Pet {
 
     @ManyToOne
     private Cliente dono;
+
+    public Pet(String nome, String especie, String raca, Boolean castrado, Sexo sexo, Cliente dono) {
+        this.nome = nome;
+        this.especie = especie;
+        this.raca = raca;
+        this.castrado = castrado;
+        this.sexo = sexo;
+        this.dono = dono;
+    }
 }

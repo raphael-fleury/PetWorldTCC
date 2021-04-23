@@ -14,7 +14,7 @@ public class ClienteModel {
     private String email;
     private String endereco;
     private String telefone;
-    private List<PetModel> pets;
+    //private List<PetModel> pets;
 
     public ClienteModel(Cliente entity) {
         nome = entity.getNome();
