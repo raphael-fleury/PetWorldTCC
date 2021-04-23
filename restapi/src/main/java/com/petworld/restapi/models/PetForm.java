@@ -1,5 +1,9 @@
 package com.petworld.restapi.models;
 
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
 import com.petworld.restapi.entities.Cliente;
 import com.petworld.restapi.entities.Pet;
 import com.petworld.restapi.entities.enums.Sexo;
@@ -11,11 +15,18 @@ import lombok.Setter;
 @Getter @Setter
 public class PetForm {
     
+    @NotBlank
     private String nome;
+
+    @NotBlank
     private String especie;
     private String raca;
     private Boolean castrado;
+
+    @NotNull
     private Sexo sexo;
+
+    @NotNull @Min(1)
     private Long donoId;
 
     public Pet toEntity(ClientesRepository clientesRepository) {

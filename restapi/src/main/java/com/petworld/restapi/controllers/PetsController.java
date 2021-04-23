@@ -3,6 +3,8 @@ package com.petworld.restapi.controllers;
 import java.net.URI;
 import java.util.List;
 
+import javax.validation.Valid;
+
 import com.petworld.restapi.entities.Pet;
 import com.petworld.restapi.models.PetForm;
 import com.petworld.restapi.models.PetModel;
@@ -22,6 +24,8 @@ import org.springframework.web.util.UriComponentsBuilder;
 @RequestMapping("/pets")
 public class PetsController {
 
+    private final Long CLINICA_ID = 1L;
+
     @Autowired
     private PetsRepository repository;
 
@@ -29,12 +33,12 @@ public class PetsController {
     private ClientesRepository clientesRepository;
 
     @GetMapping
-    public List<PetModel> getAll(Long clinicaId) {
-        return PetModel.list(repository.findByClinicaId(clinicaId));
+    public List<PetModel> getAll() {
+        return PetModel.list(repository.findByClinicaId(CLINICA_ID));
     }
 
     @PostMapping
-    public ResponseEntity<PetModel> post(@RequestBody PetForm form, UriComponentsBuilder uriBuilder) {
+    public ResponseEntity<PetModel> post(@RequestBody @Valid PetForm form, UriComponentsBuilder uriBuilder) {
         Pet pet = repository.save(form.toEntity(clientesRepository));
 
         URI uri = uriBuilder.path("/pets/{id}").buildAndExpand(pet.getId()).toUri();
