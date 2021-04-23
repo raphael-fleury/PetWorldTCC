@@ -1,4 +1,4 @@
-package com.petworld.restapi.models;
+package com.petworld.restapi.models.response;
 
 import java.util.List;
 
@@ -9,26 +9,23 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Getter @Setter
-public class PetModel {
+public class PetResponse {
 
     private String nome;
     private String especie;
     private String raca;
     private Boolean castrado;
     private Sexo sexo;
-    private ClienteModel dono;
 
-    public PetModel(Pet entity) {
+    public PetResponse(Pet entity) {
         nome = entity.getNome();
         especie = entity.getEspecie();
         raca = entity.getRaca();
         castrado = entity.getCastrado();
         sexo = entity.getSexo();
-        dono = new ClienteModel(entity.getDono());
-        //dono.setPets(null);
     }
 
-    public static List<PetModel> list(List<Pet> entities) {
-        return entities.stream().map(e -> new PetModel(e)).toList();
+    public static List<PetResponse> list(List<Pet> entities) {
+        return entities.stream().map(e -> new PetResponse(e)).toList();
     }
 }

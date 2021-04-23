@@ -1,4 +1,4 @@
-package com.petworld.restapi.models;
+package com.petworld.restapi.models.insert;
 
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
@@ -13,7 +13,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Getter @Setter
-public class PetForm {
+public class PetInsert {
     
     @NotBlank
     private String nome;
