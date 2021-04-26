@@ -4,6 +4,8 @@ import java.util.List;
 
 import com.petworld.restapi.entities.Cliente;
 
+import org.springframework.data.domain.Page;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -24,5 +26,10 @@ public class ClienteResponse {
 
     public static List<ClienteResponse> list(List<Cliente> entities) {
         return entities.stream().map(e -> new ClienteResponse(e)).toList();
+    }
+
+    public static Page<ClienteResponse> page(Page<Cliente> page) {
+        System.out.println(page.getContent().size());
+        return page.map(ClienteResponse::new);
     }
 }

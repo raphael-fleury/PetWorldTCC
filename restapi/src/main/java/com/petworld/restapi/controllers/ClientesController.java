@@ -1,7 +1,6 @@
 package com.petworld.restapi.controllers;
 
 import java.net.URI;
-import java.util.List;
 
 import javax.transaction.Transactional;
 import javax.validation.Valid;
@@ -16,7 +15,8 @@ import com.petworld.restapi.repositories.ClientesRepository;
 import com.petworld.restapi.repositories.ClinicasRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -41,8 +41,8 @@ public class ClientesController {
     private ClinicasRepository clinicasRepository;
 
     @GetMapping
-    public List<ClienteResponse> getAll() {
-        return ClienteResponse.list(repository.findByClinicaId(CLINICA_ID));
+    public Page<ClienteResponse> getAll(Pageable pageable) {
+        return ClienteResponse.page(repository.findByClinicaId(CLINICA_ID, pageable));
     }
 
     @GetMapping("/{id}")
