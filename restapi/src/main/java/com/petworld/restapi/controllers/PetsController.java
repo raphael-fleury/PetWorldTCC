@@ -1,10 +1,10 @@
 package com.petworld.restapi.controllers;
 
 import java.net.URI;
+import java.util.NoSuchElementException;
 
 import javax.transaction.Transactional;
 import javax.validation.Valid;
-import javax.validation.constraints.Min;
 
 import com.petworld.restapi.entities.Clinica;
 import com.petworld.restapi.entities.Pet;
@@ -17,8 +17,9 @@ import com.petworld.restapi.repositories.ClinicasRepository;
 import com.petworld.restapi.repositories.PetsRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -28,7 +29,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
@@ -48,6 +48,7 @@ public class PetsController {
     private ClinicasRepository clinicasRepository;
 
     @GetMapping
+    @Cacheable(value = "getPets")
     public Page<PetResponse> getAll(Pageable pageable) {
         return PetResponse.page(repository.findByClinicaId(CLINICA_ID, pageable));
     }
@@ -63,9 +64,17 @@ public class PetsController {
     }
 
     @PostMapping @Transactional
-    public ResponseEntity<PetResponse> post(@RequestBody @Valid PetInsert form, UriComponentsBuilder uriBuilder) {
-        Pet pet = repository.save(form.toEntity(clientesRepository));
-        Clinica clinica = clinicasRepository.findById(CLINICA_ID).get();
+    @CacheEvict(value = "getPets", allEntries = true)
+    public ResponseEntity<?> post(@RequestBody @Valid PetInsert form, UriComponentsBuilder uriBuilder) {
+        Pet pet; Clinica clinica;
+        
+        try {
+            pet = repository.save(form.toEntity(clientesRepository));
+            clinica = clinicasRepository.findById(CLINICA_ID).get();
+        }
+        catch (NoSuchElementException exception) {
+            return ResponseEntity.notFound().build();
+        }        
 
         pet.setClinica(clinica);
 
@@ -74,6 +83,7 @@ public class PetsController {
     }
 
     @PutMapping("/{id}") @Transactional
+    @CacheEvict(value = "getPets", allEntries = true)
     public ResponseEntity<PetResponse> put(@PathVariable Long id, @RequestBody @Valid PetUpdate form) {
         Pet pet = findByIdAndClinica(id, CLINICA_ID);
 
@@ -84,6 +94,7 @@ public class PetsController {
     }
 
     @DeleteMapping("/{id}") @Transactional
+    @CacheEvict(value = "getPets", allEntries = true)
     public ResponseEntity<?> delete(@PathVariable Long id) {
         Pet pet = findByIdAndClinica(id, CLINICA_ID);
 

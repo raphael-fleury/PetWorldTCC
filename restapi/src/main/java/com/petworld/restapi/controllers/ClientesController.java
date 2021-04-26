@@ -15,6 +15,8 @@ import com.petworld.restapi.repositories.ClientesRepository;
 import com.petworld.restapi.repositories.ClinicasRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
@@ -41,6 +43,7 @@ public class ClientesController {
     private ClinicasRepository clinicasRepository;
 
     @GetMapping
+    @Cacheable(value = "getClientes")
     public Page<ClienteResponse> getAll(Pageable pageable) {
         return ClienteResponse.page(repository.findByClinicaId(CLINICA_ID, pageable));
     }
@@ -56,6 +59,7 @@ public class ClientesController {
     }
 
     @PostMapping @Transactional
+    @CacheEvict(value = "getClientes", allEntries = true)
     public ResponseEntity<ClienteResponse> post(@RequestBody @Valid ClienteInsert form, UriComponentsBuilder uriBuilder) {
         Cliente cliente = repository.save(form.toEntity());
         Clinica clinica = clinicasRepository.findById(CLINICA_ID).get();
@@ -67,6 +71,7 @@ public class ClientesController {
     }
 
     @PutMapping("/{id}") @Transactional
+    @CacheEvict(value = "getClientes", allEntries = true)
     public ResponseEntity<ClienteResponse> put(@PathVariable Long id, @RequestBody @Valid ClienteUpdate form) {
         Cliente cliente = findByIdAndClinica(id, CLINICA_ID);
 
@@ -77,6 +82,7 @@ public class ClientesController {
     }
 
     @DeleteMapping("/{id}") @Transactional
+    @CacheEvict(value = "getClientes", allEntries = true)
     public ResponseEntity<?> delete(@PathVariable Long id) {
         Cliente cliente = findByIdAndClinica(id, CLINICA_ID);
         

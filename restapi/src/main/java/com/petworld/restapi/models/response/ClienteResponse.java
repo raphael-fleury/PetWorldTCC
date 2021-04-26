@@ -29,7 +29,6 @@ public class ClienteResponse {
     }
 
     public static Page<ClienteResponse> page(Page<Cliente> page) {
-        System.out.println(page.getContent().size());
         return page.map(ClienteResponse::new);
     }
 }

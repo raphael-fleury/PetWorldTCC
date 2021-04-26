@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.context.i18n.LocaleContextHolder;
-import org.springframework.data.mapping.PropertyReferenceException;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -23,8 +22,8 @@ public class ErrorHandler {
     @ResponseStatus(code = HttpStatus.INTERNAL_SERVER_ERROR)
     @ExceptionHandler(Exception.class)
     public String handle(Exception exception) {
-        return exception.getMessage();
-        //return "Unexpected error.";
+        //return exception.getMessage();
+        return "Unexpected error.";
     }
 
     @ResponseStatus(code = HttpStatus.BAD_REQUEST)
