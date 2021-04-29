@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <pw-header></pw-header>
     <h1>{{ msg }}</h1>
     <h2>Essential Links</h2>
     <ul>
@@ -20,8 +20,14 @@
 </template>
 
 <script>
+import Header from './components/Header';
+
 export default {
-  name: 'app',
+
+  components: {
+    'pw-header': Header
+  },
+  
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
@@ -37,7 +43,10 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+
+body {
+  margin: 0px;
 }
 
 h1, h2 {
