@@ -49,8 +49,8 @@ public class PetsController {
 
     @GetMapping
     @Cacheable(value = "getPets")
-    public Page<PetResponse> getAll(Pageable pageable) {
-        return PetResponse.page(repository.findByClinicaId(CLINICA_ID, pageable));
+    public Page<PetDetailed> getAll(Pageable pageable) {
+        return PetDetailed.page(repository.findByClinicaId(CLINICA_ID, pageable));
     }
 
     @GetMapping("/{id}")

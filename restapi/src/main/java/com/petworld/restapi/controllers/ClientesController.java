@@ -44,8 +44,8 @@ public class ClientesController {
 
     @GetMapping
     @Cacheable(value = "getClientes")
-    public Page<ClienteResponse> getAll(Pageable pageable) {
-        return ClienteResponse.page(repository.findByClinicaId(CLINICA_ID, pageable));
+    public Page<ClienteDetailed> getAll(Pageable pageable) {
+        return ClienteDetailed.page(repository.findByClinicaId(CLINICA_ID, pageable));
     }
 
     @GetMapping("/{id}")

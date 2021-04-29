@@ -5,6 +5,8 @@ import java.util.List;
 import com.petworld.restapi.entities.Cliente;
 import com.petworld.restapi.models.response.PetResponse;
 
+import org.springframework.data.domain.Page;
+
 import lombok.Getter;
 
 @Getter
@@ -28,5 +30,9 @@ public class ClienteDetailed {
 
     public static List<ClienteDetailed> list(List<Cliente> entities) {
         return entities.stream().map(e -> new ClienteDetailed(e)).toList();
+    }
+
+    public static Page<ClienteDetailed> page(Page<Cliente> page) {
+        return page.map(ClienteDetailed::new);
     }
 }

@@ -6,6 +6,8 @@ import com.petworld.restapi.entities.Pet;
 import com.petworld.restapi.entities.enums.Sexo;
 import com.petworld.restapi.models.response.ClienteResponse;
 
+import org.springframework.data.domain.Page;
+
 import lombok.Getter;
 
 @Getter
@@ -31,5 +33,9 @@ public class PetDetailed {
 
     public static List<PetDetailed> list(List<Pet> entities) {
         return entities.stream().map(e -> new PetDetailed(e)).toList();
+    }
+
+    public static Page<PetDetailed> page(Page<Pet> page) {
+        return page.map(PetDetailed::new);
     }
 }
