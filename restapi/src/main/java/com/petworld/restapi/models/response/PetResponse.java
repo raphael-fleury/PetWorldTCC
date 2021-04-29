@@ -13,6 +13,7 @@ import lombok.Setter;
 @Getter @Setter
 public class PetResponse {
 
+    private Long id;
     private String nome;
     private String especie;
     private String raca;
@@ -20,6 +21,7 @@ public class PetResponse {
     private Sexo sexo;
 
     public PetResponse(Pet entity) {
+        id = entity.getId();
         nome = entity.getNome();
         especie = entity.getEspecie();
         raca = entity.getRaca();

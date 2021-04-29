@@ -11,6 +11,7 @@ import lombok.Getter;
 @Getter
 public class PetDetailed {
     
+    private Long id;
     private String nome;
     private String especie;
     private String raca;
@@ -19,6 +20,7 @@ public class PetDetailed {
     private ClienteResponse dono;
 
     public PetDetailed(Pet entity) {
+        id = entity.getId();
         nome = entity.getNome();
         especie = entity.getEspecie();
         raca = entity.getRaca();

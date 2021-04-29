@@ -10,6 +10,7 @@ import lombok.Getter;
 @Getter
 public class ClienteDetailed {
     
+    private Long id;
     private String nome;
     private String email;
     private String endereco;
@@ -17,6 +18,7 @@ public class ClienteDetailed {
     private List<PetResponse> pets;
 
     public ClienteDetailed(Cliente entity) {
+        id = entity.getId();
         nome = entity.getNome();
         email = entity.getEmail();
         endereco = entity.getEndereco();

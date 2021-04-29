@@ -12,12 +12,14 @@ import lombok.Setter;
 @Getter @Setter
 public class ClienteResponse {
     
+    private Long id;
     private String nome;
     private String email;
     private String endereco;
     private String telefone;
 
     public ClienteResponse(Cliente entity) {
+        id = entity.getId();
         nome = entity.getNome();
         email = entity.getEmail();
         endereco = entity.getEndereco();
