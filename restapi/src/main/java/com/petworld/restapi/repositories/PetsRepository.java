@@ -9,4 +9,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 public interface PetsRepository extends JpaRepository<Pet, Long> {
     
     Page<Pet> findByClinicaId(Long clinicaId, Pageable pageable);
+    Pet findByIdAndClinicaId(Long id, Long clinicaId);
 }

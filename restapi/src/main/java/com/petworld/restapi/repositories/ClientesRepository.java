@@ -9,4 +9,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 public interface ClientesRepository extends JpaRepository<Cliente, Long> {
     
     Page<Cliente> findByClinicaId(Long clinicaId, Pageable pageable);
+    Cliente findByIdAndClinicaId(Long id, Long clinicaId);
 }
