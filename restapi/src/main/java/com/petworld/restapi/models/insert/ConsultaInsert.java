@@ -15,6 +15,7 @@ import lombok.Setter;
 @Getter @Setter
 public class ConsultaInsert {
     
+    @NotNull
     private Date data;
     private String sintomas;
     private String prescricao;
