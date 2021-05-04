@@ -48,12 +48,12 @@ public class PetsController {
     private ClinicasRepository clinicasRepository;
 
     @GetMapping
-    @Cacheable(value = "getPets")
     public Page<PetDetailed> getAll(Pageable pageable) {
         return PetDetailed.page(repository.findByClinicaId(CLINICA_ID, pageable));
     }
 
     @GetMapping("/{id}")
+    @Cacheable(value = "getPet", key = "#id")
     public ResponseEntity<PetDetailed> getById(@PathVariable Long id) {
         Pet pet = findByIdAndClinica(id, CLINICA_ID);
 
@@ -64,7 +64,6 @@ public class PetsController {
     }
 
     @PostMapping @Transactional
-    @CacheEvict(value = "getPets", allEntries = true)
     public ResponseEntity<?> post(@RequestBody @Valid PetInsert form, UriComponentsBuilder uriBuilder) {
         Pet pet; Clinica clinica;
         
@@ -83,7 +82,7 @@ public class PetsController {
     }
 
     @PutMapping("/{id}") @Transactional
-    @CacheEvict(value = "getPets", allEntries = true)
+    @CacheEvict(value = "getPet", key = "#id")
     public ResponseEntity<PetResponse> put(@PathVariable Long id, @RequestBody @Valid PetUpdate form) {
         Pet pet = findByIdAndClinica(id, CLINICA_ID);
 
@@ -94,7 +93,7 @@ public class PetsController {
     }
 
     @DeleteMapping("/{id}") @Transactional
-    @CacheEvict(value = "getPets", allEntries = true)
+    @CacheEvict(value = "getPet", key = "#id")
     public ResponseEntity<?> delete(@PathVariable Long id) {
         Pet pet = findByIdAndClinica(id, CLINICA_ID);
 

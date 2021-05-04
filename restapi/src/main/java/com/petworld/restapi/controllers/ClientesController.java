@@ -43,12 +43,12 @@ public class ClientesController {
     private ClinicasRepository clinicasRepository;
 
     @GetMapping
-    @Cacheable(value = "getClientes")
     public Page<ClienteDetailed> getAll(Pageable pageable) {
         return ClienteDetailed.page(repository.findByClinicaId(CLINICA_ID, pageable));
     }
 
     @GetMapping("/{id}")
+    @Cacheable(value = "getCliente", key = "#id")
     public ResponseEntity<ClienteDetailed> getById(@PathVariable Long id) {
         var cliente = findByIdAndClinica(id, CLINICA_ID);
 
@@ -59,7 +59,6 @@ public class ClientesController {
     }
 
     @PostMapping @Transactional
-    @CacheEvict(value = "getClientes", allEntries = true)
     public ResponseEntity<ClienteResponse> post(@RequestBody @Valid ClienteInsert form, UriComponentsBuilder uriBuilder) {
         Cliente cliente = repository.save(form.toEntity());
         Clinica clinica = clinicasRepository.findById(CLINICA_ID).get();
@@ -71,7 +70,7 @@ public class ClientesController {
     }
 
     @PutMapping("/{id}") @Transactional
-    @CacheEvict(value = "getClientes", allEntries = true)
+    @CacheEvict(value = "getCliente", key = "#id")
     public ResponseEntity<ClienteResponse> put(@PathVariable Long id, @RequestBody @Valid ClienteUpdate form) {
         Cliente cliente = findByIdAndClinica(id, CLINICA_ID);
 
@@ -82,7 +81,7 @@ public class ClientesController {
     }
 
     @DeleteMapping("/{id}") @Transactional
-    @CacheEvict(value = "getClientes", allEntries = true)
+    @CacheEvict(value = "getCliente", key = "#id")
     public ResponseEntity<?> delete(@PathVariable Long id) {
         Cliente cliente = findByIdAndClinica(id, CLINICA_ID);
         
