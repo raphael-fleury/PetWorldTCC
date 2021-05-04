@@ -4,8 +4,6 @@ import java.util.Date;
 import java.util.List;
 
 import com.petworld.restapi.entities.Consulta;
-import com.petworld.restapi.entities.Pet;
-import com.petworld.restapi.entities.Veterinario;
 import com.petworld.restapi.models.response.PetResponse;
 import com.petworld.restapi.models.response.VeterinarioResponse;
 

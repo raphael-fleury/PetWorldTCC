@@ -8,12 +8,14 @@ import javax.validation.Valid;
 
 import com.petworld.restapi.entities.Clinica;
 import com.petworld.restapi.entities.Pet;
+import com.petworld.restapi.models.detailed.ConsultaDetailed;
 import com.petworld.restapi.models.detailed.PetDetailed;
 import com.petworld.restapi.models.insert.PetInsert;
 import com.petworld.restapi.models.response.PetResponse;
 import com.petworld.restapi.models.update.PetUpdate;
 import com.petworld.restapi.repositories.ClientesRepository;
 import com.petworld.restapi.repositories.ClinicasRepository;
+import com.petworld.restapi.repositories.ConsultasRepository;
 import com.petworld.restapi.repositories.PetsRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,6 +43,7 @@ public class PetsController {
     @Autowired private PetsRepository repository;
     @Autowired private ClientesRepository clientesRepository;
     @Autowired private ClinicasRepository clinicasRepository;
+    @Autowired private ConsultasRepository consultasRepository;
 
     @GetMapping
     public Page<PetDetailed> getAll(Pageable pageable) {
@@ -97,5 +100,10 @@ public class PetsController {
         
         repository.delete(pet);
         return ResponseEntity.ok(new PetResponse(pet));
+    }
+
+    @GetMapping("/{id}/consultas")
+    public Page<ConsultaDetailed> getConsultas(@PathVariable Long id, Pageable pageable) {
+        return ConsultaDetailed.page(consultasRepository.findByPetId(id, pageable));
     }
 }

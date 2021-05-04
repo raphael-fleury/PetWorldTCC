@@ -5,12 +5,14 @@ import java.net.URI;
 import javax.transaction.Transactional;
 import javax.validation.Valid;
 
+import com.petworld.restapi.models.detailed.ConsultaDetailed;
 import com.petworld.restapi.models.detailed.VeterinarioDetailed;
 import com.petworld.restapi.models.insert.VeterinarioInsert;
 import com.petworld.restapi.models.response.VeterinarioResponse;
 import com.petworld.restapi.models.update.VeterinarioUpdate;
 import com.petworld.restapi.repositories.VeterinariosRepository;
 import com.petworld.restapi.repositories.ClinicasRepository;
+import com.petworld.restapi.repositories.ConsultasRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
@@ -36,6 +38,7 @@ public class VeterinariosController {
 
     @Autowired private VeterinariosRepository repository;
     @Autowired private ClinicasRepository clinicasRepository;
+    @Autowired private ConsultasRepository consultasRepository;
 
     @GetMapping
     public Page<VeterinarioDetailed> getAll(Pageable pageable) {
@@ -85,5 +88,10 @@ public class VeterinariosController {
 
         repository.delete(veterinario);
         return ResponseEntity.ok(new VeterinarioResponse(veterinario));
+    }
+
+    @GetMapping("/{id}/consultas")
+    public Page<ConsultaDetailed> getConsultas(@PathVariable Long id, Pageable pageable) {
+        return ConsultaDetailed.page(consultasRepository.findByPetId(id, pageable));
     }
 }
