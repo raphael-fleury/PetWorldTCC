@@ -5,8 +5,6 @@ import java.net.URI;
 import javax.transaction.Transactional;
 import javax.validation.Valid;
 
-import com.petworld.restapi.entities.Veterinario;
-import com.petworld.restapi.entities.Clinica;
 import com.petworld.restapi.models.detailed.VeterinarioDetailed;
 import com.petworld.restapi.models.insert.VeterinarioInsert;
 import com.petworld.restapi.models.response.VeterinarioResponse;
@@ -36,11 +34,8 @@ public class VeterinariosController {
     
     private final Long CLINICA_ID = 1L;
 
-    @Autowired
-    private VeterinariosRepository repository;
-
-    @Autowired
-    private ClinicasRepository clinicasRepository;
+    @Autowired private VeterinariosRepository repository;
+    @Autowired private ClinicasRepository clinicasRepository;
 
     @GetMapping
     public Page<VeterinarioDetailed> getAll(Pageable pageable) {
@@ -50,7 +45,7 @@ public class VeterinariosController {
     @GetMapping("/{id}")
     @Cacheable(value = "getVeterinario", key = "#id")
     public ResponseEntity<VeterinarioDetailed> getById(@PathVariable Long id) {
-        var veterinario = findByIdAndClinica(id, CLINICA_ID);
+        var veterinario = repository.findByIdAndClinicaId(id, CLINICA_ID);
 
         if (veterinario == null)
             return ResponseEntity.notFound().build();
@@ -60,8 +55,8 @@ public class VeterinariosController {
 
     @PostMapping @Transactional
     public ResponseEntity<VeterinarioResponse> post(@RequestBody @Valid VeterinarioInsert form, UriComponentsBuilder uriBuilder) {
-        Veterinario veterinario = repository.save(form.toEntity());
-        Clinica clinica = clinicasRepository.findById(CLINICA_ID).get();
+        var veterinario = repository.save(form.toEntity());
+        var clinica = clinicasRepository.findById(CLINICA_ID).get();
 
         veterinario.setClinica(clinica);
 
@@ -72,7 +67,7 @@ public class VeterinariosController {
     @PutMapping("/{id}") @Transactional
     @CacheEvict(value = "getVeterinario", key = "#id")
     public ResponseEntity<VeterinarioResponse> put(@PathVariable Long id, @RequestBody @Valid VeterinarioUpdate form) {
-        Veterinario veterinario = findByIdAndClinica(id, CLINICA_ID);
+        var veterinario = repository.findByIdAndClinicaId(id, CLINICA_ID);
 
         if (veterinario == null)
             return ResponseEntity.notFound().build();
@@ -83,21 +78,12 @@ public class VeterinariosController {
     @DeleteMapping("/{id}") @Transactional
     @CacheEvict(value = "getVeterinario", key = "#id")
     public ResponseEntity<?> delete(@PathVariable Long id) {
-        Veterinario veterinario = findByIdAndClinica(id, CLINICA_ID);
+        var veterinario = repository.findByIdAndClinicaId(id, CLINICA_ID);
         
         if (veterinario == null)
             return ResponseEntity.notFound().build();
 
         repository.delete(veterinario);
         return ResponseEntity.ok(new VeterinarioResponse(veterinario));
-    }
-
-    private Veterinario findByIdAndClinica(Long id, Long clinicaId) {
-        var optional = repository.findById(id);
-
-        if (!optional.isPresent() || optional.get().getClinica().getId() != clinicaId)
-            return null;
-        
-        return optional.get();
     }
 }

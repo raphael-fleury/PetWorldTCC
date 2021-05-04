@@ -5,8 +5,6 @@ import java.net.URI;
 import javax.transaction.Transactional;
 import javax.validation.Valid;
 
-import com.petworld.restapi.entities.Cliente;
-import com.petworld.restapi.entities.Clinica;
 import com.petworld.restapi.models.detailed.ClienteDetailed;
 import com.petworld.restapi.models.insert.ClienteInsert;
 import com.petworld.restapi.models.response.ClienteResponse;
@@ -36,11 +34,8 @@ public class ClientesController {
     
     private final Long CLINICA_ID = 1L;
 
-    @Autowired
-    private ClientesRepository repository;
-
-    @Autowired
-    private ClinicasRepository clinicasRepository;
+    @Autowired private ClientesRepository repository;
+    @Autowired private ClinicasRepository clinicasRepository;
 
     @GetMapping
     public Page<ClienteDetailed> getAll(Pageable pageable) {
@@ -50,7 +45,7 @@ public class ClientesController {
     @GetMapping("/{id}")
     @Cacheable(value = "getCliente", key = "#id")
     public ResponseEntity<ClienteDetailed> getById(@PathVariable Long id) {
-        var cliente = findByIdAndClinica(id, CLINICA_ID);
+        var cliente = repository.findByIdAndClinicaId(id, CLINICA_ID);
 
         if (cliente == null)
             return ResponseEntity.notFound().build();
@@ -60,8 +55,8 @@ public class ClientesController {
 
     @PostMapping @Transactional
     public ResponseEntity<ClienteResponse> post(@RequestBody @Valid ClienteInsert form, UriComponentsBuilder uriBuilder) {
-        Cliente cliente = repository.save(form.toEntity());
-        Clinica clinica = clinicasRepository.findById(CLINICA_ID).get();
+        var cliente = repository.save(form.toEntity());
+        var clinica = clinicasRepository.findById(CLINICA_ID).get();
 
         cliente.setClinica(clinica);
 
@@ -72,7 +67,7 @@ public class ClientesController {
     @PutMapping("/{id}") @Transactional
     @CacheEvict(value = "getCliente", key = "#id")
     public ResponseEntity<ClienteResponse> put(@PathVariable Long id, @RequestBody @Valid ClienteUpdate form) {
-        Cliente cliente = findByIdAndClinica(id, CLINICA_ID);
+        var cliente = repository.findByIdAndClinicaId(id, CLINICA_ID);
 
         if (cliente == null)
             return ResponseEntity.notFound().build();
@@ -83,21 +78,12 @@ public class ClientesController {
     @DeleteMapping("/{id}") @Transactional
     @CacheEvict(value = "getCliente", key = "#id")
     public ResponseEntity<?> delete(@PathVariable Long id) {
-        Cliente cliente = findByIdAndClinica(id, CLINICA_ID);
+        var cliente = repository.findByIdAndClinicaId(id, CLINICA_ID);
         
         if (cliente == null)
             return ResponseEntity.notFound().build();
 
         repository.delete(cliente);
         return ResponseEntity.ok(new ClienteResponse(cliente));
-    }
-
-    private Cliente findByIdAndClinica(Long id, Long clinicaId) {
-        var optional = repository.findById(id);
-
-        if (!optional.isPresent() || optional.get().getClinica().getId() != clinicaId)
-            return null;
-        
-        return optional.get();
     }
 }

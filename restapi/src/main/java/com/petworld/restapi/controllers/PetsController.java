@@ -38,14 +38,9 @@ public class PetsController {
 
     private final Long CLINICA_ID = 1L;
 
-    @Autowired
-    private PetsRepository repository;
-
-    @Autowired
-    private ClientesRepository clientesRepository;
-
-    @Autowired
-    private ClinicasRepository clinicasRepository;
+    @Autowired private PetsRepository repository;
+    @Autowired private ClientesRepository clientesRepository;
+    @Autowired private ClinicasRepository clinicasRepository;
 
     @GetMapping
     public Page<PetDetailed> getAll(Pageable pageable) {
@@ -55,7 +50,7 @@ public class PetsController {
     @GetMapping("/{id}")
     @Cacheable(value = "getPet", key = "#id")
     public ResponseEntity<PetDetailed> getById(@PathVariable Long id) {
-        Pet pet = findByIdAndClinica(id, CLINICA_ID);
+        var pet = repository.findByIdAndClinicaId(id, CLINICA_ID);
 
         if (pet == null)
             return ResponseEntity.notFound().build();
@@ -84,7 +79,7 @@ public class PetsController {
     @PutMapping("/{id}") @Transactional
     @CacheEvict(value = "getPet", key = "#id")
     public ResponseEntity<PetResponse> put(@PathVariable Long id, @RequestBody @Valid PetUpdate form) {
-        Pet pet = findByIdAndClinica(id, CLINICA_ID);
+        var pet = repository.findByIdAndClinicaId(id, CLINICA_ID);
 
         if (pet == null)
             return ResponseEntity.notFound().build();
@@ -95,21 +90,12 @@ public class PetsController {
     @DeleteMapping("/{id}") @Transactional
     @CacheEvict(value = "getPet", key = "#id")
     public ResponseEntity<?> delete(@PathVariable Long id) {
-        Pet pet = findByIdAndClinica(id, CLINICA_ID);
+        var pet = repository.findByIdAndClinicaId(id, CLINICA_ID);
 
         if (pet == null)
             return ResponseEntity.notFound().build();
         
         repository.delete(pet);
         return ResponseEntity.ok(new PetResponse(pet));
-    }
-
-    private Pet findByIdAndClinica(Long id, Long clinicaId) {
-        var optional = repository.findById(id);
-
-        if (!optional.isPresent() || optional.get().getClinica().getId() != clinicaId)
-            return null;
-
-        return optional.get();
     }
 }

@@ -34,17 +34,10 @@ public class ConsultasController {
     
     private final Long CLINICA_ID = 1L;
 
-    @Autowired
-    private ConsultasRepository repository;
-
-    @Autowired
-    private ClinicasRepository clinicasRepository;
-
-    @Autowired
-    private VeterinariosRepository veterinariosRepository;
-
-    @Autowired
-    private PetsRepository petsRepository;
+    @Autowired private ConsultasRepository repository;
+    @Autowired private ClinicasRepository clinicasRepository;
+    @Autowired private VeterinariosRepository veterinariosRepository;
+    @Autowired private PetsRepository petsRepository;
 
     @GetMapping("/{id}")
     @Cacheable(value = "getConsulta", key = "#id")
@@ -61,12 +54,12 @@ public class ConsultasController {
     public ResponseEntity<?> post(@RequestBody @Valid ConsultaInsert form, UriComponentsBuilder uriBuilder) { 
         var veterinario = veterinariosRepository.findByIdAndClinicaId(form.getVeterinarioId(), CLINICA_ID);
         var pet = petsRepository.findByIdAndClinicaId(form.getPetId(), CLINICA_ID);
-        var clinica = clinicasRepository.findById(CLINICA_ID).get();
-
-        if (veterinario == null || pet == null || clinica == null)
+        
+        if (veterinario == null || pet == null)
             return ResponseEntity.notFound().build();
         
-        var consulta = form.toEntity(veterinariosRepository, petsRepository);
+        var consulta = form.toEntity(veterinariosRepository, petsRepository);   
+        var clinica = clinicasRepository.findById(CLINICA_ID).get();
         consulta.setClinica(clinica);
 
         URI uri = uriBuilder.path("/consultas/{id}").buildAndExpand(consulta.getId()).toUri();
