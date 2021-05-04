@@ -8,6 +8,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface ExamesRepository extends JpaRepository<Exame, Long> {
     
-    Page<Exame> findByClinicaId(Long clinicaId, Pageable pageable);
-    Exame findByIdAndClinicaId(Long id, Long clinicaId);
+    Page<Exame> findByConsultaId(Long consultaId, Pageable pageable);
+    Page<Exame> findByConsultaPetId(Long petId, Pageable pageable);
 }

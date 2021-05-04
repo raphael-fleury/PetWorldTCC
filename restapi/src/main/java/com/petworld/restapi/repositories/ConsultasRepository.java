@@ -8,6 +8,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface ConsultasRepository extends JpaRepository<Consulta, Long> {
     
-    Page<Consulta> findByClinicaId(Long clinicaId, Pageable pageable);
+    Page<Consulta> findByPetIdAndVeterinarioId(Long clinicaId, Pageable pageable);
+    Page<Consulta> findByVeterinarioId(Long veterinarioId, Pageable pageable);
+    Page<Consulta> findByPetId(Long petId, Pageable pageable);
+
     Consulta findByIdAndClinicaId(Long id, Long clinicaId);
 }
