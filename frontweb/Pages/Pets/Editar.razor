@@ -1,0 +1,34 @@
+@page "/pets/editar/{id}"
+@inherits PetBase
+
+@using Data.Entities
+@using Data.Repositories
+
+@inject PetsRepository PetsRepository
+
+@if (pet == null)
+{
+    if (exception == null)
+    {
+        <p><em>Carregando...</em></p>
+    }      
+    else
+    {
+        int statusCode = (int)exception.StatusCode;
+        
+        <div id="error">
+            <h1>@statusCode</h1>
+            <a>@GetErrorMessage()</a>
+        </div>
+    }
+}
+
+@code {
+    [Parameter]
+    public string Id { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadPet(long.Parse(Id));
+    }
+}

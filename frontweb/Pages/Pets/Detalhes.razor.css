@@ -1,0 +1,10 @@
+#operations a {
+    margin-right: 10px;
+}
+
+#properties {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}

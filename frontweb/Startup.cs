@@ -9,6 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using PetWorldWeb.Data;
+using PetWorldWeb.Data.Repositories;
 
 namespace PetWorldWeb
 {
@@ -27,7 +28,7 @@ namespace PetWorldWeb
         {
             services.AddRazorPages();
             services.AddServerSideBlazor();
-            services.AddSingleton<WeatherForecastService>();
+            services.AddSingleton<PetsRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

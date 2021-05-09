@@ -1,0 +1,77 @@
+﻿@page "/pets/detalhes/{id}"
+
+@inherits PetBase
+@using PetWorldWeb.Data.Repositories
+
+@inject PetsRepository PetsRepository
+@inject NavigationManager NavManager
+
+@if (pet == null)
+{ 
+    if (exception == null)
+    {
+        <p><em>Carregando...</em></p>
+    }      
+    else
+    {
+        int statusCode = (int)exception.StatusCode;
+        
+        <div id="error">
+            <h1>@statusCode</h1>
+            <a>@GetErrorMessage()</a>
+        </div>
+    }
+}
+else
+{
+    <h1>@pet.Nome</h1>
+    <div id="operations">
+        <a href="/pets/editar/@pet.Id">Editar</a>
+        <a href="" @onclick="@ShowDeleteDialog" @onclick:preventDefault>Excluir</a>
+    </div>
+    
+    <div id="properties">
+        @foreach (var pair in properties)
+        {
+            if (!string.IsNullOrWhiteSpace(pair.Value))
+            {
+                <label>
+                    <b>@pair.Key: </b>
+                    @pair.Value.ToLower().Titleize()
+                </label>
+            }          
+        }
+    </div>
+
+    <ConfirmDialog @ref="dialog" />
+}
+
+<a href="/pets">Voltar aos Pets</a>
+
+@code {
+    [Parameter]
+    public string Id { get; set; }
+
+    private ConfirmDialog dialog;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadPet(long.Parse(Id));
+    }
+
+    private void ShowDeleteDialog()
+    {
+        dialog.Title = "Tem certeza?";
+        dialog.Body = $"Deseja deletar {pet.Nome}?";
+        dialog.ConfirmText = "Deletar";
+        dialog.CancelText = "Cancelar";
+        dialog.Confirmed += () => Task.Run(DeletePet);
+        dialog.Show();
+    }
+
+    private async Task DeletePet()
+    {
+        await PetsRepository.DeleteById(long.Parse(Id));
+        NavManager.NavigateTo("/pets");
+    }
+}

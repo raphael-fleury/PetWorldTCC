@@ -1,0 +1,39 @@
+@using Data
+@using Data.Entities
+@using Data.Repositories
+
+@inject PetsRepository PetsRepository
+
+@code {
+    protected Pet pet;
+    protected HttpException exception;
+
+    protected Dictionary<string, string> properties => new Dictionary<string, string>
+    {
+        ["Dono"] = pet.Dono.Nome,
+        ["Sexo"] = pet.Sexo,
+        ["Espécie"] = pet.Especie,
+        ["Raça"] = pet.Raca,
+        ["Castrado"] = pet.Castrado ? "Sim" : "Não"
+    };
+
+    private Dictionary<int, string> errors = new Dictionary<int, string>
+    {
+        [404] = "Pet não encontrado"
+    };
+
+    protected async Task LoadPet(long id)
+    {
+        try { pet = await PetsRepository.GetById(id); }
+        catch (HttpException exception)
+        {
+            this.exception = exception;
+        }
+    }
+
+    protected string GetErrorMessage()
+    {
+        int statusCode = (int)exception.StatusCode;
+        return errors.ContainsKey(statusCode) ? errors[statusCode] : exception.Message;
+    }
+}

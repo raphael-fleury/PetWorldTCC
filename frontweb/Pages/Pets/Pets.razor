@@ -1,0 +1,52 @@
+﻿@page "/pets"
+
+@using PetWorldWeb.Data.Entities
+@using PetWorldWeb.Data.Repositories
+@inject PetsRepository PetsRepository
+
+<h1>Pets</h1>
+
+@if (pets == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Dono</th>
+                <th>Espécie</th>
+                <th>Sexo</th>
+                <th>Operações</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var pet in pets)
+            {
+                <tr>
+                    <td>@pet.Nome</td>
+                    <td>@pet.Dono.Nome</td>
+                    <td>@pet.Especie</td>
+                    <td>@pet.Sexo</td>
+                    <td>
+                        <a href="/pets/detalhes/@pet.Id">Detalhes</a>
+                        <a href="/pets/editar/@pet.Id">Editar</a>
+                        <a href="/pets/excluir/@pet.Id">Excluir</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private Pet[] pets;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var list = await PetsRepository.GetAll();
+        pets = list.ToArray();
+    }
+}
