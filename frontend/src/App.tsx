@@ -1,7 +1,9 @@
+import Pets from 'pages/Pets';
+
 function App() {
   return (
     <div className="App">
-      <h2>Hello world!</h2>
+      <Pets/>
     </div>
   );
 }
