@@ -1,4 +1,4 @@
-import Page from "../../types/Page";
+import Page from "types/Page";
 
 type Props = {
     page: Page<any>

@@ -1,4 +1,4 @@
-import PetsTable from '../../components/PetsTable'
+import PetsTable from 'components/tables/PetsTable'
 
 const Pets = () => {
     return (

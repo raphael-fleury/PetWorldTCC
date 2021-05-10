@@ -1,5 +1,3 @@
-import { useEffect, useState } from 'react';
-
 type Row = {
     values: JSX.Element[]
 }
@@ -10,8 +8,6 @@ type Props = {
 }
 
 const DataTable = ({ headers, rows }: Props) => {
-
-    const [activePage, setActivePage] = useState(0);
 
     return (
         <>

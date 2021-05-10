@@ -1,11 +1,10 @@
-import axios from "axios"
 import { useEffect, useState } from "react"
-import Page from "../../types/Page"
-import Pet from "../../types/Pet"
-import DataTable from "../DataTable"
-import Pagination from "../Pagination"
-import ConfirmDialog from "../dialogs/ConfirmDialog"
-import { BACKEND_URL } from "../../utils/requests"
+import { getPage, remove } from "repositories/PetRepository";
+import Page from "types/Page"
+import Pet from "types/Pet"
+import DataTable from   "../DataTable"
+import Pagination from "../../Pagination"
+import ConfirmDialog from "../../dialogs/ConfirmDialog"
 import { Link } from "react-router-dom"
 
 const PetsTable = () => {
@@ -26,16 +25,16 @@ const PetsTable = () => {
     const [petToRemove, setPetToRemove] = useState<Pet>(dummyPet);
 
     useEffect(() => {
-        axios.get(`${BACKEND_URL}/pets?page=${activePage}&size=10`)
-            .then(response => {
-                const data = response.data as Page<Pet>;
-                setPage(data);
-            })
+        getPage(activePage, 10)
+            .then(response => setPage(response.data))
     }, [activePage]);
 
-    const deletePet = () => { hideDialog() }
     const hideDialog = () => setPetToRemove(dummyPet);
     const showDialog = (pet : Pet) => setPetToRemove(pet);
+    const deletePet = () => {
+        remove(petToRemove.id);
+        hideDialog();
+    }
 
     const headers = [ 'Nome', 'Espécie', 'Raça', 'Dono', '' ]
 
