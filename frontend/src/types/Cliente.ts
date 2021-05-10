@@ -6,7 +6,7 @@ type Cliente = {
     email: string
     endereco: string
     telefone: string
-    pets: Pet[]
+    pets?: Pet[]
 }
 
 export default Cliente

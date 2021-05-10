@@ -1,4 +1,5 @@
 import Cliente from './Cliente';
+import Consulta from './Consulta'
 
 type Pet = {
     id: number
@@ -7,7 +8,8 @@ type Pet = {
     raca: string
     castrado: boolean
     sexo: string
-    dono: Cliente
+    dono?: Cliente
+    consultas?: Consulta[]
 }
 
 export default Pet
