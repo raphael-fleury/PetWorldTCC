@@ -2,6 +2,7 @@ package com.petworld.restapi.models.response;
 
 import java.util.Date;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import com.petworld.restapi.entities.Consulta;
 
@@ -26,7 +27,7 @@ public class ConsultaResponse {
     }
 
     public static List<ConsultaResponse> list(List<Consulta> entities) {
-        return entities.stream().map(e -> new ConsultaResponse(e)).toList();
+        return entities.stream().map(e -> new ConsultaResponse(e)).collect(Collectors.toList());
     }
 
     public static Page<ConsultaResponse> page(Page<Consulta> page) {

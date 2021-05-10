@@ -1,6 +1,7 @@
 package com.petworld.restapi.models.response;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import com.petworld.restapi.entities.Cliente;
 
@@ -27,7 +28,7 @@ public class ClienteResponse {
     }
 
     public static List<ClienteResponse> list(List<Cliente> entities) {
-        return entities.stream().map(e -> new ClienteResponse(e)).toList();
+        return entities.stream().map(e -> new ClienteResponse(e)).collect(Collectors.toList());
     }
 
     public static Page<ClienteResponse> page(Page<Cliente> page) {

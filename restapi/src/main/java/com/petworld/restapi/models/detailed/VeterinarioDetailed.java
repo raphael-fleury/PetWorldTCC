@@ -1,6 +1,7 @@
 package com.petworld.restapi.models.detailed;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import com.petworld.restapi.entities.Veterinario;
 
@@ -26,7 +27,7 @@ public class VeterinarioDetailed {
     }
 
     public static List<VeterinarioDetailed> list(List<Veterinario> entities) {
-        return entities.stream().map(e -> new VeterinarioDetailed(e)).toList();
+        return entities.stream().map(e -> new VeterinarioDetailed(e)).collect(Collectors.toList());
     }
 
     public static Page<VeterinarioDetailed> page(Page<Veterinario> page) {

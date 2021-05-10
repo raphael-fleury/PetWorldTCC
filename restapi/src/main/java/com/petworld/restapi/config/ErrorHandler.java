@@ -1,6 +1,7 @@
 package com.petworld.restapi.config;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
@@ -42,7 +43,7 @@ public class ErrorHandler {
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public List<FormError> handle(MethodArgumentNotValidException exception) {
         var fieldErrors = exception.getBindingResult().getFieldErrors();   
-        return fieldErrors.stream().map(this::convertError).toList();
+        return fieldErrors.stream().map(this::convertError).collect(Collectors.toList());
     }
 
     private FormError convertError(FieldError fieldError) {

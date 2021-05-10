@@ -1,6 +1,7 @@
 package com.petworld.restapi.models.detailed;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import com.petworld.restapi.entities.Pet;
 import com.petworld.restapi.entities.enums.Sexo;
@@ -32,7 +33,7 @@ public class PetDetailed {
     }
 
     public static List<PetDetailed> list(List<Pet> entities) {
-        return entities.stream().map(e -> new PetDetailed(e)).toList();
+        return entities.stream().map(e -> new PetDetailed(e)).collect(Collectors.toList());
     }
 
     public static Page<PetDetailed> page(Page<Pet> page) {

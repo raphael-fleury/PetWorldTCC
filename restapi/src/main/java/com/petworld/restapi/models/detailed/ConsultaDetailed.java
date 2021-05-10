@@ -2,6 +2,7 @@ package com.petworld.restapi.models.detailed;
 
 import java.util.Date;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import com.petworld.restapi.entities.Consulta;
 import com.petworld.restapi.models.response.PetResponse;
@@ -32,7 +33,7 @@ public class ConsultaDetailed {
     }
 
     public static List<ConsultaDetailed> list(List<Consulta> entities) {
-        return entities.stream().map(e -> new ConsultaDetailed(e)).toList();
+        return entities.stream().map(e -> new ConsultaDetailed(e)).collect(Collectors.toList());
     }
 
     public static Page<ConsultaDetailed> page(Page<Consulta> page) {

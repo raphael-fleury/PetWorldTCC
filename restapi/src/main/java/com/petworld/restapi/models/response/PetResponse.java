@@ -1,6 +1,7 @@
 package com.petworld.restapi.models.response;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import com.petworld.restapi.entities.Pet;
 import com.petworld.restapi.entities.enums.Sexo;
@@ -30,7 +31,7 @@ public class PetResponse {
     }
 
     public static List<PetResponse> list(List<Pet> entities) {
-        return entities.stream().map(e -> new PetResponse(e)).toList();
+        return entities.stream().map(e -> new PetResponse(e)).collect(Collectors.toList());
     }
 
     public static Page<PetResponse> page(Page<Pet> page) {
