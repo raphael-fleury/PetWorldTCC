@@ -6,9 +6,15 @@ const Routes = () => {
         <BrowserRouter>
             <Switch>
                 <Route path="/" exact>
-                    <Pets /> {/* temporary */}
+                    <Pets />
                 </Route>
                 <Route path="/pets">
+                    <Pets />
+                </Route>
+                <Route path="/clientes">
+                    <Pets />
+                </Route>
+                <Route path="/veterinarios">
                     <Pets />
                 </Route>
             </Switch>
