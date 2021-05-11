@@ -1,10 +1,8 @@
-import Pets from 'pages/Pets';
+import Routes from './Routes';
 
 function App() {
   return (
-    <div className="App">
-      <Pets/>
-    </div>
+    <Routes></Routes>
   );
 }
 
