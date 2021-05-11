@@ -1,10 +1,6 @@
-type Row = {
-    values: JSX.Element[]
-}
-
 type Props = {
     headers: string[]
-    rows: Row[]
+    rows: JSX.Element[][]
 }
 
 const DataTable = ({ headers, rows }: Props) => {
@@ -15,19 +11,19 @@ const DataTable = ({ headers, rows }: Props) => {
                 <table className="table table-striped table-sm">
                     <thead>
                         <tr>
+                            <th />
                             { headers.map((header, index) => (
                                 <th key={index}>{header}</th>
-                            ))
-                            }
+                            ))}
                         </tr>
                     </thead>
                     <tbody>
                         { rows.map((row, index) => (
                             <tr key={index}>
-                                { row.values.map((value, index) => (
-                                    <td key={index}>{value}</td>
-                                ))
-                                }
+                                <td />
+                                { row.map((value, index) => (
+                                    <td key={index} className="align-middle pl-5">{value}</td>
+                                ))}
                             </tr>
                         ))
                         }

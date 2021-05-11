@@ -1,49 +1,33 @@
-import { useEffect, useState } from "react"
-import { getPage, remove } from "repositories/PetRepository";
+import { useState } from "react"
+import Repository from "repositories/PetRepository";
 import Page from "types/Page"
 import Pet from "types/Pet"
-import DataTable from   "../DataTable"
-import Pagination from "../../Pagination"
+import EntityTable from   "../EntityTable"
 import ConfirmDialog from "../../dialogs/ConfirmDialog"
-import { Link } from "react-router-dom"
+import { Router, Link } from "react-router-dom"
 
 const PetsTable = () => {
-    
     const dummyPet = {
         id: 0, nome: '', especie: '', raca: '', sexo: '', castrado: false
     }
 
-    const [page, setPage] = useState<Page<Pet>>({
-        first: true,
-        last: true,
-        number: 0,
-        totalElements: 0,
-        totalPages: 0
-    });
-    
-    const [activePage, setActivePage] = useState(0);
     const [petToRemove, setPetToRemove] = useState<Pet>(dummyPet);
-
-    useEffect(() => {
-        getPage(activePage, 10)
-            .then(response => setPage(response.data))
-    }, [activePage]);
 
     const hideDialog = () => setPetToRemove(dummyPet);
     const showDialog = (pet : Pet) => setPetToRemove(pet);
     const deletePet = () => {
-        remove(petToRemove.id);
+        Repository.delete(petToRemove.id);
         hideDialog();
     }
 
     const headers = [ 'Nome', 'Espécie', 'Raça', 'Dono', '' ]
 
-    const getRows = () => {
+    const renderPage = (page : Page<Pet>) => {
         if (!page.content)
-            return [ { values: [] } ]
+            return []
         
-        return page.content.map(pet => ({
-            values : [
+        return page.content.map(pet => (
+            [
                 <>{pet.nome}</>,
                 <>{pet.especie}</>,
                 <>{pet.raca}</>,
@@ -61,7 +45,11 @@ const PetsTable = () => {
                     <button className="btn btn-link" onClick={() => showDialog(pet)}>Remover</button>
                 </>
             ]
-        }))
+        ))
+    }
+
+    async function getPage(page: number, size: number) : Promise<Page<Pet>> {
+        return (await Repository.getPage(page, size)).data;
     }
 
     const dialog = () => {
@@ -75,11 +63,12 @@ const PetsTable = () => {
         )
     }
 
+    const table = EntityTable<Pet>({ headers, getPage, renderPage });
+
     return (
         <>
             { petToRemove.id != 0 ? dialog() : <></> }      
-            <Pagination page={page} onPageChange={setActivePage}/>
-            <DataTable headers={headers} rows={getRows()}/>
+            { table }
         </>
     )
 }
