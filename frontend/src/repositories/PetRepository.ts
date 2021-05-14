@@ -5,23 +5,23 @@ import Client from "../repositories/Client";
 const resource = "/pets";
 
 export default {
-    getPage(page?: number, size?: number) {
-        return Client.get<Page<Pet>>(`${resource}?page=${page ?? 0}&size=${size ?? 10}`)
+    async getPage(page?: number, size?: number) {
+        return (await Client.get<Page<Pet>>(`${resource}?page=${page ?? 0}&size=${size ?? 10}`)).data
     },
 
-    getById(id: number) {
-        return Client.get<Pet>(resource + "/" + id)
+    async getById(id: number) {
+        return (await Client.get<Pet>(resource + "/" + id)).data
     },
 
-    post(pet: Pet) {
-        return Client.post<Pet>(resource, pet)
+    async post(pet: Pet) {
+        return (await Client.post<Pet>(resource, pet)).data
     },
 
-    put(id: number, pet: Pet) {
-        return Client.put<Pet>(resource + "/" + id, pet)
+    async put(id: number, pet: Pet) {
+        return (await Client.put<Pet>(resource + "/" + id, pet)).data
     },
 
-    delete(id: number) {
-        return Client.delete<Pet>(resource + "/" + id)
+    async delete(id: number) {
+        return (await Client.delete<Pet>(resource + "/" + id)).data
     }
 };
