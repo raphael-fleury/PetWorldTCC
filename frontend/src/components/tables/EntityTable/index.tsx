@@ -40,8 +40,6 @@ function EntityTable<T>({ headers, getPage, renderPage}: Props<T>) {
             })
     }, [activePage]);
 
-    console.log(page.last);
-
     return (
         <>     
             <Pagination page={page} onPageChange={setActivePage}/>
