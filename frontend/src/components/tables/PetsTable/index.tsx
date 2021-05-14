@@ -4,7 +4,7 @@ import Page from "types/Page"
 import Pet from "types/Pet"
 import EntityTable from   "../EntityTable"
 import ConfirmDialog from "../../dialogs/ConfirmDialog"
-import { Router, Link } from "react-router-dom"
+import { Link } from "react-router-dom"
 
 const PetsTable = () => {
     const dummyPet = {
@@ -58,7 +58,7 @@ const PetsTable = () => {
         }
         
     const getPage = Repository.getPage
-    const table = EntityTable<Pet>({ headers, getPage , renderPage });
+    const table = EntityTable<Pet>({ headers, getPage, renderPage });
 
     return (
         <>

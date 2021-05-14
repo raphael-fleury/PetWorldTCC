@@ -6,7 +6,7 @@ type Props = { actual : string }
 
 const SidebarManager = ({actual} : Props) => {
 
-    const [isSidebarHidden, setSidebarHidden] = useState(false);
+    const [isSidebarHidden, setSidebarHidden] = useState(true);
 
     const show = () => setSidebarHidden(false);
     const hide = () => setSidebarHidden(true);

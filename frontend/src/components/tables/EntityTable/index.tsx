@@ -34,8 +34,13 @@ function EntityTable<T>({ headers, getPage, renderPage}: Props<T>) {
     
     useEffect(() => {
         getPage(activePage, 10)
-            .then(page => setData(renderPage(page)))
+            .then(page => {
+                setPage(page)
+                setData(renderPage(page))
+            })
     }, [activePage]);
+
+    console.log(page.last);
 
     return (
         <>     
