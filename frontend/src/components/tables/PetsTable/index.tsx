@@ -20,7 +20,7 @@ const PetsTable = () => {
         hideDialog();
     }
 
-    const headers = [ 'Nome', 'Espécie', 'Raça', 'Dono', '' ]
+    const headers = [ 'Nome', 'Espécie', 'Raça', 'Dono', 'Operações' ]
 
     const renderPage = (page : Page<Pet>) => {
         if (!page.content)
@@ -33,41 +33,36 @@ const PetsTable = () => {
                 <>{pet.raca}</>,
                 <>{pet.dono?.nome}</>,
                 <>
-                    {/* <span></span>
-                    <a href={`pets/${pet.id}`}>Detalhes</a>
-                    <a href={`pets/editar/${pet.id}`}>Editar</a>
-                    <a href={`pets/remover/${pet.id}`}>Remover</a>
-                    <Link to={`pets/editar/${pet.id}`}>
-                        <a>Editar</a>
+                    <Link to={`pets/detalhes/${pet.id}`}>
+                        <button className="btn btn-link p-1">Detalhes</button>
                     </Link>
-                    <button >Remover</button>
-                    <button className="page-link">Remover</button> */}
-                    <button className="btn btn-link" onClick={() => showDialog(pet)}>Remover</button>
+                    <Link to={`pets/editar/${pet.id}`}>
+                        <button className="btn btn-link p-1">Editar</button>
+                    </Link>
+                    <button className="btn btn-link p-1" onClick={() => showDialog(pet)}>Remover</button>
                 </>
             ]
         ))
     }
 
-    async function getPage(page: number, size: number) : Promise<Page<Pet>> {
-        return (await Repository.getPage(page, size)).data;
-    }
-
+    
     const dialog = () => {
         return (
             <ConfirmDialog
-                title="Tem certeza?"
-                desc={`Deseja mesmo remover ${petToRemove.nome}?`}
-                onConfirm={deletePet}
-                onCancel={hideDialog}
+            title="Tem certeza?"
+            desc={`Deseja mesmo remover ${petToRemove.nome}?`}
+            onConfirm={deletePet}
+            onCancel={hideDialog}
             />
-        )
-    }
-
-    const table = EntityTable<Pet>({ headers, getPage, renderPage });
+            )
+        }
+        
+    const getPage = Repository.getPage
+    const table = EntityTable<Pet>({ headers, getPage , renderPage });
 
     return (
         <>
-            { petToRemove.id != 0 ? dialog() : <></> }      
+            { petToRemove.id !== 0 ? dialog() : <></> }      
             { table }
         </>
     )

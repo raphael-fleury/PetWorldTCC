@@ -4,28 +4,39 @@ import logo from 'assets/img/logo.png'
 
 type Props = {
     actual: string
+    hidden: boolean
+    onClose: Function
 }
 
-const Sidebar = ({actual} : Props) => {
+const Sidebar = ({actual, hidden, onClose} : Props) => {
 
     function getLink(to : string, title : string) {
         return (
             <Link to={to}>
-                <button className="sb-btn" disabled={to == actual}>{title}</button>
+                <button className="sb-btn" disabled={to === actual}>{title}</button>
             </Link>
         )
     }
 
     return (
-        <div id="sidebar">
-            <img src={logo} alt="Home" width={110} className="m-5 mb-4" />
-            <div id="links">
-                { getLink("/", "Início") }
-                { getLink("/pets", "Pets") }
-                { getLink("/clientes", "Clientes") }
-                { getLink("/veterinarios", "Veterinários") }
-            </div>          
-        </div>
+        <>
+            <div className={hidden ? "" : "modal"} role="dialog">
+                <div id="sidebar" className={hidden ? "hidden" : ""}>
+                    <button id="close" className="btn" onClick={() => onClose()}>X</button>
+                    <div id="elements">
+                        <img src={logo} alt="Home" width={110} className="m-5 mb-4" />
+                        <div id="links">
+                            { getLink("/", "Início") }
+                            { getLink("/pets", "Pets") }
+                            { getLink("/clientes", "Clientes") }
+                            { getLink("/veterinarios", "Veterinários") }
+                        </div>                
+                    </div>
+                </div>
+            </div>
+            
+            { hidden ? <></> : <div className="modal-backdrop fade show"></div> }
+        </>
     )
 }
 

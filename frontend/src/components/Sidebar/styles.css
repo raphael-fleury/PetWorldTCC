@@ -1,13 +1,21 @@
 #sidebar {
-    display: flex;
-    flex-direction: column;
-
+    height: 100%;
     width: max-content;
-    height: 100vh;
-    position: sticky;
-    top: 0px;
-    
+
+    position: fixed;
+
     background-color: #FFA400;
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+#sidebar.hidden {
+    width: 0;
+}
+
+button#close {
+    position: absolute;
+    right: 0px;
 }
 
 #links {

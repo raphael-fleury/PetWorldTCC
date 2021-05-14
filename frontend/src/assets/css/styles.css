@@ -13,7 +13,7 @@
 
     --color-primary: #FF8400;
     --color-background: #FFE9DA;
-    --color-text: #6B2206;
+    --color-text: var(--color-pw-7);
 }
 
 html, body {

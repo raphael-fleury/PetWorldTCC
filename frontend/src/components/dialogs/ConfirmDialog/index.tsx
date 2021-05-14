@@ -14,7 +14,7 @@ const ConfirmDialog = ({ title, desc, cancelText, confirmText, onConfirm, onCanc
 
     return (
         <>
-            <div className="modal" tabIndex={-1} role="dialog">
+            <div className="modal" role="dialog">
                 <div className="modal-dialog" role="document">
                     <div className="modal-content">
                         <div className="modal-header">
