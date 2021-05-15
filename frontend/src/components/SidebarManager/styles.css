@@ -1,11 +1,5 @@
 #open {
-    background-color: var(--color-pw-4);
-    border: var(--color-pw-4);
     position: absolute;
     right: 0;
     top: 0;
-}
-
-#open:checked {
-    box-shadow: var(--color-pw-4);
 }

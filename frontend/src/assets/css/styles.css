@@ -11,9 +11,12 @@
     --color-pw-7: #6B2206;
     --color-pw-8: #000000;
 
-    --color-primary: #FF8400;
     --color-background: #FFE9DA;
+    --color-primary: var(--color-pw-5);
+    --color-link: var(--color-pw-6);
     --color-text: var(--color-pw-7);
+
+    --bs-primary: var(--color-primary)
 }
 
 html, body {
@@ -43,4 +46,39 @@ h1, h2, h3, h4, h5, h6, p, a, span
 
 .page {
     display: flex;
+}
+
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.btn-primary:active:focus,
+.open>.dropdown-toggle.btn-primary {
+    color: #fff;
+    background-color: var(--bs-primary);
+    border-color: var(--bs-primary);
+    box-shadow: var(--color-pw-4);
+}
+
+.btn-link,
+.btn-link:hover,
+.btn-link:focus,
+.btn-link:active,
+.btn-link.active,
+.btn-link:active:focus,
+.open>.dropdown-toggle.btn-link {
+    box-shadow: var(--color-pw-4);
+}
+
+button:active {
+    filter: drop-shadow(0 0 6px var(--color-primary));
+}
+
+.btn-link {
+    color: var(--color-primary);
+}
+
+.btn-link:hover {
+    color: var(--color-link);
 }
