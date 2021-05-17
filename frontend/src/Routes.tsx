@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Pets from './pages/Pets';
+import Pets from './pages/crud/pets/Pets';
+import CadastrarPet from './pages/crud/pets/CadastrarPet';
 
 const Routes = () => {
     return (
@@ -8,8 +9,11 @@ const Routes = () => {
                 <Route path="/" exact>
                     <Pets />
                 </Route>
-                <Route path="/pets">
+                <Route path="/pets" exact>
                     <Pets />
+                </Route>
+                <Route path="/pets/cadastrar">
+                    <CadastrarPet />
                 </Route>
                 <Route path="/clientes">
                     <Pets />

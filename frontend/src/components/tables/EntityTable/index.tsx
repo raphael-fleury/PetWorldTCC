@@ -41,7 +41,7 @@ function EntityTable<T>({ headers, getPage, renderPage}: Props<T>) {
     }, [activePage]);
 
     return (
-        <>     
+        <>
             <Pagination page={page} onPageChange={setActivePage}/>
             <DataTable headers={headers} rows={data}/>
         </>

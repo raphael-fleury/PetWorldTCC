@@ -71,14 +71,18 @@ h1, h2, h3, h4, h5, h6, p, a, span
     box-shadow: var(--color-pw-4);
 }
 
-button:active {
+.btn-primary:active {
     filter: drop-shadow(0 0 6px var(--color-primary));
 }
 
-.btn-link {
+.btn-link, .page-link {
     color: var(--color-primary);
 }
 
-.btn-link:hover {
+.btn-link:hover, .page-link:hover {
     color: var(--color-link);
+}
+
+.disabled .page-link {
+    color: var(--color-pw-7);
 }
