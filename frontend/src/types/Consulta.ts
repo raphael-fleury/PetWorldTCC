@@ -1,13 +1,21 @@
 import Pet from "./Pet"
 import Veterinario from "./Veterinario"
 
-type Consulta = {
+export type Consulta = {
     id: number
-    veterinario: Veterinario
-    pet: Pet
+    veterinario?: Veterinario
+    pet?: Pet
     data: string
     sintomas: string
     prescricao: string
 }
 
-export default Consulta
+export type ConsultaForm = {
+    veterinarioId?: number
+    petId?: number
+    data: string
+    sintomas: string
+    prescricao: string
+}
+
+export default Consulta;

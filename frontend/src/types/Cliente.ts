@@ -1,6 +1,6 @@
 import Pet from "./Pet"
 
-type Cliente = {
+export type Cliente = {
     id: number
     nome: string
     email: string
@@ -9,4 +9,11 @@ type Cliente = {
     pets?: Pet[]
 }
 
-export default Cliente
+export type ClienteForm = {
+    nome: string
+    email: string
+    endereco: string
+    telefone: string
+}
+
+export default Cliente;
