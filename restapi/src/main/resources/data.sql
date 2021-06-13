@@ -1,5 +1,5 @@
 -- 1
-INSERT INTO CLINICA(nome) VALUES('Petz');
+INSERT INTO CLINICA(nome, codigo, email, senha) VALUES('Petz', 'B3C0L0', 'admin@petz.com.br', '123456');
 
 INSERT INTO CLIENTE(nome, email, endereco, telefone, clinica_id) VALUES
 ('Manoel Siqueira', 'manoelsiqueira@example.com', 'Rua Rubens Lara, 32 - Santos/SP', '139XXXX6177', 1),
@@ -44,7 +44,7 @@ INSERT INTO VACINACAO(vacina, detalhes, consulta_id) VALUES
 ('Vacina antirrábica', '', 1);
 
 -- 2
-INSERT INTO CLINICA(nome) VALUES('Castro Alves');
+INSERT INTO CLINICA(nome, codigo, email, senha) VALUES('Castro Alves', 'R3D4L8', 'castroalves@exemplo.com', '123456');
 
 INSERT INTO CLIENTE(nome, email, endereco, telefone, clinica_id) VALUES
 ('João Luiz', 'joaoluiz@example.com', 'Rua Santos Dumont, 114 - Santos/SP', '139XXXX8178', 2);
