@@ -1,0 +1,52 @@
+.login {
+    max-width: 350px;
+    width: 90%;
+    height: 90%;
+    margin: auto;
+    margin-top: 40px;
+}
+
+.logo {
+    z-index: 1;
+    width: 150px;
+    margin: auto;
+    position: sticky;
+}
+
+.logo img {
+    position: fixed;
+    width: 150px;
+}
+
+.login-container {
+    background-color: var(--color-pw-4);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+    padding-top: 130px;
+    margin: auto;
+    margin-top: 60px;
+}
+
+.login-form {
+    min-width: 120px;
+    width: 50%;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.btn-login {
+    width: 100%;
+    background: #c0392b !important;
+    color: white !important;
+}
+
+.link-cadastro {
+    width: fit-content;
+    margin: auto;
+    justify-content: center;
+}
+
+.not-found {
+    text-align: center;
+    color: brown;
+}

@@ -2,6 +2,8 @@ import './styles.css'
 import { Link } from 'react-router-dom'
 import logo from 'assets/img/logo.png'
 
+import UserService from 'services/UserService';
+
 type Props = {
     actual: string
     hidden: boolean
@@ -18,6 +20,11 @@ const Sidebar = ({actual, hidden, onClose} : Props) => {
         )
     }
 
+    function logout() {
+        UserService.logout();
+        window.location.reload();
+    }
+
     return (
         <>
             <div className={hidden ? "" : "modal"} role="dialog">
@@ -30,7 +37,8 @@ const Sidebar = ({actual, hidden, onClose} : Props) => {
                             { getLink("/pets", "Pets") }
                             { getLink("/clientes", "Clientes") }
                             { getLink("/veterinarios", "Veterinários") }
-                        </div>                
+                            <button className="sb-btn" onClick={logout}>Sair</button>
+                        </div>
                     </div>
                 </div>
             </div>

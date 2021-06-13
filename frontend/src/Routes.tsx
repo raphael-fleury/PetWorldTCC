@@ -1,26 +1,49 @@
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
+import Home from './pages/Home';
+import Login from './pages/Login';
+import Registrar from './pages/Registrar';
 import Pets from './pages/crud/pets/Pets';
-import CadastrarPet from './pages/crud/pets/CadastrarPet';
+
+import UserService from 'services/UserService';
 
 const Routes = () => {
+
+    const guestRoutes = <>
+        <Route path="/" exact>
+            <Redirect to="/login" />
+        </Route>
+
+        <Route path="/login" exact>
+            <Login />
+        </Route>
+
+        <Route path="/registrar" exact>
+            <Registrar />
+        </Route>
+
+        <Route>
+            <Redirect to="/login" />
+        </Route>
+    </>
+
+    const routes = <>
+        <Route path="/" exact>
+            <Home />
+        </Route>
+
+        <Route path="/pets" exact>
+            <Pets />
+        </Route>
+
+        <Route>
+            <Redirect to="/" />
+        </Route>
+    </>
+
     return (
         <BrowserRouter>
             <Switch>
-                <Route path="/" exact>
-                    <Pets />
-                </Route>
-                <Route path="/pets" exact>
-                    <Pets />
-                </Route>
-                <Route path="/pets/cadastrar">
-                    <CadastrarPet />
-                </Route>
-                <Route path="/clientes">
-                    <Pets />
-                </Route>
-                <Route path="/veterinarios">
-                    <Pets />
-                </Route>
+                { UserService.isLoggedIn() ? routes : guestRoutes }
             </Switch>
         </BrowserRouter>
     )
