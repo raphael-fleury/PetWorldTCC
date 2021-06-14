@@ -14,6 +14,11 @@ import CadastrarCliente from 'pages/Clientes/Cadastrar';
 import EditarCliente from 'pages/Clientes/Editar';
 import DetalhesCliente from 'pages/Clientes/Detalhes';
 
+import Veterinarios from 'pages/Veterinarios/Menu';
+import CadastrarVeterinario from 'pages/Veterinarios/Cadastrar';
+import EditarVeterinario from 'pages/Veterinarios/Editar';
+import DetalhesVeterinario from 'pages/Veterinarios/Detalhes';
+
 import UserService from 'services/UserService';
 import SidebarManager from 'components/SidebarManager';
 
@@ -73,6 +78,24 @@ const Routes = () => {
         </Route>
     </>
 
+    const veterinarioRoutes = <>
+        <Route path="/veterinarios" exact>
+            <Veterinarios />
+        </Route>
+
+        <Route path="/veterinarios/novo">
+            <CadastrarVeterinario />
+        </Route>
+
+        <Route path="/veterinarios/editar/:id">
+            <EditarVeterinario />
+        </Route>
+
+        <Route path="/veterinarios/detalhes/:id">
+            <DetalhesVeterinario />
+        </Route>
+    </>
+
     const routes = <>
         <SidebarManager />
 
@@ -82,6 +105,7 @@ const Routes = () => {
 
         { petRoutes }
         { clienteRoutes }
+        { veterinarioRoutes }
 
         <Route>
             <Redirect to="/" />

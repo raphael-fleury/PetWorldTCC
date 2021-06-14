@@ -1,6 +1,6 @@
 import './styles.css'
 import { useState } from 'react';
-import Sidebar from '../Sidebar'
+import Sidebar from './Sidebar'
 
 const SidebarManager = () => {
 

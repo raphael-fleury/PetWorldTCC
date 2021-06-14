@@ -9,7 +9,7 @@ export type Veterinario = {
     consultas?: Consulta[]
 }
 
-export type VeterinarioForm = {
+export type VeterinarioInsert = {
     nome: string
     email: string
     endereco: string

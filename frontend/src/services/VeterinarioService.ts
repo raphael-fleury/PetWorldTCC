@@ -1,4 +1,4 @@
-import { Veterinario, VeterinarioForm } from "types/Veterinario";
+import { Veterinario, VeterinarioInsert } from "types/Veterinario";
 import Page from "types/Page";
 import Client from "./Client";
 
@@ -17,11 +17,11 @@ export default {
         return (await Client.get<Veterinario>(resource + "/" + id)).data
     },
 
-    async post(veterinario: VeterinarioForm) {
+    async post(veterinario: VeterinarioInsert) {
         return (await Client.post<Veterinario>(resource, veterinario)).data
     },
 
-    async put(id: number, veterinario: VeterinarioForm) {
+    async put(id: number, veterinario: VeterinarioInsert) {
         return (await Client.put<Veterinario>(resource + "/" + id, veterinario)).data
     },
 
