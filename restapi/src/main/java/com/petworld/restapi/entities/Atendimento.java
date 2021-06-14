@@ -15,21 +15,22 @@ import lombok.NoArgsConstructor;
 
 @Entity @Data
 @NoArgsConstructor @AllArgsConstructor
-public class Consulta {
+public class Atendimento {
     
-    @ManyToOne
-    private Atendimento atendimento;
+    @ManyToOne private Clinica clinica;
+    @ManyToOne private Veterinario veterinario;
+    @ManyToOne private Pet pet;
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String sintomas;
-    private String prescricao;
+    private Date data;
 
-    public Consulta(Atendimento atendimento, String sintomas, String prescricao) {
-        this.atendimento = atendimento;
-        this.sintomas = sintomas;
-        this.prescricao = prescricao;
+    public Atendimento(Veterinario veterinario, Pet pet, Date data) {
+        this.clinica = veterinario.getClinica();
+        this.veterinario = veterinario;
+        this.pet = pet;
+        this.data = data;
     }
 
 }

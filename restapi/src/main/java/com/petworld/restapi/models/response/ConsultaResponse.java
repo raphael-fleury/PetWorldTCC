@@ -15,13 +15,15 @@ import lombok.Setter;
 public class ConsultaResponse {
     
     private Long id;
+    private Long atendimentoId;
     private Date data;
     private String sintomas;
     private String prescricao;
 
     public ConsultaResponse(Consulta consulta) {
         id = consulta.getId();
-        data = consulta.getData();
+        atendimentoId = consulta.getAtendimento().getId();
+        data = consulta.getAtendimento().getData();
         sintomas = consulta.getSintomas();
         prescricao = consulta.getPrescricao();
     }

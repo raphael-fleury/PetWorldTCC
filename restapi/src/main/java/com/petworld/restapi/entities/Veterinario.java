@@ -27,9 +27,6 @@ public class Veterinario {
     private String endereco;
     private String telefone;
 
-    @OneToMany(mappedBy = "veterinario")
-    private List<Consulta> consultas;
-
     public Veterinario(String nome, String email, String endereco, String telefone) {
         this.nome = nome;
         this.email = email;

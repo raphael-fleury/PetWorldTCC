@@ -37,9 +37,6 @@ public class Pet {
     @Enumerated(EnumType.STRING)
     private Sexo sexo;
 
-    @OneToMany(mappedBy = "pet")
-    private List<Consulta> consultas;
-
     public Pet(String nome, String especie, String raca, Boolean castrado, Sexo sexo, Cliente dono) {
         this.nome = nome;
         this.especie = especie;

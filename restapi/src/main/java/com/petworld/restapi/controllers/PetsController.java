@@ -8,15 +8,21 @@ import javax.validation.Valid;
 
 import com.petworld.restapi.entities.Clinica;
 import com.petworld.restapi.entities.Pet;
+import com.petworld.restapi.models.detailed.AtendimentoDetailed;
 import com.petworld.restapi.models.detailed.ConsultaDetailed;
 import com.petworld.restapi.models.detailed.PetDetailed;
 import com.petworld.restapi.models.insert.PetInsert;
+import com.petworld.restapi.models.response.AtendimentoResponse;
+import com.petworld.restapi.models.response.ConsultaResponse;
 import com.petworld.restapi.models.response.PetResponse;
 import com.petworld.restapi.models.update.PetUpdate;
 import com.petworld.restapi.repositories.ClientesRepository;
 import com.petworld.restapi.repositories.ClinicasRepository;
 import com.petworld.restapi.repositories.ConsultasRepository;
+import com.petworld.restapi.repositories.AtendimentosRepository;
 import com.petworld.restapi.repositories.PetsRepository;
+import com.petworld.restapi.services.AtendimentosService;
+import com.petworld.restapi.services.ConsultasService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
@@ -43,7 +49,9 @@ public class PetsController {
     @Autowired private PetsRepository repository;
     @Autowired private ClientesRepository clientesRepository;
     @Autowired private ClinicasRepository clinicasRepository;
-    @Autowired private ConsultasRepository consultasRepository;
+    
+    @Autowired private AtendimentosService atendimentosService;
+    @Autowired private ConsultasService consultasService;
 
     @GetMapping
     public Page<PetDetailed> getAll(Pageable pageable) {
@@ -102,8 +110,13 @@ public class PetsController {
         return ResponseEntity.ok(new PetResponse(pet));
     }
 
+    @GetMapping("/{id}/atendimentos")
+    public Page<AtendimentoResponse> getAtendimentos(@PathVariable Long id, Pageable pageable) {
+        return atendimentosService.findByPet(id, CLINICA_ID, pageable);
+    }
+
     @GetMapping("/{id}/consultas")
-    public Page<ConsultaDetailed> getConsultas(@PathVariable Long id, Pageable pageable) {
-        return ConsultaDetailed.page(consultasRepository.findByPetId(id, pageable));
+    public Page<ConsultaResponse> getConsultas(@PathVariable Long id, Pageable pageable) {
+        return consultasService.findByPet(id, CLINICA_ID, pageable);
     }
 }

@@ -16,7 +16,7 @@ import lombok.Data;
 public class Exame {
     
     @ManyToOne
-    private Consulta consulta;
+    private Atendimento atendimento;
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

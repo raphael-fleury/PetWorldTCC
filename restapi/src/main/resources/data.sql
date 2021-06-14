@@ -33,14 +33,18 @@ INSERT INTO VETERINARIO(nome, email, endereco, telefone, clinica_id) VALUES
 ('Doctor Rey', 'drrey@petz.com.br', 'Rua João Caetano, 112 - Santos/SP', '139XXXX6868', 1),
 ('Marco dos Anjos', 'mdosanjos@petz.com.br', 'Rua Teixeira de Freitas, 215 - Santos/SP', '139XXXX7776', 1);
 
-INSERT INTO CONSULTA(data, prescricao, sintomas, clinica_id, pet_id, veterinario_id) VALUES
-('2022-05-21 16:30:00', 'Dipirona kkkkk', 'Espirro', 1, 1, 1),
-('2021-01-13 15:00:00', 'Antibiotico', 'Coceira', 1, 2, 2);
+insert into ATENDIMENTO(data, clinica_id, pet_id, veterinario_id) VALUES
+('2022-05-21 16:30:00', 1, 1, 1),
+('2021-06-15 15:00:00', 1, 2, 1);
 
-INSERT INTO EXAME(data_resultado, nome, descricao, consulta_id) VALUES
+INSERT INTO CONSULTA(atendimento_id, prescricao, sintomas) VALUES
+(1, 'Dipirona kkkkk', 'Espirro'),
+(2, 'Antibiotico', 'Coceira');
+
+INSERT INTO EXAME(data_resultado, nome, descricao, atendimento_id) VALUES
 ('2022-06-01', 'Exame de sangue', 'Para detectar possíveis vermes', 2);
 
-INSERT INTO VACINACAO(vacina, detalhes, consulta_id) VALUES
+INSERT INTO VACINACAO(vacina, detalhes, atendimento_id) VALUES
 ('Vacina antirrábica', '', 1);
 
 -- 2

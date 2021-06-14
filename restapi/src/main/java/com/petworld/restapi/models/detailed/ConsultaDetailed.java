@@ -25,11 +25,11 @@ public class ConsultaDetailed {
 
     public ConsultaDetailed(Consulta consulta) {
         id = consulta.getId();
-        data = consulta.getData();
+        data = consulta.getAtendimento().getData();
         sintomas = consulta.getSintomas();
         prescricao = consulta.getPrescricao();
-        veterinario = new VeterinarioResponse(consulta.getVeterinario());
-        pet = new PetResponse(consulta.getPet());
+        veterinario = new VeterinarioResponse(consulta.getAtendimento().getVeterinario());
+        pet = new PetResponse(consulta.getAtendimento().getPet());
     }
 
     public static List<ConsultaDetailed> list(List<Consulta> entities) {

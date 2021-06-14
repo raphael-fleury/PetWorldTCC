@@ -5,14 +5,16 @@ import java.net.URI;
 import javax.transaction.Transactional;
 import javax.validation.Valid;
 
-import com.petworld.restapi.models.detailed.ConsultaDetailed;
+import com.petworld.restapi.models.detailed.AtendimentoDetailed;
 import com.petworld.restapi.models.detailed.VeterinarioDetailed;
 import com.petworld.restapi.models.insert.VeterinarioInsert;
+import com.petworld.restapi.models.response.AtendimentoResponse;
 import com.petworld.restapi.models.response.VeterinarioResponse;
 import com.petworld.restapi.models.update.VeterinarioUpdate;
 import com.petworld.restapi.repositories.VeterinariosRepository;
+import com.petworld.restapi.services.AtendimentosService;
 import com.petworld.restapi.repositories.ClinicasRepository;
-import com.petworld.restapi.repositories.ConsultasRepository;
+import com.petworld.restapi.repositories.AtendimentosRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
@@ -38,7 +40,8 @@ public class VeterinariosController {
 
     @Autowired private VeterinariosRepository repository;
     @Autowired private ClinicasRepository clinicasRepository;
-    @Autowired private ConsultasRepository consultasRepository;
+
+    @Autowired private AtendimentosService atendimentosService;
 
     @GetMapping
     public Page<VeterinarioDetailed> getAll(Pageable pageable) {
@@ -90,8 +93,8 @@ public class VeterinariosController {
         return ResponseEntity.ok(new VeterinarioResponse(veterinario));
     }
 
-    @GetMapping("/{id}/consultas")
-    public Page<ConsultaDetailed> getConsultas(@PathVariable Long id, Pageable pageable) {
-        return ConsultaDetailed.page(consultasRepository.findByPetId(id, pageable));
+    @GetMapping("/{id}/atendimentos")
+    public Page<AtendimentoResponse> getAtendimentos(@PathVariable Long id, Pageable pageable) {
+        return atendimentosService.findByVeterinario(id, CLINICA_ID, pageable);
     }
 }
