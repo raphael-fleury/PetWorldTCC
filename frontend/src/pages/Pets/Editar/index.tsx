@@ -1,5 +1,4 @@
-import SidebarManager from 'components/SidebarManager';
-import PetForm from 'components/forms/PetForm';
+import PetForm from '../Form';
 import PetService from 'services/PetService';
 import { Redirect, useParams } from 'react-router-dom';
 import { useEffect } from 'react';
@@ -26,13 +25,12 @@ const EditarPet = () => {
         return <Redirect to={`/pets/detalhes/${id}`} />
     }
     
-    return <>
-        <SidebarManager actual="/pets" />
+    return (
         <div className="container pt-3">
             <h1 className="text-primary py-3">Editar Pet</h1>
             <PetForm pet={pet} onSubmit={editar}/>
         </div>
-    </>
+    )
 }
 
 export default EditarPet;

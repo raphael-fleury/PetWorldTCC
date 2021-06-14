@@ -1,16 +1,12 @@
-import ClientesTable from 'components/tables/ClientesTable'
-import SidebarManager from 'components/SidebarManager'
+import ClientesTable from './Tabela'
 
 const Clientes = () => {
 
     return (
-        <>
-            <SidebarManager actual="/clientes" />
-            <div className="container pt-3">
-                <h1 className="text-primary py-3">Clientes</h1>
-                <ClientesTable />
-            </div>
-        </>
+        <div className="container pt-3">
+            <h1 className="text-primary py-3">Clientes</h1>
+            <ClientesTable />
+        </div>
     )
 }
 

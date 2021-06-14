@@ -2,8 +2,8 @@ import { useState } from "react"
 import Service from "services/PetService";
 import Page from "types/Page"
 import Pet from "types/Pet"
-import EntityTable from   "../EntityTable"
-import ConfirmDialog from "../../dialogs/ConfirmDialog"
+import EntityTable from   "components/tables/EntityTable"
+import ConfirmDialog from "components/dialogs/ConfirmDialog"
 import OkDialog from "components/dialogs/OkDialog";
 import { Link } from "react-router-dom"
 

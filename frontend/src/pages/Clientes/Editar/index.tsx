@@ -1,5 +1,4 @@
-import SidebarManager from 'components/SidebarManager';
-import ClienteForm from 'components/forms/ClienteForm';
+import ClienteForm from '../Form';
 import ClienteService from 'services/ClienteService';
 import { Redirect, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
@@ -25,13 +24,12 @@ const EditarCliente = () => {
         return <Redirect to={`/clientes/detalhes/${id}`} />
     }
 
-    return <>
-        <SidebarManager actual="/clientes" />
+    return (
         <div className="container pt-3">
             <h1 className="text-primary py-3">Editar Cliente</h1>
             <ClienteForm cliente={cliente} onSubmit={editar} />
         </div>
-    </>
+    )
 }
 
 export default EditarCliente;

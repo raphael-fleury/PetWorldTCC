@@ -15,6 +15,7 @@ import EditarCliente from 'pages/Clientes/Editar';
 import DetalhesCliente from 'pages/Clientes/Detalhes';
 
 import UserService from 'services/UserService';
+import SidebarManager from 'components/SidebarManager';
 
 const Routes = () => {
 
@@ -73,6 +74,8 @@ const Routes = () => {
     </>
 
     const routes = <>
+        <SidebarManager />
+
         <Route path="/" exact>
             <Home />
         </Route>

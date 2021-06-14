@@ -1,5 +1,5 @@
-import EstadosSelect from '../elements/EstadosSelect';
-import FormRow from '../elements/FormRow';
+import EstadosSelect from 'components/forms/elements/EstadosSelect';
+import FormRow from 'components/forms/elements/FormRow';
 
 import { Cliente, ClienteInsert } from 'types/Cliente';
 import { useState } from 'react';

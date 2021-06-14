@@ -1,16 +1,12 @@
-import PetsTable from 'components/tables/PetsTable'
-import SidebarManager from 'components/SidebarManager'
+import PetsTable from './Tabela'
 
 const Pets = () => {
 
     return (
-        <>
-            <SidebarManager actual="/pets" />
-            <div className="container pt-3">
-                <h1 className="text-primary py-3">Pets</h1>
-                <PetsTable />
-            </div>
-        </>
+        <div className="container pt-3">
+            <h1 className="text-primary py-3">Pets</h1>
+            <PetsTable />
+        </div>
     )
 }
 

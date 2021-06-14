@@ -5,17 +5,16 @@ import logo from 'assets/img/logo.png'
 import UserService from 'services/UserService';
 
 type Props = {
-    actual: string
     hidden: boolean
     onClose: Function
 }
 
-const Sidebar = ({actual, hidden, onClose} : Props) => {
+const Sidebar = ({ hidden, onClose } : Props) => {
 
     function getLink(to : string, title : string) {
         return (
             <Link to={to}>
-                <button className="sb-btn" disabled={to === actual}>{title}</button>
+                <button className="sb-btn">{title}</button>
             </Link>
         )
     }

@@ -1,5 +1,4 @@
-import SidebarManager from 'components/SidebarManager';
-import ClienteForm from 'components/forms/ClienteForm';
+import ClienteForm from '../Form';
 import ClienteService from 'services/ClienteService';
 import { useState } from 'react';
 import { ClienteInsert } from 'types/Cliente';
@@ -17,13 +16,12 @@ const CadastrarCliente = () => {
         return <Redirect to={`/clientes/detalhes/${created}`} />
     }
 
-    return <>
-        <SidebarManager actual="/clientes" />
+    return (
         <div className="container pt-3">
             <h1 className="text-primary py-3">Cadastrar Cliente</h1>
             <ClienteForm onSubmit={cadastrar} />
         </div>
-    </>
+    )
 }
 
 export default CadastrarCliente;

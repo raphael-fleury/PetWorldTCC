@@ -1,6 +1,6 @@
-import Switch from '../elements/Switch';
-import RadioGroup from '../elements/RadioGroup';
-import FormRow from '../elements/FormRow';
+import Switch from 'components/forms/elements/Switch';
+import RadioGroup from 'components/forms/elements/RadioGroup';
+import FormRow from 'components/forms/elements/FormRow';
 import { useEffect, useState } from 'react';
 import { Pet, PetInsert } from 'types/Pet';
 

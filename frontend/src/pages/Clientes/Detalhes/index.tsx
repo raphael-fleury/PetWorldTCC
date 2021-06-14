@@ -1,4 +1,3 @@
-import SidebarManager from 'components/SidebarManager';
 import OnePerRow from 'components/forms/elements/OnePerRow';
 import Service from 'services/ClienteService';
 import { useEffect, useState } from 'react';
@@ -26,24 +25,21 @@ const DetalhesCliente = () => {
     }
 
     return (
-        <>
-            <SidebarManager actual="/clientes" />
-            <div className="container pt-3">
-                <h1 className="text-primary py-3">{cliente.nome}</h1>
-                <OnePerRow>
-                    { getPair("E-mail", cliente.email) }
-                    { getPair("Telefone", cliente.telefone) }
-                    { getPair("Endereço", cliente.endereco) }
-                    { getPair("Pets", "" + cliente.pets?.length) }                
-                </OnePerRow>
-                <Link to={`/clientes/adicionar-pet/${cliente.id}`}>
-                    <button className="btn btn-link">Adicionar Pet</button>
-                </Link>
-                <Link to="/clientes">
-                    <button className="btn btn-link">Ver todos os clientes</button>
-                </Link>
-            </div>
-        </>    
+        <div className="container pt-3">
+            <h1 className="text-primary py-3">{cliente.nome}</h1>
+            <OnePerRow>
+                { getPair("E-mail", cliente.email) }
+                { getPair("Telefone", cliente.telefone) }
+                { getPair("Endereço", cliente.endereco) }
+                { getPair("Pets", "" + cliente.pets?.length) }                
+            </OnePerRow>
+            <Link to={`/clientes/adicionar-pet/${cliente.id}`}>
+                <button className="btn btn-link">Adicionar Pet</button>
+            </Link>
+            <Link to="/clientes">
+                <button className="btn btn-link">Ver todos os clientes</button>
+            </Link>
+        </div>
     )
 }
 

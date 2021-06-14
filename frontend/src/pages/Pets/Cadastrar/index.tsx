@@ -1,5 +1,4 @@
-import SidebarManager from 'components/SidebarManager';
-import PetForm from 'components/forms/PetForm';
+import PetForm from '../Form';
 import PetService from 'services/PetService';
 import { Redirect, useParams } from 'react-router-dom';
 import { useState } from 'react';
@@ -20,13 +19,12 @@ const CadastrarPet = () => {
         return <Redirect to={`/pets/detalhes/${created}`} />
     }
     
-    return <>
-        <SidebarManager actual="/pets" />
+    return (
         <div className="container pt-3">
             <h1 className="text-primary py-3">Cadastrar Pet</h1>
             <PetForm donoId={donoId} onSubmit={cadastrar} />
         </div>
-    </>
+    )
 }
 
 export default CadastrarPet;
