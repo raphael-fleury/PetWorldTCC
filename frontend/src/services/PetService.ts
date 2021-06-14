@@ -1,4 +1,4 @@
-import { Pet, PetForm } from "types/Pet";
+import { Pet, PetInsert } from "types/Pet";
 import Page from "types/Page";
 import Client from "../services/Client";
 
@@ -17,11 +17,11 @@ export default {
         return (await Client.get<Pet>(resource + "/" + id)).data
     },
 
-    async post(pet: PetForm) {
+    async post(pet: PetInsert) {
         return (await Client.post<Pet>(resource, pet)).data
     },
 
-    async put(id: number, pet: PetForm) {
+    async put(id: number, pet: PetInsert) {
         return (await Client.put<Pet>(resource + "/" + id, pet)).data
     },
 

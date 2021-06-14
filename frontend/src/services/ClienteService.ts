@@ -1,4 +1,4 @@
-import { Cliente, ClienteForm } from "types/Cliente";
+import { Cliente, ClienteInsert } from "types/Cliente";
 import Page from "types/Page";
 import Client from "../services/Client";
 
@@ -17,11 +17,11 @@ export default {
         return (await Client.get<Cliente>(resource + "/" + id)).data
     },
 
-    async post(cliente: ClienteForm) {
+    async post(cliente: ClienteInsert) {
         return (await Client.post<Cliente>(resource, cliente)).data
     },
 
-    async put(id: number, cliente: ClienteForm) {
+    async put(id: number, cliente: ClienteInsert) {
         return (await Client.put<Cliente>(resource + "/" + id, cliente)).data
     },
 

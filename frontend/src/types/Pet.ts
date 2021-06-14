@@ -12,7 +12,7 @@ export type Pet = {
     consultas?: Consulta[]
 }
 
-export type PetForm = {
+export type PetInsert = {
     nome: string
     especie: string
     raca: string

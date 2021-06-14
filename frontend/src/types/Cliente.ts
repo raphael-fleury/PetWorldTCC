@@ -9,7 +9,7 @@ export type Cliente = {
     pets?: Pet[]
 }
 
-export type ClienteForm = {
+export type ClienteInsert = {
     nome: string
     email: string
     endereco: string

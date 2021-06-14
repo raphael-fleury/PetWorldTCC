@@ -5,13 +5,9 @@ type Props = {
 }
 
 const OnePerRow = ({ children }: Props) => {
-    return (
-        <> {
-            children.map((child, index) => (
-                <Row>{child}</Row>
-            ))
-        } </>
-    )
+    return <>
+        { children.map((child) => <Row>{child}</Row>) } 
+    </>
 }
 
 export default OnePerRow;
