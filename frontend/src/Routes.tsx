@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Registrar from './pages/Registrar';
-import Pets from './pages/crud/pets/Pets';
+import Pets from './pages/Pets/Menu';
 
 import UserService from 'services/UserService';
 

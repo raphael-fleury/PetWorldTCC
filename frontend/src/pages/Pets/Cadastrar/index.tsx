@@ -1,5 +1,5 @@
-import SidebarManager from '../../../../components/SidebarManager';
-import PetForm from '../../../../components/forms/PetForm';
+import SidebarManager from 'components/SidebarManager';
+import PetForm from 'components/forms/PetForm';
 
 const CadastrarPet = () => {
 

@@ -1,23 +1,49 @@
 import { useState } from "react"
-import Repository from "repositories/PetRepository";
+import Service from "services/PetService";
 import Page from "types/Page"
 import Pet from "types/Pet"
 import EntityTable from   "../EntityTable"
 import ConfirmDialog from "../../dialogs/ConfirmDialog"
+import OkDialog from "components/dialogs/OkDialog";
 import { Link } from "react-router-dom"
 
 const PetsTable = () => {
-    const dummyPet = {
-        id: 0, nome: '', especie: '', raca: '', sexo: '', castrado: false
+    
+    const noDialog = <></>
+    
+    const [ dialog, setDialog ] = useState<JSX.Element>(noDialog);
+    
+    const deletePet = (pet: Pet) => {
+        Service.delete(pet.id)
+            .then(() => setDialog(successDialog(pet)))
+            .catch(() => setDialog(errorDialog(pet)))
     }
 
-    const [petToRemove, setPetToRemove] = useState<Pet>(dummyPet);
+    const hideDialog = () => setDialog(noDialog);
 
-    const hideDialog = () => setPetToRemove(dummyPet);
-    const showDialog = (pet : Pet) => setPetToRemove(pet);
-    const deletePet = () => {
-        Repository.delete(petToRemove.id);
-        hideDialog();
+    const removeDialog = (pet: Pet) => <ConfirmDialog
+        title="Tem certeza?"
+        desc={`Deseja mesmo remover ${pet.nome}?`}
+        confirmText="Sim"
+        cancelText="Cancelar"
+        onConfirm={() => deletePet(pet)}
+        onCancel={hideDialog}
+    />
+
+    const successDialog = (pet: Pet) => <OkDialog
+        title="Removido com sucesso"
+        desc={`${pet.nome} foi removido.`}
+        onClose={hideDialog}
+    />
+
+    const errorDialog = (pet: Pet) => <OkDialog
+        title="Erro"
+        desc={`Não foi possível remover ${pet.nome}.`}
+        onClose={hideDialog}
+    />
+
+    const showDialog = (pet : Pet) => {
+        setDialog(removeDialog(pet));
     }
 
     const headers = [ 'Nome', 'Espécie', 'Raça', 'Dono', 'Operações' ]
@@ -45,27 +71,10 @@ const PetsTable = () => {
         ))
     }
 
-    
-    const dialog = () => {
-        return (
-            <ConfirmDialog
-            title="Tem certeza?"
-            desc={`Deseja mesmo remover ${petToRemove.nome}?`}
-            onConfirm={deletePet}
-            onCancel={hideDialog}
-            />
-            )
-        }
-        
-    const getPage = Repository.getPage
+    const getPage = Service.getPage;
     const table = EntityTable<Pet>({ headers, getPage, renderPage });
 
-    return (
-        <>
-            { petToRemove.id !== 0 ? dialog() : <></> }      
-            { table }
-        </>
-    )
+    return <> { dialog } { table } </>
 }
 
 export default PetsTable;
