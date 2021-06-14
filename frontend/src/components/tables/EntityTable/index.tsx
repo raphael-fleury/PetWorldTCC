@@ -16,9 +16,10 @@ type Props<T> = {
     headers: string[],
     getPage: PageGetter<T>
     renderPage: PageRenderer<T>
+    children?: JSX.Element
 }
 
-function EntityTable<T>({ headers, getPage, renderPage}: Props<T>) {
+function EntityTable<T>({ headers, getPage, renderPage, children }: Props<T>) {
     
     const [data, setData] = useState<JSX.Element[][]>([[]]);
 
@@ -33,7 +34,7 @@ function EntityTable<T>({ headers, getPage, renderPage}: Props<T>) {
     const [activePage, setActivePage] = useState(0);
     
     useEffect(() => {
-        getPage(activePage, 10)
+        getPage(activePage, 8)
             .then(page => {
                 setPage(page)
                 setData(renderPage(page))
@@ -42,7 +43,7 @@ function EntityTable<T>({ headers, getPage, renderPage}: Props<T>) {
 
     return (
         <>
-            <Pagination page={page} onPageChange={setActivePage}/>
+            <Pagination page={page} onPageChange={setActivePage}>{ children }</Pagination>
             <DataTable headers={headers} rows={data}/>
         </>
     )

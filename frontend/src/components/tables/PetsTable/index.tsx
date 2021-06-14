@@ -33,7 +33,7 @@ const PetsTable = () => {
     const successDialog = (pet: Pet) => <OkDialog
         title="Removido com sucesso"
         desc={`${pet.nome} foi removido.`}
-        onClose={hideDialog}
+        onClose={() => window.location.reload()}
     />
 
     const errorDialog = (pet: Pet) => <OkDialog

@@ -91,7 +91,7 @@ const ClienteForm = ({ cliente, onSubmit }: Props) => {
                 />
             </FormRow>
             <FormRow title="E-mail">
-                <input type="text" id="email" placeholder="carlosandrade@exemplo.com" className="form-control"
+                <input type="email" id="email" placeholder="carlosandrade@exemplo.com" className="form-control"
                     required value={email} onChange={(event) => setEmail(event.target.value)}
                 />
             </FormRow>

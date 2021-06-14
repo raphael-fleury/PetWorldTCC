@@ -1,28 +1,26 @@
 import SidebarManager from 'components/SidebarManager';
 import OnePerRow from 'components/forms/elements/OnePerRow';
-import Label from 'components/forms/elements/Label';
 import Service from 'services/PetService';
 import { useEffect, useState } from 'react';
 import Pet from 'types/Pet';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
-type Props = { id: number }
+const DetalhesPet = () => {
 
-const DetalhesPet = ({ id }: Props) => {
-
+    const params = useParams<{ id: string }>();
+    const id = Number.parseInt(params.id);
+    
     const [pet, setPet] = useState<Pet>(Service.dummy);
 
     useEffect(() => {
         Service.getById(id).then(x => setPet(x))
-    });
+    }, [id]);
 
     const getPair = (key: string, value: string) => {
-        return (
-            <>
-                <span className="col-sm-2 col-form-label">{key}</span>
-                <span className="col-sm-2 col-form-label">{value}</span>
-            </>
-        )
+        return <>
+            <span className="col-sm-2 col-form-label">{key}</span>
+            <span className="col-sm-2 col-form-label">{value}</span>
+        </>
     }
 
     return (
@@ -33,7 +31,7 @@ const DetalhesPet = ({ id }: Props) => {
                 <OnePerRow>
                     <>
                         <span className="col-sm-2 col-form-label">Dono</span>
-                        <Link to={`/clientes/${pet.dono?.id}`} className="col-sm-2 col-form-label">
+                        <Link to={`/clientes/detalhes/${pet.dono?.id}`} className="col-sm-2 col-form-label">
                             {pet.dono?.nome}                     
                         </Link>
                     </>
@@ -42,10 +40,9 @@ const DetalhesPet = ({ id }: Props) => {
                     { getPair("Castrado", pet.castrado ? "Sim" : "Não") }
                     { getPair("Sexo", pet.sexo) }                
                 </OnePerRow>
-                <div className="col-sm-4">
-                        <button className="btn btn-link">Editar</button>
-                        <button className="btn btn-link">Remover</button>
-                </div>
+                <Link to="/pets">
+                    <button className="btn btn-link">Ver todos os pets</button>
+                </Link>
             </div>
         </>    
     )

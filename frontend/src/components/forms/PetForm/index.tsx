@@ -6,16 +6,18 @@ import { Pet, PetInsert } from 'types/Pet';
 
 type Props = {
     pet?: Pet
+    donoId?: number
     onSubmit: (pet: PetInsert) => void
 }
 
-const PetForm = ({ pet, onSubmit }: Props) => {
+const PetForm = ({ pet, donoId, onSubmit }: Props) => {
 
     const [ nome, setNome] = useState("");
     const [ especie, setEspecie] = useState("");
     const [ raca, setRaca] = useState("");
     const [ castrado, setCastrado] = useState(false);
     const [ sexo, setSexo] = useState("MASCULINO");
+    const [ dono, setDonoId] = useState(donoId ?? 0);
     
     useEffect(() => {
         if (!pet) { return; }
@@ -24,11 +26,12 @@ const PetForm = ({ pet, onSubmit }: Props) => {
         setRaca(pet.raca)
         setCastrado(pet.castrado)
         setSexo(pet.sexo)
+        setDonoId(pet.dono?.id ?? 0)
     }, [pet])
 
     function submit(event: any) {
         event?.preventDefault();
-        onSubmit({ nome, especie, raca, castrado, sexo })
+        onSubmit({ nome, especie, raca, castrado, sexo, donoId: dono })
     }
 
     return (
