@@ -4,6 +4,10 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Registrar from './pages/Registrar';
 
+import NovoAtendimento from 'pages/Atendimentos/Novo';
+import EditarAtendimento from 'pages/Atendimentos/Editar';
+import DetalhesAtendimento from 'pages/Atendimentos/Detalhes';
+
 import Pets from './pages/Pets/Menu';
 import CadastrarPet from 'pages/Pets/Cadastrar';
 import EditarPet from 'pages/Pets/Editar';
@@ -39,6 +43,20 @@ const Routes = () => {
 
         <Route>
             <Redirect to="/login" />
+        </Route>
+    </>
+
+    const atendimentoRoutes = <>
+        <Route path="/atendimentos/novo">
+            <NovoAtendimento />
+        </Route>
+
+        <Route path="/atendimentos/editar/:id">
+            <EditarAtendimento />
+        </Route>
+
+        <Route path="/atendimentos/detalhes/:id">
+            <DetalhesAtendimento />
         </Route>
     </>
 
@@ -106,6 +124,7 @@ const Routes = () => {
         { petRoutes }
         { clienteRoutes }
         { veterinarioRoutes }
+        { atendimentoRoutes }
 
         <Route>
             <Redirect to="/" />

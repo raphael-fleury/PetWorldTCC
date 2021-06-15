@@ -3,18 +3,18 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-import Service from "services/ConsultaService";
-import Consulta from "types/Consulta";
+import Service from "services/AtendimentoService";
+import Atendimento from "types/Atendimento";
 
 type Props = { date: Moment }
 
 const Dia = ({ date }: Props) => {
 
-    const [ consultas, setConsultas ] = useState<Consulta[]>();
+    const [ atendimentos, setAtendimentos ] = useState<Atendimento[]>();
     const [ page, setPage ] = useState(0);
     
     useEffect(() => {
-        Service.getByDate(date, page, 10).then(page => setConsultas(page.content))
+        Service.getByDate(date, page, 10).then(page => setAtendimentos(page.content))
     }, [date, page]);
 
     return (
@@ -31,21 +31,21 @@ const Dia = ({ date }: Props) => {
                     </thead>
                     <tbody>
                     {
-                        consultas?.map(consulta => (
+                        atendimentos?.map(atendimento => (
                             <tr>
-                                <td>{moment(consulta.data).format("HH:mm")}</td>
+                                <td>{moment(atendimento.data).format("HH:mm")}</td>
                                 <td>
-                                    <Link to={`/veterinarios/${consulta.veterinario?.id}`}>
-                                        {consulta.veterinario?.nome}
+                                    <Link to={`/veterinarios/detalhes/${atendimento.veterinario?.id}`}>
+                                        {atendimento.veterinario?.nome}
                                     </Link>
                                 </td>
                                 <td>
-                                    <Link to={`/pets/${consulta.pet?.id}`}>
-                                        {consulta.pet?.nome}
+                                    <Link to={`/pets/detalhes/${atendimento.pet?.id}`}>
+                                        {atendimento.pet?.nome}
                                     </Link>
                                 </td>
                                 <td>
-                                    <Link to={`/atendimentos/${consulta.id}`}>
+                                    <Link to={`/atendimentos/detalhes/${atendimento.id}`}>
                                         Detalhes
                                     </Link>
                                 </td>
