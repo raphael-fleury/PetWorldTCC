@@ -14,6 +14,7 @@ import com.petworld.restapi.models.detailed.PetDetailed;
 import com.petworld.restapi.models.insert.PetInsert;
 import com.petworld.restapi.models.response.AtendimentoResponse;
 import com.petworld.restapi.models.response.ConsultaResponse;
+import com.petworld.restapi.models.response.ExameResponse;
 import com.petworld.restapi.models.response.PetResponse;
 import com.petworld.restapi.models.update.PetUpdate;
 import com.petworld.restapi.repositories.ClientesRepository;
@@ -23,6 +24,7 @@ import com.petworld.restapi.repositories.AtendimentosRepository;
 import com.petworld.restapi.repositories.PetsRepository;
 import com.petworld.restapi.services.AtendimentosService;
 import com.petworld.restapi.services.ConsultasService;
+import com.petworld.restapi.services.ExamesService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
@@ -52,6 +54,7 @@ public class PetsController {
     
     @Autowired private AtendimentosService atendimentosService;
     @Autowired private ConsultasService consultasService;
+    @Autowired private ExamesService examesService;
 
     @GetMapping
     public Page<PetDetailed> getAll(Pageable pageable) {
@@ -118,5 +121,10 @@ public class PetsController {
     @GetMapping("/{id}/consultas")
     public Page<ConsultaResponse> getConsultas(@PathVariable Long id, Pageable pageable) {
         return consultasService.findByPet(id, CLINICA_ID, pageable);
+    }
+
+    @GetMapping("/{id}/exames")
+    public Page<ExameResponse> getExames(@PathVariable Long id, Pageable pageable) {
+        return examesService.findByPet(id, CLINICA_ID, pageable);
     }
 }

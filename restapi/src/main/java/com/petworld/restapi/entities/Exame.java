@@ -10,9 +10,10 @@ import javax.persistence.ManyToOne;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity @Data
-@AllArgsConstructor
+@NoArgsConstructor @AllArgsConstructor
 public class Exame {
     
     @ManyToOne
@@ -25,4 +26,10 @@ public class Exame {
     private String descricao;
     private Date dataResultado;
     
+    public Exame(String nome, String descricao, Date dataResultado, Atendimento atendimento) {
+        this.nome = nome;
+        this.descricao = descricao;
+        this.dataResultado = dataResultado;
+        this.atendimento = atendimento;
+    }
 }

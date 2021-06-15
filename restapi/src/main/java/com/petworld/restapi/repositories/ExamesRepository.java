@@ -1,6 +1,5 @@
 package com.petworld.restapi.repositories;
 
-import java.util.Date;
 import java.util.List;
 
 import com.petworld.restapi.entities.Exame;
@@ -11,9 +10,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface ExamesRepository extends JpaRepository<Exame, Long> {
     
-    List<Exame> findByAtendimentoId(Long atendimentoId);
-    Page<Exame> findByAtendimentoPetId(Long petId, Pageable pageable);
-    Page<Exame> findByAtendimentoDataBetweenAndAtendimentoPetId(Date start, Date end, Long petId, Pageable pageable);
+    List<Exame> findByAtendimentoIdAndAtendimentoClinicaId(Long atendimentoId, Long clinicaId);
+    Page<Exame> findByAtendimentoPetIdAndAtendimentoClinicaId(Long petId, Long clinicaId, Pageable pageable);
     
     Exame findByIdAndAtendimentoClinicaId(Long id, Long clinicaId);
 }
