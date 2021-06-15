@@ -1,11 +1,11 @@
 package com.petworld.restapi.controllers;
 
 import java.net.URI;
+import java.util.List;
 
 import javax.transaction.Transactional;
 import javax.validation.Valid;
 
-import com.petworld.restapi.models.detailed.AtendimentoDetailed;
 import com.petworld.restapi.models.detailed.VeterinarioDetailed;
 import com.petworld.restapi.models.insert.VeterinarioInsert;
 import com.petworld.restapi.models.response.AtendimentoResponse;
@@ -14,7 +14,6 @@ import com.petworld.restapi.models.update.VeterinarioUpdate;
 import com.petworld.restapi.repositories.VeterinariosRepository;
 import com.petworld.restapi.services.AtendimentosService;
 import com.petworld.restapi.repositories.ClinicasRepository;
-import com.petworld.restapi.repositories.AtendimentosRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
@@ -46,6 +45,11 @@ public class VeterinariosController {
     @GetMapping
     public Page<VeterinarioDetailed> getAll(Pageable pageable) {
         return VeterinarioDetailed.page(repository.findByClinicaId(CLINICA_ID, pageable));
+    }
+
+    @GetMapping("/nome/{nome}")
+    public List<VeterinarioDetailed> getByName(@PathVariable String nome) {
+        return VeterinarioDetailed.list(repository.findByNomeContainsIgnoreCaseAndClinicaId(nome, CLINICA_ID));
     }
 
     @GetMapping("/{id}")

@@ -1,6 +1,7 @@
 package com.petworld.restapi.controllers;
 
 import java.net.URI;
+import java.util.List;
 
 import javax.transaction.Transactional;
 import javax.validation.Valid;
@@ -40,6 +41,11 @@ public class ClientesController {
     @GetMapping
     public Page<ClienteDetailed> getAll(Pageable pageable) {
         return ClienteDetailed.page(repository.findByClinicaId(CLINICA_ID, pageable));
+    }
+
+    @GetMapping("/nome/{nome}")
+    public List<ClienteDetailed> getByName(@PathVariable String nome) {
+        return ClienteDetailed.list(repository.findByNomeContainsIgnoreCaseAndClinicaId(nome, CLINICA_ID));
     }
 
     @GetMapping("/{id}")

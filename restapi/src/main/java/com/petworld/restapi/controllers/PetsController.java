@@ -1,6 +1,7 @@
 package com.petworld.restapi.controllers;
 
 import java.net.URI;
+import java.util.List;
 import java.util.NoSuchElementException;
 
 import javax.transaction.Transactional;
@@ -8,8 +9,6 @@ import javax.validation.Valid;
 
 import com.petworld.restapi.entities.Clinica;
 import com.petworld.restapi.entities.Pet;
-import com.petworld.restapi.models.detailed.AtendimentoDetailed;
-import com.petworld.restapi.models.detailed.ConsultaDetailed;
 import com.petworld.restapi.models.detailed.PetDetailed;
 import com.petworld.restapi.models.insert.PetInsert;
 import com.petworld.restapi.models.response.AtendimentoResponse;
@@ -19,8 +18,6 @@ import com.petworld.restapi.models.response.PetResponse;
 import com.petworld.restapi.models.update.PetUpdate;
 import com.petworld.restapi.repositories.ClientesRepository;
 import com.petworld.restapi.repositories.ClinicasRepository;
-import com.petworld.restapi.repositories.ConsultasRepository;
-import com.petworld.restapi.repositories.AtendimentosRepository;
 import com.petworld.restapi.repositories.PetsRepository;
 import com.petworld.restapi.services.AtendimentosService;
 import com.petworld.restapi.services.ConsultasService;
@@ -59,6 +56,11 @@ public class PetsController {
     @GetMapping
     public Page<PetDetailed> getAll(Pageable pageable) {
         return PetDetailed.page(repository.findByClinicaId(CLINICA_ID, pageable));
+    }
+
+    @GetMapping("/nome/{nome}")
+    public List<PetDetailed> getByName(@PathVariable String nome) {
+        return PetDetailed.list(repository.findByNomeContainsIgnoreCaseAndClinicaId(nome, CLINICA_ID));
     }
 
     @GetMapping("/{id}")
