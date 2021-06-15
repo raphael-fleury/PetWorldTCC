@@ -13,6 +13,10 @@ export default {
         return (await Client.get<Page<Pet>>(`${resource}?page=${page ?? 0}&size=${size ?? 10}`)).data
     },
 
+    async getByNameContains(nome: string) {
+        return (await Client.get<Pet[]>(`${resource}/nome/${nome}`)).data
+    },
+
     async getById(id: number) {
         return (await Client.get<Pet>(resource + "/" + id)).data
     },

@@ -54,11 +54,16 @@ h1, h2, h3, h4, h5, h6, p, a, span
 .btn-primary:active,
 .btn-primary.active,
 .btn-primary:active:focus,
+.btn-primary:disabled,
 .open>.dropdown-toggle.btn-primary {
     color: #fff;
     background-color: var(--bs-primary);
     border-color: var(--bs-primary);
     box-shadow: var(--color-pw-4);
+}
+
+.btn-primary:disabled {
+    background-color: var(--color-pw-6);
 }
 
 .btn-link,
