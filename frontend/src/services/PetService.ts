@@ -1,5 +1,8 @@
 import { Pet, PetInsert } from "types/Pet";
 import Page from "types/Page";
+import Exame from "types/Exame";
+import Consulta from "types/Consulta";
+import Atendimento from "types/Atendimento";
 import Client from "../services/Client";
 
 const resource = "/pets";
@@ -19,6 +22,18 @@ export default {
 
     async getById(id: number) {
         return (await Client.get<Pet>(resource + "/" + id)).data
+    },
+
+    async getAtendimentos(id: number) {
+        return (await Client.get<Page<Atendimento>>(`${resource}/${id}/atendimentos`)).data
+    },
+
+    async getConsultas(id: number) {
+        return (await Client.get<Page<Consulta>>(`${resource}/${id}/consultas`)).data
+    },
+
+    async getExames(id: number) {
+        return (await Client.get<Page<Exame>>(`${resource}/${id}/exames`)).data
     },
 
     async post(pet: PetInsert) {
