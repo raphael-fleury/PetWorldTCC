@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo:wght@400;500;600;700&display=swap');
+
+:root {
+    --color-pw-1: #FFFFFF;
+    --color-pw-2: #FFEACD;
+    --color-pw-3: #FFC14D;
+    --color-pw-4: #FFA400;
+    --color-pw-5: #EB751E;
+    --color-pw-6: #C55C1B;
+    --color-pw-7: #6B2206;
+    --color-pw-8: #000000;
+
+    --color-background: #FFE9DA;
+    --color-primary: var(--color-pw-5);
+    --color-link: var(--color-pw-6);
+    --color-text: var(--color-pw-7);
+
+    --bs-primary: var(--color-primary)
+}
+
+html, body {
+    height: 100%;
+    font-family: "Exo", "Ubuntu", sans-serif;
+    background-color: var(--color-background) !important;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.content {
+    flex: 1 0 auto;
+}
+
+.text-primary {
+    color: var(--color-text) !important;
+}
+
+h1, h2, h3, h4, h5, h6, p, a, span
+.h1, .h2, .h3, .h4, .h5, .h6 {
+    color: var(--color-text) !important;
+}
+
+.page {
+    display: flex;
+}
+
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.btn-primary:active:focus,
+.btn-primary:disabled,
+.open>.dropdown-toggle.btn-primary {
+    color: #fff;
+    background-color: var(--bs-primary);
+    border-color: var(--bs-primary);
+    box-shadow: var(--color-pw-4);
+}
+
+.btn-primary:disabled {
+    background-color: var(--color-pw-6);
+}
+
+.btn-link,
+.btn-link:hover,
+.btn-link:focus,
+.btn-link:active,
+.btn-link.active,
+.btn-link:active:focus,
+.open>.dropdown-toggle.btn-link {
+    box-shadow: var(--color-pw-4);
+}
+
+.btn-primary:active {
+    filter: drop-shadow(0 0 6px var(--color-primary));
+}
+
+.btn-link, .page-link {
+    color: var(--color-primary);
+}
+
+.btn-link:hover, .page-link:hover {
+    color: var(--color-link);
+}
+
+.disabled .page-link {
+    color: var(--color-pw-7);
+}
